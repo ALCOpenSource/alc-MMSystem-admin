@@ -59,4 +59,14 @@
         <item>Mentor</item>
         <item>Admin</item>
     </string-array>
+
+    <!--  ************ Admin Program ****************** -->
+    <string name="program_details_title">Google Africa Scholarship Program</string>
+    <string name="edit_program_button">Edit Program</string>
+    <string name="delete_archive_program">Delete/Archive Program</string>
+    <string name="mentor_manager_program_card">Mentor Managers assigned to this program</string>
+    <string name="mentor_program_card">Mentors assigned to this program</string>
+    <string name="report_program_card">Program Reports</string>
+    <string name="task_program_card">Program Tasks</string>
+    <string name="view_button">View</string>
 </resources>

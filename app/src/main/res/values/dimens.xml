@@ -22,6 +22,12 @@
     <dimen name="chip_mentor_profile_width">90dp</dimen>
     <dimen name="chip_mentor_profile_height">32dp</dimen>
 
+    <dimen name="card_height">160dp</dimen>
+    <dimen name="card_width">130dp</dimen>
+    <dimen name="button_padding">15dp</dimen>
+
     <!-- ************** radius *********** -->
     <dimen name="cardCornerRadius">5dp</dimen>
+    <dimen name="buttonCornerRadius">10dp</dimen>
+
 </resources>
