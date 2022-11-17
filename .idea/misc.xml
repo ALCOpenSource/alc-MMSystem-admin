@@ -6,8 +6,11 @@
         <entry key="app/src/main/res/drawable/ic_arrow_delete.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_admin_profile.xml" value="0.14990942028985507" />
         <entry key="app/src/main/res/layout/fragment_edit_admin_profile.xml" value="0.14990942028985507" />
+        <entry key="app/src/main/res/layout/fragment_mentor_manager.xml" value="0.13229166666666667" />
         <entry key="app/src/main/res/layout/fragment_program_details.xml" value="0.14990942028985507" />
         <entry key="app/src/main/res/layout/fragment_programs.xml" value="0.14990942028985507" />
+        <entry key="app/src/main/res/layout/fragment_tasks.xml" value="0.33970184326171876" />
+        <entry key="app/src/main/res/layout/item_task_report.xml" value="0.14990942028985507" />
       </map>
     </option>
   </component>

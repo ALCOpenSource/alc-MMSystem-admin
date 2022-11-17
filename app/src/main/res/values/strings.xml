@@ -69,4 +69,8 @@
     <string name="report_program_card">Program Reports</string>
     <string name="task_program_card">Program Tasks</string>
     <string name="view_button">View</string>
+
+    <string name="task_report_max_button">Maximum</string>
+    <string name="task_report_sort_button">Sort</string>
+
 </resources>
