@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable/ic_arrow_delete.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_program_details.xml" value="0.14990942028985507" />
+        <entry key="app/src/main/res/layout/fragment_programs.xml" value="0.14990942028985507" />
       </map>
     </option>
   </component>

@@ -18,7 +18,12 @@
     <fragment
         android:id="@+id/programsFragment"
         android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.ProgramsFragment"
-        tools:layout="@layout/fragment_programs" />
+        tools:layout="@layout/fragment_programs" >
+    <action
+        android:id="@+id/action_programsFragment_to_programDetailsFragment"
+        app:destination="@id/programDetailsFragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/messagesFragment"
         android:name="com.peculiaruc.alc_mmsystem_admin.ui.messages.MessagesFragment"
@@ -43,4 +48,12 @@
         android:name="com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.MentorManagerFragment"
         tools:layout="@layout/fragment_mentor_manager" />
 
+    <fragment
+        android:id="@+id/programDetailsFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.ProgramDetailsFragment"
+        tools:layout="@layout/fragment_program_details" >
+        <argument
+            android:name="programID"
+            app:argType="integer" />
+    </fragment>
 </navigation>
