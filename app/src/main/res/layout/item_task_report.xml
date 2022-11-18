@@ -1,56 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/taskReportCard"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.card.MaterialCardView
+        style="@style/taskReportCard"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_small">
 
-        <TextView
-            android:id="@+id/title"
-            style="@style/mediumMukta"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text=""
-            app:layout_constraintEnd_toStartOf="@+id/downloadButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/description"
-            style="@style/regularMuktaBlack5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text=""
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/downloadButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            <TextView
+                android:id="@+id/title"
+                style="@style/mediumMukta"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                app:layout_constraintEnd_toStartOf="@+id/downloadButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/shareButton"
-            style="@style/shareImageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="share ImageButton"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/description"
+                style="@style/regularMuktaBlack5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/downloadButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title" />
 
-        <ImageButton
-            android:id="@+id/downloadButton"
-            style="@style/downloadImageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/spacing_small"
-            android:contentDescription="download ImageButton"
-            app:layout_constraintBottom_toBottomOf="@+id/shareButton"
-            app:layout_constraintEnd_toStartOf="@+id/shareButton"
-            app:layout_constraintTop_toTopOf="@+id/shareButton" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</com.google.android.material.card.MaterialCardView>
+            <ImageButton
+                android:id="@+id/shareButton"
+                style="@style/shareImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="share ImageButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageButton
+                android:id="@+id/downloadButton"
+                style="@style/downloadImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_small"
+                android:contentDescription="download ImageButton"
+                app:layout_constraintBottom_toBottomOf="@+id/shareButton"
+                app:layout_constraintEnd_toStartOf="@+id/shareButton"
+                app:layout_constraintTop_toTopOf="@+id/shareButton" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

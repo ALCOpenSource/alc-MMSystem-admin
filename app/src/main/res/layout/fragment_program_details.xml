@@ -89,12 +89,12 @@
                         <TextView
                             android:id="@+id/cardDescriptionMentorManager"
                             style="@style/cardDescription"
-                            android:layout_above="@+id/cardButtonMentorManager"
+                            android:layout_above="@+id/shareButton"
                             android:layout_below="@+id/cardTitleMentorManager"
                             android:text="@string/mentor_manager_program_card" />
 
                         <Button
-                            android:id="@+id/cardButtonMentorManager"
+                            android:id="@+id/shareButton"
                             style="@style/cardButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
