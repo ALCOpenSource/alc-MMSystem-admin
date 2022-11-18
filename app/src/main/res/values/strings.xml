@@ -81,6 +81,7 @@
     <string name="task_report_max_button">Maximum</string>
     <string name="task_report_sort_button">Sort</string>
 
+    <string name="task_reports_title">Task Reports</string>
     <string-array name="reports_string_array">
         <item>All Reports</item>
         <item>Some Reports</item>
