@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentProgramDetailsBinding
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
@@ -28,5 +29,10 @@ class ProgramDetailsFragment : BaseFragment<FragmentProgramDetailsBinding>() {
             programID = it.getInt(ADMIN_ID_ARGUMENT)
         }
 
+        binding.cardButtonTask.setOnClickListener(){
+            val action =
+                ProgramDetailsFragmentDirections.actionProgramDetailsFragmentToTaskReportsFragment()
+            view.findNavController().navigate(action)
+        }
     }
 }
