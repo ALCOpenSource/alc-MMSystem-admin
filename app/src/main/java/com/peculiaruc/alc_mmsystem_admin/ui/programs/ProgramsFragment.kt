@@ -18,8 +18,8 @@ class ProgramsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_programs, container, false)
-        val root= inflater.inflate(R.layout.fragment_programs, container, false)
-        val bt=root.findViewById<Button>(R.id.programDetailsButton)
+        val root = inflater.inflate(R.layout.fragment_programs, container, false)
+        val bt = root.findViewById<Button>(R.id.programDetailsButton)
         bt.setOnClickListener {
             val action =
                 ProgramsFragmentDirections.actionProgramsFragmentToProgramDetailsFragment(1)

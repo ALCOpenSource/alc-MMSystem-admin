@@ -18,10 +18,10 @@
     <fragment
         android:id="@+id/programsFragment"
         android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.ProgramsFragment"
-        tools:layout="@layout/fragment_programs" >
-    <action
-        android:id="@+id/action_programsFragment_to_programDetailsFragment"
-        app:destination="@id/programDetailsFragment" />
+        tools:layout="@layout/fragment_programs">
+        <action
+            android:id="@+id/action_programsFragment_to_programDetailsFragment"
+            app:destination="@id/programDetailsFragment" />
     </fragment>
 
     <fragment
@@ -51,7 +51,7 @@
     <fragment
         android:id="@+id/programDetailsFragment"
         android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.ProgramDetailsFragment"
-        tools:layout="@layout/fragment_program_details" >
+        tools:layout="@layout/fragment_program_details">
         <argument
             android:name="programID"
             app:argType="integer" />
