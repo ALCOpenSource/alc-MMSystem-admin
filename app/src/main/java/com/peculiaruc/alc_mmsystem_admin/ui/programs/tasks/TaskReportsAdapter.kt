@@ -9,10 +9,9 @@ import com.peculiaruc.alc_mmsystem_admin.domain.models.Report
 import com.peculiaruc.alc_mmsystem_admin.databinding.ItemTaskReportBinding
 
 
-
 class TaskReportsAdapter(
-    private val itemClickListener:ItemClickListener)
-    : ListAdapter<Report, TaskReportsAdapter.TaskReportViewHolder>(DiffCallback) {
+    private val itemClickListener: ItemClickListener
+) : ListAdapter<Report, TaskReportsAdapter.TaskReportViewHolder>(DiffCallback) {
 
     interface ItemClickListener {
         fun onReportItemClick(item: Report)
@@ -56,12 +55,12 @@ class TaskReportsAdapter(
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(report: Report) {
             binding.title.text = report.title
-            binding.description.text = "By " + report.user + " " + report.time
+            binding.description.text = "By " + report.user + " - " + report.time
 
-            binding.downloadButton.setOnClickListener(){
+            binding.downloadButton.setOnClickListener() {
                 itemClickListener.onDownloadClick(report)
             }
-            binding.shareButton.setOnClickListener(){
+            binding.shareButton.setOnClickListener() {
                 itemClickListener.onShareClick(report)
             }
         }
