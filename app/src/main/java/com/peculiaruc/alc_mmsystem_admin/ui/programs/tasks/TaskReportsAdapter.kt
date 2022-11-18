@@ -50,6 +50,7 @@ class TaskReportsAdapter(
         holder.bind(getItem(position))
     }
 
+
     inner class TaskReportViewHolder(
         private var binding: ItemTaskReportBinding
     ) : RecyclerView.ViewHolder(binding.root) {

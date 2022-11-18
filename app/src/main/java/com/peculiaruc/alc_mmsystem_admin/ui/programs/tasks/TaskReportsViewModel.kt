@@ -9,6 +9,7 @@ import com.peculiaruc.alc_mmsystem_admin.domain.models.Report
 class TaskReportsViewModel : ViewModel() {
 
     private var taskReportsList = ArrayList<Report>()
+    var filtredTaskReports = MutableLiveData<List<Report>>()
     private var _taskReports = MutableLiveData<List<Report>>()
     var taskReports: LiveData<List<Report>> = _taskReports
 
@@ -18,6 +19,11 @@ class TaskReportsViewModel : ViewModel() {
                 Report(i, "Google Africa Scholarship Report", "19th - 25th Oct 22", "Ibrahim Kabir")
             taskReportsList.add(report)
         }
+        _taskReports.value = taskReportsList
+    }
+
+    fun setTaskReportsList(list: ArrayList<Report>) {
+        taskReportsList = list
         _taskReports.value = taskReportsList
     }
 

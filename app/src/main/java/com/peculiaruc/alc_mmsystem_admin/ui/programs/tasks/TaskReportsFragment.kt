@@ -1,13 +1,14 @@
 package com.peculiaruc.alc_mmsystem_admin.ui.programs.tasks
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.SearchView
 import android.widget.Spinner
-import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,17 +19,19 @@ import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
 
 class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
     TaskReportsAdapter.ItemClickListener {
-
+    val TAG = "TaskReportsFragmentTag"
     override val layoutIdFragment: Int = R.layout.fragment_task_reports
     override val viewModel: TaskReportsViewModel by viewModels()
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var spinner: Spinner
-    private lateinit var taskReportsAdapter:TaskReportsAdapter
+    private lateinit var taskReportsAdapter: TaskReportsAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setTitle(true, getString(R.string.task_reports_title))
+        setHasOptionsMenu(true)
+
         viewModel.initTaskReports()
         recyclerView = binding.taskReportsList
         spinner = binding.taskSpinner
@@ -41,6 +44,9 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
         taskReportsAdapter = TaskReportsAdapter(this)
         recyclerView.adapter = taskReportsAdapter
         viewModel.taskReports.observe(viewLifecycleOwner) {
+            taskReportsAdapter.submitList(it)
+        }
+        viewModel.filtredTaskReports.observe(viewLifecycleOwner) {
             taskReportsAdapter.submitList(it)
         }
     }
@@ -80,12 +86,33 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }
+
             override fun onQueryTextChange(newText: String?): Boolean {
-                //taskReportsAdapter.filter.filter(newText)
+                filter(newText)
                 return true
             }
         })
 
     }
+
+    private fun filter(text: String?) {
+        var filteredlist: ArrayList<Report> = ArrayList()
+        val length = text?.length ?: 0
+        if (length > 0) {
+            viewModel.taskReports.value?.let {
+                for (item in it) {
+                    if (item.title.lowercase().contains(text?.lowercase()!!)) {
+                        filteredlist.add(item)
+                    }
+                }
+            }
+
+        } else {
+            filteredlist = viewModel.taskReports.value as ArrayList<Report>
+        }
+
+        viewModel.filtredTaskReports.value = filteredlist
+    }
+
 
 }
