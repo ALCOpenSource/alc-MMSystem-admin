@@ -68,5 +68,14 @@
         <argument
             android:name="programID"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_programDetailsFragment_to_taskReportsFragment"
+            app:destination="@id/taskReportsFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/taskReportsFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.tasks.TaskReportsFragment"
+        tools:layout="@layout/fragment_task_reports"/>
+
 </navigation>
