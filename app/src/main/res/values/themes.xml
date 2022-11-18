@@ -50,6 +50,7 @@
         <item name="android:textColor">@color/mms_black_2</item>
         <item name="android:textSize">@dimen/font_large</item>
     </style>
+
     <style name="regularMuktaBlack5">
         <item name="android:fontFamily">@font/mukta_regular</item>
         <item name="android:textColor">@color/mms_black_5</item>
@@ -166,5 +167,27 @@
         <item name="fontFamily">@font/mukta_bold</item>
         <item name="android:layout_alignParentBottom">true</item>
         <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="taskReportCard">
+        <item name="strokeWidth">1dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardCornerRadius">@dimen/cardCornerRadius</item>
+        <item name="strokeColor">@color/mms_pry_10</item>
+        <item name="contentPadding">@dimen/spacing_small</item>
+    </style>
+
+    <style name="downloadImageButton">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:src">@drawable/ic_download</item>
+    </style>
+
+    <style name="shareImageButton">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:src">@drawable/ic_share</item>
     </style>
 </resources>
