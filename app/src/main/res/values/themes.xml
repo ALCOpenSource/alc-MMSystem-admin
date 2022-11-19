@@ -123,6 +123,19 @@
         <item name="fontFamily">@font/mukta_bold</item>
         <item name="android:padding">@dimen/button_padding</item>
     </style>
+    <style name="buttonRegularBoldText" parent="Widget.Material3.Button">
+        <item name="cornerRadius">@dimen/buttonCornerRadius</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+        <item name="textFillColor">@color/white</item>
+        <item name="fontFamily">@font/mukta_regular</item>
+    </style>
+    <style name="buttonOutlineRegularBoldText" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="cornerRadius">5dp</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+        <item name="strokeColor">@color/mms_pry_2</item>
+        <item name="textOutlineColor">@color/mms_pry_2</item>
+        <item name="fontFamily">@font/mukta_regular</item>
+    </style>
 
     <style name="redTextButtonWithIcon" parent="Widget.MaterialComponents.Button.TextButton.Icon">
         <item name="android:textAllCaps">false</item>

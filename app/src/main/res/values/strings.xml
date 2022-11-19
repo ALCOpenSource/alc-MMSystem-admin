@@ -86,4 +86,11 @@
         <item>All Reports</item>
         <item>Some Reports</item>
     </string-array>
+
+    <string name="program_report_title">Google Africa Scholarship Program Report</string>
+    <string name="achievements_title">Major Achievements</string>
+    <string name="blocker_title">Major Blocker</string>
+    <string name="recommendations_title">Major Recommendations</string>
+    <string name="button_share">Share</string>
+
 </resources>
