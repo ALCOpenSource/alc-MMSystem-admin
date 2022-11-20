@@ -22,11 +22,6 @@ class TaskReportsViewModel : ViewModel() {
         _taskReports.value = taskReportsList
     }
 
-    fun setTaskReportsList(list: ArrayList<Report>) {
-        taskReportsList = list
-        _taskReports.value = taskReportsList
-    }
-
 }
 
 class TaskReportsViewModelFactory() : ViewModelProvider.Factory {
