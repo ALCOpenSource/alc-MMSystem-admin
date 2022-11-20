@@ -76,6 +76,18 @@
     <fragment
         android:id="@+id/taskReportsFragment"
         android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.tasks.TaskReportsFragment"
-        tools:layout="@layout/fragment_task_reports"/>
+        tools:layout="@layout/fragment_task_reports">
+        <action
+            android:id="@+id/action_taskReportsFragment_to_TaskReportDetailFragment"
+            app:destination="@id/TaskReportDetailFragment" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/TaskReportDetailFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.tasks.TaskReportDetailsFragment"
+        tools:layout="@layout/fragment_task_report_details">
+        <argument
+            android:name="taskReportID"
+            app:argType="integer" />
+    </fragment>
 </navigation>
