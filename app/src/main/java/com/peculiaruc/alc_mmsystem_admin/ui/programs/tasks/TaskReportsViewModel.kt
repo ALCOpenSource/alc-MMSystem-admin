@@ -9,7 +9,7 @@ import com.peculiaruc.alc_mmsystem_admin.domain.models.Report
 class TaskReportsViewModel : ViewModel() {
 
     private var taskReportsList = ArrayList<Report>()
-    var filtredTaskReports = MutableLiveData<List<Report>>()
+    var filteredTaskReports = MutableLiveData<List<Report>>()
     private var _taskReports = MutableLiveData<List<Report>>()
     var taskReports: LiveData<List<Report>> = _taskReports
 

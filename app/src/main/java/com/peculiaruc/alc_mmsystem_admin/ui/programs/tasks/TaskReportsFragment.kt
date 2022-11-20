@@ -10,19 +10,20 @@ import android.widget.ArrayAdapter
 import android.widget.SearchView
 import android.widget.Spinner
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentTaskReportsBinding
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Report
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
+import com.peculiaruc.alc_mmsystem_admin.ui.programs.ProgramsFragmentDirections
 
 class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
     TaskReportsAdapter.ItemClickListener {
     val TAG = "TaskReportsFragmentTag"
     override val layoutIdFragment: Int = R.layout.fragment_task_reports
     override val viewModel: TaskReportsViewModel by viewModels()
-
     private lateinit var recyclerView: RecyclerView
     private lateinit var spinner: Spinner
     private lateinit var taskReportsAdapter: TaskReportsAdapter
@@ -46,7 +47,7 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
         viewModel.taskReports.observe(viewLifecycleOwner) {
             taskReportsAdapter.submitList(it)
         }
-        viewModel.filtredTaskReports.observe(viewLifecycleOwner) {
+        viewModel.filteredTaskReports.observe(viewLifecycleOwner) {
             taskReportsAdapter.submitList(it)
         }
     }
@@ -65,7 +66,10 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
     }
 
     override fun onReportItemClick(item: Report) {
-        TODO("Not yet implemented")
+        val action =
+            TaskReportsFragmentDirections.actionTaskReportsFragmentToTaskReportDetailFragment(1)
+        view?.findNavController()?.navigate(action)
+
     }
 
     override fun onDownloadClick(item: Report) {
@@ -111,7 +115,7 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
             filteredlist = viewModel.taskReports.value as ArrayList<Report>
         }
 
-        viewModel.filtredTaskReports.value = filteredlist
+        viewModel.filteredTaskReports.value = filteredlist
     }
 
 

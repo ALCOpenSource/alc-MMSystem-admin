@@ -55,8 +55,8 @@ class TaskReportsAdapter(
         private var binding: ItemTaskReportBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(report: Report) {
-            binding.title.text = report.title
-            binding.description.text = "By " + report.user + " - " + report.time
+            binding.itemTitle.text = report.title
+            binding.itemDescription.text = "By " + report.user + " - " + report.time
 
             binding.downloadButton.setOnClickListener() {
                 itemClickListener.onDownloadClick(report)

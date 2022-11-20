@@ -29,7 +29,7 @@ class ProgramDetailsFragment : BaseFragment<FragmentProgramDetailsBinding>() {
             programID = it.getInt(ADMIN_ID_ARGUMENT)
         }
 
-        binding.cardButtonTask.setOnClickListener(){
+        binding.cardButtonTask.setOnClickListener() {
             val action =
                 ProgramDetailsFragmentDirections.actionProgramDetailsFragmentToTaskReportsFragment()
             view.findNavController().navigate(action)
