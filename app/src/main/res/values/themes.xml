@@ -132,7 +132,7 @@
     </style>
 
     <style name="buttonOutlineRegularBoldText" parent="Widget.Material3.Button.OutlinedButton">
-        <item name="cornerRadius">5dp</item>
+        <item name="cornerRadius">@dimen/buttonCornerRadius</item>
         <item name="android:textSize">@dimen/font_medium</item>
         <item name="strokeColor">@color/mms_pry_2</item>
         <item name="textOutlineColor">@color/mms_pry_2</item>

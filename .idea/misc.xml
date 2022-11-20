@@ -3,12 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/add_circle_plus_1.xml" value="0.119" />
+        <entry key="app/src/main/res/drawable/calender_icon.xml" value="0.119" />
         <entry key="app/src/main/res/drawable/edit_big.xml" value="0.105" />
+        <entry key="app/src/main/res/drawable/empty_notification_background.xml" value="0.119" />
         <entry key="app/src/main/res/drawable/ic_approval_requests.xml" value="0.105" />
         <entry key="app/src/main/res/drawable/ic_arrow_delete.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/search_icon.xml" value="0.105" />
         <entry key="app/src/main/res/drawable/task.xml" value="0.105" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.16485507246376813" />
+        <entry key="app/src/main/res/layout/dialog_download.xml" value="0.15364583333333334" />
+        <entry key="app/src/main/res/layout/dialog_share.xml" value="0.36385498046875" />
         <entry key="app/src/main/res/layout/fragment_admin_profile.xml" value="0.14990942028985507" />
         <entry key="app/src/main/res/layout/fragment_edit_admin_profile.xml" value="0.14990942028985507" />
         <entry key="app/src/main/res/layout/fragment_mentor_manager.xml" value="0.13229166666666667" />

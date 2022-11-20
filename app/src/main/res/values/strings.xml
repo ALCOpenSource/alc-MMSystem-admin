@@ -92,5 +92,11 @@
     <string name="blocker_title">Major Blocker</string>
     <string name="recommendations_title">Major Recommendations</string>
     <string name="button_share">Share</string>
+    <string name="button_done">Done</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_open_email">Open Email App</string>
+
+    <string name="report_share_dialog_message">Share report via email</string>
+    <string name="report_download_dialog_success_message">Report Downloaded Successfully!</string>
 
 </resources>
