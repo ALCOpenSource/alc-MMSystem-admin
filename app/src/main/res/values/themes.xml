@@ -123,12 +123,14 @@
         <item name="fontFamily">@font/mukta_bold</item>
         <item name="android:padding">@dimen/button_padding</item>
     </style>
+
     <style name="buttonRegularBoldText" parent="Widget.Material3.Button">
         <item name="cornerRadius">@dimen/buttonCornerRadius</item>
         <item name="android:textSize">@dimen/font_medium</item>
         <item name="textFillColor">@color/white</item>
         <item name="fontFamily">@font/mukta_regular</item>
     </style>
+
     <style name="buttonOutlineRegularBoldText" parent="Widget.Material3.Button.OutlinedButton">
         <item name="cornerRadius">5dp</item>
         <item name="android:textSize">@dimen/font_medium</item>
@@ -197,10 +199,17 @@
         <item name="android:src">@drawable/ic_download</item>
     </style>
 
-    <style name="shareImageButton">
+    <style name="closeImageButton">
         <item name="android:background">@android:color/transparent</item>
         <item name="android:minWidth">48dp</item>
         <item name="android:minHeight">48dp</item>
         <item name="android:src">@drawable/ic_share</item>
+    </style>
+
+    <style name="shareImageButton">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:src">@drawable/ic_close_icon</item>
     </style>
 </resources>
