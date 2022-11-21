@@ -45,10 +45,28 @@
         <item name="android:textSize">@dimen/font_medium</item>
     </style>
 
+    <style name="largeMuktaExtraBold">
+        <item name="android:fontFamily">@font/mukta_extrabold</item>
+        <item name="android:textColor">@color/mms_black_2</item>
+        <item name="android:textSize">@dimen/font_large</item>
+    </style>
+
+    <style name="regularMuktaBlack5">
+        <item name="android:fontFamily">@font/mukta_regular</item>
+        <item name="android:textColor">@color/mms_black_5</item>
+        <item name="android:textSize">@dimen/font_regular</item>
+    </style>
+
     <style name="mediumRoboto">
         <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="android:textColor">@color/mms_black_2</item>
         <item name="android:textSize">@dimen/font_regular</item>
+    </style>
+
+    <style name="largeRoboto">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">@color/mms_black_2</item>
+        <item name="android:textSize">@dimen/font_large</item>
     </style>
 
 
@@ -89,4 +107,109 @@
         <item name="chipCornerRadius">5dp</item>
     </style>
 
+
+    <style name="imageCircle">
+        <item name="android:layout_width">@dimen/profile_width</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="shapeAppearanceOverlay">@style/CircleImage</item>
+        <item name="layout_constraintDimensionRatio">1:1</item>
+    </style>
+
+    <style name="buttonLargeBoldText" parent="Widget.Material3.Button">
+        <item name="cornerRadius">@dimen/buttonCornerRadius</item>
+        <item name="android:textSize">@dimen/font_large</item>
+        <item name="textFillColor">@color/white</item>
+        <item name="fontFamily">@font/mukta_bold</item>
+        <item name="android:padding">@dimen/button_padding</item>
+    </style>
+
+    <style name="buttonRegularBoldText" parent="Widget.Material3.Button">
+        <item name="cornerRadius">@dimen/buttonCornerRadius</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+        <item name="textFillColor">@color/white</item>
+        <item name="fontFamily">@font/mukta_regular</item>
+    </style>
+
+    <style name="buttonOutlineRegularBoldText" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="cornerRadius">@dimen/buttonCornerRadius</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+        <item name="strokeColor">@color/mms_pry_2</item>
+        <item name="textOutlineColor">@color/mms_pry_2</item>
+        <item name="fontFamily">@font/mukta_regular</item>
+    </style>
+
+    <style name="redTextButtonWithIcon" parent="Widget.MaterialComponents.Button.TextButton.Icon">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/mms_sec_3</item>
+        <item name="iconTint">@color/mms_sec_3</item>
+    </style>
+
+    <style name="programCard">
+        <item name="android:layout_width">@dimen/card_width</item>
+        <item name="android:layout_height">@dimen/card_height</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardCornerRadius">10dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="cardBackgroundColor">@color/mms_black_10</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginRight">@dimen/spacing_default</item>
+        <item name="contentPadding">@dimen/spacing_small</item>
+    </style>
+
+    <style name="cardDescription" parent="regularMuktaBlack5">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:autoSizeMinTextSize" tools:targetApi="o">5dp</item>
+        <item name="android:autoSizeMaxTextSize" tools:targetApi="o">@dimen/font_regular</item>
+        <item name="android:autoSizeStepGranularity" tools:targetApi="o">1sp</item>
+        <item name="android:autoSizeTextType" tools:targetApi="o">uniform</item>
+    </style>
+
+    <style name="cardTitle" parent="mediumMukta">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">top|center_horizontal</item>
+        <item name="android:layout_alignParentTop">true</item>
+    </style>
+
+    <style name="cardButton" parent="Widget.Material3.Button">
+        <item name="cornerRadius">@dimen/buttonCornerRadius</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+        <item name="textFillColor">@color/white</item>
+        <item name="fontFamily">@font/mukta_bold</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="taskReportCard">
+        <item name="strokeWidth">1dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardCornerRadius">@dimen/cardCornerRadius</item>
+        <item name="strokeColor">@color/mms_pry_10</item>
+        <item name="contentPadding">@dimen/spacing_small</item>
+    </style>
+
+    <style name="downloadImageButton">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:src">@drawable/ic_download</item>
+    </style>
+
+    <style name="closeImageButton">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:src">@drawable/ic_share</item>
+    </style>
+
+    <style name="shareImageButton">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:src">@drawable/ic_close_icon</item>
+    </style>
 </resources>

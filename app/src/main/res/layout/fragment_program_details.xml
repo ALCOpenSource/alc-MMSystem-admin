@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.programs.ProgramDetailsFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/programDetailTopLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_default"
+            android:layout_marginRight="@dimen/spacing_default"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image_profile"
+                style="@style/imageCircle"
+                android:src="@drawable/image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+
+            <TextView
+                android:id="@+id/programTitle"
+                style="@style/largeMuktaExtraBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_default"
+                android:text="Google Africa Scholarship Program"
+                app:layout_constraintBottom_toBottomOf="@+id/image_profile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image_profile"
+                app:layout_constraintTop_toTopOf="@+id/image_profile" />
+
+            <TextView
+                android:id="@+id/aboutTv"
+                style="@style/mediumMukta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_default"
+                android:text="@string/about"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_profile" />
+
+            <TextView
+                android:id="@+id/programDescriptionTextView"
+                style="@style/regularMuktaBlack5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_default"
+                android:text="@string/text_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/aboutTv" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/editProgramButton"
+            app:layout_constraintTop_toBottomOf="@+id/programDetailTopLayout">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/spacing_default">
+
+                <com.google.android.material.card.MaterialCardView style="@style/programCard">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/cardTitleMentorManager"
+                            style="@style/cardTitle"
+                            android:text="12" />
+
+                        <TextView
+                            android:id="@+id/cardDescriptionMentorManager"
+                            style="@style/cardDescription"
+                            android:layout_above="@+id/shareButton"
+                            android:layout_below="@+id/cardTitleMentorManager"
+                            android:text="@string/mentor_manager_program_card" />
+
+                        <Button
+                            android:id="@+id/shareButton"
+                            style="@style/cardButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/view_button" />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView style="@style/programCard">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/cardTitleMentors"
+                            style="@style/cardTitle"
+                            android:text="80" />
+
+                        <TextView
+                            android:id="@+id/cardDescriptionMentors"
+                            style="@style/cardDescription"
+                            android:layout_above="@+id/cardButtonMentors"
+                            android:layout_below="@+id/cardTitleMentors"
+                            android:text="@string/mentor_program_card" />
+
+                        <Button
+                            android:id="@+id/cardButtonMentors"
+                            style="@style/cardButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/view_button" />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView style="@style/programCard">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/cardTitleReport"
+                            style="@style/cardTitle"
+                            android:text="90" />
+
+                        <TextView
+                            android:id="@+id/cardDescriptionReport"
+                            style="@style/cardDescription"
+                            android:layout_above="@+id/cardButtonReport"
+                            android:layout_below="@+id/cardTitleReport"
+                            android:text="@string/report_program_card" />
+
+                        <Button
+                            android:id="@+id/cardButtonReport"
+                            style="@style/cardButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/view_button" />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView style="@style/programCard">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:id="@+id/cardTitleTask"
+                            style="@style/cardTitle"
+                            android:text="07" />
+
+                        <TextView
+                            android:id="@+id/cardDescriptionTask"
+                            style="@style/cardDescription"
+                            android:layout_above="@+id/cardButtonTask"
+                            android:layout_below="@+id/cardTitleTask"
+                            android:text="@string/task_program_card" />
+
+                        <Button
+                            android:id="@+id/cardButtonTask"
+                            style="@style/cardButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/view_button" />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <Button
+            android:id="@+id/editProgramButton"
+            style="@style/buttonLargeBoldText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_default"
+            android:layout_marginRight="@dimen/spacing_default"
+            android:text="@string/edit_program_button"
+            app:layout_constraintBottom_toTopOf="@+id/deleteArchiveProgramButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/deleteArchiveProgramButton"
+            style="@style/redTextButtonWithIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_default"
+            android:text="@string/delete_archive_program"
+            app:icon="@drawable/ic_arrow_delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

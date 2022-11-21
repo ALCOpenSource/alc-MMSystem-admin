@@ -67,4 +67,36 @@
         <item>Mentor</item>
         <item>Admin</item>
     </string-array>
+
+    <!--  ************ Admin Program ****************** -->
+    <string name="program_details_title">Google Africa Scholarship Program</string>
+    <string name="edit_program_button">Edit Program</string>
+    <string name="delete_archive_program">Delete/Archive Program</string>
+    <string name="mentor_manager_program_card">Mentor Managers assigned to this program</string>
+    <string name="mentor_program_card">Mentors assigned to this program</string>
+    <string name="report_program_card">Program Reports</string>
+    <string name="task_program_card">Program Tasks</string>
+    <string name="view_button">View</string>
+
+    <string name="task_report_max_button">Maximum</string>
+    <string name="task_report_sort_button">Sort</string>
+
+    <string name="task_reports_title">Task Reports</string>
+    <string-array name="reports_string_array">
+        <item>All Reports</item>
+        <item>Some Reports</item>
+    </string-array>
+
+    <string name="program_report_title">Google Africa Scholarship Program Report</string>
+    <string name="achievements_title">Major Achievements</string>
+    <string name="blocker_title">Major Blocker</string>
+    <string name="recommendations_title">Major Recommendations</string>
+    <string name="button_share">Share</string>
+    <string name="button_done">Done</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_open_email">Open Email App</string>
+
+    <string name="report_share_dialog_message">Share report via email</string>
+    <string name="report_download_dialog_success_message">Report Downloaded Successfully!</string>
+
 </resources>
