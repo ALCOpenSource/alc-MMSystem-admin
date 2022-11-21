@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.peculiaruc.alc_mmsystem_admin.databinding.ItemReportBinding
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Report
-import com.peculiaruc.alc_mmsystem_admin.databinding.ItemTaskReportBinding
 
 
 class TaskReportsAdapter(
@@ -33,7 +33,7 @@ class TaskReportsAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskReportViewHolder {
         val viewHolder = TaskReportViewHolder(
-            ItemTaskReportBinding.inflate(
+            ItemReportBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -52,7 +52,7 @@ class TaskReportsAdapter(
 
 
     inner class TaskReportViewHolder(
-        private var binding: ItemTaskReportBinding
+        private var binding: ItemReportBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(report: Report) {
             binding.itemTitle.text = report.title
