@@ -1,12 +1,14 @@
 package com.peculiaruc.alc_mmsystem_admin.ui.programs.tasks
 
+import android.app.Dialog
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.SearchView
 import android.widget.Spinner
 import androidx.fragment.app.viewModels
@@ -73,11 +75,11 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
     }
 
     override fun onDownloadClick(item: Report) {
-        TODO("Not yet implemented")
+        showDownloadDialog()
     }
 
     override fun onShareClick(item: Report) {
-        TODO("Not yet implemented")
+        showShareDialog()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -118,5 +120,53 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
         viewModel.filteredTaskReports.value = filteredlist
     }
 
+    private fun showDownloadDialog() {
+        activity?.let {
+            val dialog = Dialog(it)
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog.setCancelable(false)
+            dialog.setContentView(R.layout.dialog_download)
+            dialog.window?.setLayout(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            )
+            val doneButton = dialog.findViewById(R.id.downloadDoneButton) as Button
+            doneButton.setOnClickListener { dialog.dismiss() }
+            dialog.show()
+        }
+    }
 
+    private fun showShareDialog() {
+        activity?.let {
+
+            val dialog = Dialog(it)
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog.setCancelable(false)
+            dialog.setContentView(R.layout.dialog_share)
+            dialog.window?.setLayout(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            )
+            val cancelButton = dialog.findViewById(R.id.cancelButton) as Button
+            val emailButton = dialog.findViewById(R.id.shareEmailButton) as Button
+            emailButton.setOnClickListener {
+                sendEmail()
+                dialog.dismiss()
+            }
+            cancelButton.setOnClickListener { dialog.dismiss() }
+            dialog.show()
+        }
+    }
+
+    fun sendEmail() {
+        val intent = Intent(Intent.ACTION_SENDTO).apply {
+            data = Uri.parse("mailto:") // only email apps should handle this
+            putExtra(Intent.EXTRA_SUBJECT, "")
+        }
+        try {
+            startActivity(Intent.createChooser(intent, null))
+        } catch (e: ActivityNotFoundException) {
+            Log.e(TAG, e.toString())
+        }
+    }
 }
