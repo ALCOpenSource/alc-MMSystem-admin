@@ -71,6 +71,9 @@
         <action
             android:id="@+id/action_programDetailsFragment_to_taskReportsFragment"
             app:destination="@id/taskReportsFragment" />
+        <action
+            android:id="@+id/action_programDetailsFragment_to_reportsFragment"
+            app:destination="@id/reportsFragment" />
     </fragment>
 
     <fragment
@@ -90,4 +93,9 @@
             android:name="taskReportID"
             app:argType="integer" />
     </fragment>
+
+    <fragment
+        android:id="@+id/reportsFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.reports.ReportsFragment"
+        tools:layout="@layout/fragment_reports" />
 </navigation>
