@@ -10,6 +10,7 @@ import android.util.DisplayMetrics
 import android.util.Log
 import android.view.*
 import android.widget.Button
+import android.widget.ImageView
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.peculiaruc.alc_mmsystem_admin.R
@@ -52,6 +53,8 @@ class TaskReportDetailsFragment : BaseFragment<FragmentTaskReportDetailsBinding>
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT
             )
+            val downloadImage = dialog.findViewById(R.id.downloadImage) as ImageView
+            downloadImage.setImageResource(R.drawable.download_dialog_backgroun_1)
             val doneButton = dialog.findViewById(R.id.downloadDoneButton) as Button
             doneButton.setOnClickListener { dialog.dismiss() }
             dialog.show()

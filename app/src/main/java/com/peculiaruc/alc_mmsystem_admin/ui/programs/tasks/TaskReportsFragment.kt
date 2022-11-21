@@ -7,10 +7,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.SearchView
-import android.widget.Spinner
+import android.widget.*
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -131,6 +128,8 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
                 ViewGroup.LayoutParams.WRAP_CONTENT
             )
             val doneButton = dialog.findViewById(R.id.downloadDoneButton) as Button
+            val downloadImage = dialog.findViewById(R.id.downloadImage) as ImageView
+            downloadImage.setImageResource(R.drawable.download_dialog_backgroun_1)
             doneButton.setOnClickListener { dialog.dismiss() }
             dialog.show()
         }

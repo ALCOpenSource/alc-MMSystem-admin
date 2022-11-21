@@ -34,5 +34,11 @@ class ProgramDetailsFragment : BaseFragment<FragmentProgramDetailsBinding>() {
                 ProgramDetailsFragmentDirections.actionProgramDetailsFragmentToTaskReportsFragment()
             view.findNavController().navigate(action)
         }
+
+        binding.cardButtonReport.setOnClickListener() {
+            val action =
+                ProgramDetailsFragmentDirections.actionProgramDetailsFragmentToReportsFragment()
+            view.findNavController().navigate(action)
+        }
     }
 }

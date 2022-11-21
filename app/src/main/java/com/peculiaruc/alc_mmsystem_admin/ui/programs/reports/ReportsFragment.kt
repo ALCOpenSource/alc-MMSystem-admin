@@ -7,10 +7,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.SearchView
-import android.widget.Spinner
+import android.widget.*
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,7 +21,7 @@ import com.peculiaruc.alc_mmsystem_admin.ui.programs.ProgramsFragmentDirections
 class ReportsFragment : BaseFragment<FragmentReportsBinding>(),
     ReportsAdapter.ItemClickListener {
     val TAG = "ReportsFragmentTag"
-    override val layoutIdFragment: Int = R.layout.fragment_task_reports
+    override val layoutIdFragment: Int = R.layout.fragment_reports
     override val viewModel: ReportsViewModel by viewModels()
     private lateinit var recyclerView: RecyclerView
     private lateinit var spinner: Spinner
@@ -32,7 +29,7 @@ class ReportsFragment : BaseFragment<FragmentReportsBinding>(),
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setTitle(true, getString(R.string.task_reports_title))
+        setTitle(true, getString(R.string.reports_title))
         setHasOptionsMenu(true)
 
         viewModel.initReports()
@@ -128,6 +125,8 @@ class ReportsFragment : BaseFragment<FragmentReportsBinding>(),
                 ViewGroup.LayoutParams.WRAP_CONTENT
             )
             val doneButton = dialog.findViewById(R.id.downloadDoneButton) as Button
+            val downloadImage = dialog.findViewById(R.id.downloadImage) as ImageView
+            downloadImage.setImageResource(R.drawable.download_dialog_backgroun_2)
             doneButton.setOnClickListener { dialog.dismiss() }
             dialog.show()
         }
