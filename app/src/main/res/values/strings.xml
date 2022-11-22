@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">alc-MMSystem-admin</string>
+    <string name="mentor_mana">Mentor Management System</string>
+    <string name="welcome">Welcome</string>
+    <string name="sign_in_to_continue">Sign in to continue</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="forgot_password_title">Forgot Password</string>
+    <string name="forgot_password_message">An email has been sent to your registered email. Follow the link to reset your password</string>
+    <string name="done">Done</string>
 </resources>
