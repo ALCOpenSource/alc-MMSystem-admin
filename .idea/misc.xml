@@ -16,6 +16,7 @@
         <entry key="app/src/main/res/layout/dialog_download.xml" value="0.15364583333333334" />
         <entry key="app/src/main/res/layout/dialog_share.xml" value="0.36385498046875" />
         <entry key="app/src/main/res/layout/fragment_admin_profile.xml" value="0.14990942028985507" />
+        <entry key="app/src/main/res/layout/fragment_criteria_input_selection_dialog.xml" value="0.20126190185546877" />
         <entry key="app/src/main/res/layout/fragment_edit_admin_profile.xml" value="0.14990942028985507" />
         <entry key="app/src/main/res/layout/fragment_mentor_manager.xml" value="0.13229166666666667" />
         <entry key="app/src/main/res/layout/fragment_program_details.xml" value="0.14990942028985507" />

@@ -177,7 +177,7 @@
     <style name="cardButton" parent="Widget.Material3.Button">
         <item name="cornerRadius">@dimen/buttonCornerRadius</item>
         <item name="android:textSize">@dimen/font_medium</item>
-        <item name="textFillColor">@color/white</item>
+        <item name="android:textColor">@color/white</item>
         <item name="fontFamily">@font/mukta_bold</item>
         <item name="android:layout_alignParentBottom">true</item>
         <item name="android:layout_centerHorizontal">true</item>
@@ -210,5 +210,19 @@
         <item name="android:minWidth">48dp</item>
         <item name="android:minHeight">48dp</item>
         <item name="android:src">@drawable/ic_close_icon</item>
+    </style>
+
+    <style name="criteriaInputSelectionButton" parent="Widget.Material3.Button">
+        <item name="cornerRadius">5dp</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+        <item name="android:textColor">@color/mms_black_2</item>
+        <item name="fontFamily">@font/mukta_light</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="backgroundTint">@color/mms_black_8</item>
+        <item name="android:layout_marginTop">@dimen/spacing_small</item>
+        <item name="android:layout_marginBottom">@dimen/spacing_small</item>
+        <item name="android:paddingTop">@dimen/spacing_default</item>
+        <item name="android:paddingBottom">@dimen/spacing_default</item>
     </style>
 </resources>
