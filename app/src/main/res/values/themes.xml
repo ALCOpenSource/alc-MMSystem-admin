@@ -217,12 +217,37 @@
         <item name="android:textSize">@dimen/font_small</item>
         <item name="android:textColor">@color/mms_black_2</item>
         <item name="fontFamily">@font/mukta_light</item>
-        <item name="android:layout_alignParentBottom">true</item>
-        <item name="android:layout_centerHorizontal">true</item>
         <item name="backgroundTint">@color/mms_black_8</item>
         <item name="android:layout_marginTop">@dimen/spacing_small</item>
         <item name="android:layout_marginBottom">@dimen/spacing_small</item>
         <item name="android:paddingTop">@dimen/spacing_default</item>
         <item name="android:paddingBottom">@dimen/spacing_default</item>
     </style>
+
+    <style name="criteriaTextInputLayoutWithIcon" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="cornerRadius">5dp</item>
+        <item name="android:textSize">@dimen/font_small</item>
+        <item name="android:textColor">@color/mms_black_2</item>
+        <item name="fontFamily">@font/mukta_regular</item>
+        <item name="endIconDrawable">@drawable/subtract_circle_minus_remove</item>
+        <item name="endIconTint">@color/mms_sec_3</item>
+        <item name="endIconMode">custom</item>
+        <item name="boxStrokeColor">@color/mms_black_8</item>
+        <item name="android:layout_marginTop">@dimen/spacing_small</item>
+        <item name="android:layout_marginBottom">@dimen/spacing_small</item>
+    </style>
+
+    <style name="criteriaTextInputLayout" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="cornerRadius">5dp</item>
+        <item name="android:textSize">@dimen/font_small</item>
+        <item name="android:textColor">@color/mms_black_2</item>
+        <item name="fontFamily">@font/mukta_regular</item>
+        <item name="boxStrokeColor">@color/mms_black_8</item>
+    </style>
+
+    <style name="addCirclePlusButton">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:src">@drawable/add_circle_plus_1</item>
+    </style>
+
 </resources>

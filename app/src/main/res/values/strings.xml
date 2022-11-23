@@ -106,5 +106,12 @@
     <string name="critera_input_file">File Input</string>
     <string name="critera_input_multiple">Multiple Input</string>
     <string name="critera_input_multi_choice">Multi choice</string>
+    <string name="criteria_multi_choice_title">Input Multiple Select Options</string>
+
+    <string name="criteria_multi_choice_question_hint">Select Previous Held Roles.</string>
+    <string name="criteria_multi_choice1_hint">Learner</string>
+    <string name="criteria_multi_choice2_hint">Mentor</string>
+    <string name="criteria_multi_choice3_hint">Program Assistant</string>
+
 
 </resources>
