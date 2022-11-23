@@ -214,7 +214,7 @@
 
     <style name="criteriaInputSelectionButton" parent="Widget.Material3.Button">
         <item name="cornerRadius">5dp</item>
-        <item name="android:textSize">@dimen/font_medium</item>
+        <item name="android:textSize">@dimen/font_small</item>
         <item name="android:textColor">@color/mms_black_2</item>
         <item name="fontFamily">@font/mukta_light</item>
         <item name="android:layout_alignParentBottom">true</item>
