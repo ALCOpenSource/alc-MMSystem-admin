@@ -97,5 +97,18 @@
     <fragment
         android:id="@+id/reportsFragment"
         android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.reports.ReportsFragment"
-        tools:layout="@layout/fragment_reports" />
+        tools:layout="@layout/fragment_reports">
+        <action
+            android:id="@+id/action_reportsFragment_to_ReportDetailFragment"
+            app:destination="@id/ReportDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ReportDetailFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.reports.ReportDetailsFragment"
+        tools:layout="@layout/fragment_report_details">
+        <argument
+            android:name="reportID"
+            app:argType="integer" />
+    </fragment>
 </navigation>

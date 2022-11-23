@@ -16,7 +16,6 @@ import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentTaskReportsBinding
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Report
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
-import com.peculiaruc.alc_mmsystem_admin.ui.programs.ProgramsFragmentDirections
 
 class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
     TaskReportsAdapter.ItemClickListener {

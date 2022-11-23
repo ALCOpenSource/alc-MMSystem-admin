@@ -16,7 +16,7 @@ import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentReportsBinding
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Report
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
-import com.peculiaruc.alc_mmsystem_admin.ui.programs.ProgramsFragmentDirections
+
 
 class ReportsFragment : BaseFragment<FragmentReportsBinding>(),
     ReportsAdapter.ItemClickListener {
@@ -65,7 +65,9 @@ class ReportsFragment : BaseFragment<FragmentReportsBinding>(),
     }
 
     override fun onReportItemClick(item: Report) {
-        TODO("Not yet implemented")
+        val action =
+            ReportsFragmentDirections.actionReportsFragmentToReportDetailFragment(1)
+        view?.findNavController()?.navigate(action)
     }
 
     override fun onDownloadClick(item: Report) {
