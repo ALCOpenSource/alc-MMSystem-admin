@@ -11,4 +11,8 @@
     <string name="forgot_password_title">Forgot Password</string>
     <string name="forgot_password_message">An email has been sent to your registered email. Follow the link to reset your password</string>
     <string name="done">Done</string>
+    <string name="login">Login</string>
+    <string name="set_new_password">Set New Password</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="your_new_password_must_differ_from_previously_used_password">*Your new password must differ from previously used password.</string>
 </resources>
