@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentNewPasswordBinding
 
@@ -22,7 +23,9 @@ class NewPasswordFragment : Fragment() {
         binding = FragmentNewPasswordBinding.inflate(layoutInflater)
 
         binding.apply {
-
+            buttonResetPassword.setOnClickListener {
+                findNavController().navigate(NewPasswordFragmentDirections.actionNewPasswordFragmentToPasswordResetDialog())
+            }
         }
 
         return binding.root

@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 
+
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
@@ -27,10 +28,13 @@ class LoginFragment : Fragment() {
         mSpannableString.setSpan(UnderlineSpan(), 0, mSpannableString.length,0)
         binding.apply {
             signUpLink.text = mSpannableString
-            forgotPasswordLink.setOnClickListener {
 
-            }
         }
+
+        binding.forgotPasswordLink.setOnClickListener {
+           findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToForgotPasswordFragment())
+        }
+
 
         return binding.root
     }

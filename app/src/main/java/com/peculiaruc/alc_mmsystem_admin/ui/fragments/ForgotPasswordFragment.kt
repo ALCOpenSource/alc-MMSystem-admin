@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentForgotPasswordBinding
 
 class ForgotPasswordFragment : Fragment() {
@@ -20,7 +21,9 @@ class ForgotPasswordFragment : Fragment() {
         binding = FragmentForgotPasswordBinding.inflate(layoutInflater)
 
         binding.apply {
-
+            buttonDone.setOnClickListener {
+                findNavController().navigate(ForgotPasswordFragmentDirections.actionForgotPasswordFragmentToNewPasswordFragment())
+            }
         }
 
         return binding.root
