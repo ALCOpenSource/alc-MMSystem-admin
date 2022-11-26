@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView_mentor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/pry9"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageView_mentorImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="8dp"
+                android:cropToPadding="false"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+            <TextView
+                android:id="@+id/textView_mentorName"
+                android:layout_width="0dp"
+                android:layout_height="27dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/mukta_semi_bold"
+                android:text="Peculiah C. Umeh"
+                android:textColor="@color/black2"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/imageView_commentIcon"
+                app:layout_constraintStart_toEndOf="@+id/imageView_mentorImage"
+                app:layout_constraintTop_toTopOf="@+id/imageView_mentorImage" />
+
+            <TextView
+                android:id="@+id/textView_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/mukta_regular"
+                android:maxLines="1"
+                android:text="UI/UX Designer"
+                android:textColor="@color/black5"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="@+id/textView_mentorName"
+                app:layout_constraintStart_toStartOf="@+id/textView_mentorName"
+                app:layout_constraintTop_toBottomOf="@+id/textView_mentorName" />
+
+            <ImageView
+                android:id="@+id/imageView_commentIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/comment_circle_chat_message" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipSpacingVertical="0dp"
+                app:layout_constraintStart_toStartOf="@+id/textView_description"
+                app:layout_constraintTop_toBottomOf="@+id/textView_description"
+                app:singleLine="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_assistant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:fontFamily="@font/mukta_bold"
+                    android:text="@string/program_asst"
+                    android:textColor="@color/pry2"
+                    android:textSize="10sp"
+
+                    app:chipBackgroundColor="@color/pry9"
+                    app:chipCornerRadius="8dp"
+                    app:chipStrokeColor="@color/pry8"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_mentor_gad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:fontFamily="@font/mukta_bold"
+                    android:text="@string/mentor_gad"
+                    android:textColor="@color/pry2"
+                    android:textSize="10sp"
+                    app:chipBackgroundColor="@color/pry9"
+                    app:chipCornerRadius="8dp"
+
+
+                    app:chipStrokeColor="@color/pry8"
+                    app:chipStrokeWidth="1dp" />
+            </com.google.android.material.chip.ChipGroup>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

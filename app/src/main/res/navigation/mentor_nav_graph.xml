@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mentor_nav_graph"
+    app:startDestination="@id/mentorFragment">
+
+
+    <fragment
+        android:id="@+id/mentorFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.fragments.MentorFragment"
+        android:label="MentorFragment"
+        tools:layout="@layout/fragment_mentor">
+        <action
+            android:id="@+id/action_mentorFragment_to_addMentorDialog"
+            app:destination="@id/addMentorDialog" />
+    </fragment>
+
+    <dialog android:id="@+id/addMentorDialog"
+        tools:layout="@layout/dialog_add_mentors"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.fragments.AddMentorDialog"
+        android:label="AddMentorDialog">
+        <action
+            android:id="@+id/action_addMentorDialog_to_mentorAddedDialog"
+            app:destination="@id/mentorAddedDialog"
+            app:popUpToInclusive="true"
+            app:popUpTo="@+id/addMentorDialog"
+            />
+    </dialog>
+
+    <dialog android:id="@+id/mentorAddedDialog"
+        tools:layout="@layout/dialog_mentor_added"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.fragments.MentorAddedDialog"
+        android:label="MentorAddedDialog">
+        <action
+            android:id="@+id/action_mentorAddedDialog_to_mentorFragment"
+            app:destination="@id/mentorFragment"
+            app:popUpTo="@id/addMentorDialog"
+            app:popUpToInclusive="true" />
+    </dialog>
+
+
+</navigation>

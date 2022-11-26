@@ -3,83 +3,61 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".ui.fragments.NewPasswordFragment">
-
+    android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/forgotPasswordTitle"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:fontFamily="@font/mukta_extra_bold"
-        android:gravity="center_horizontal"
-        android:text="@string/set_new_password"
+        android:layout_marginTop="64dp"
+        android:fontFamily="@font/mukta_semi_bold"
+        android:text="@string/add_mentors"
         android:textColor="@color/black2"
-        android:textSize="32sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextPassword"
+        android:id="@+id/editTextTextEmailAddress"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
         android:fontFamily="@font/mukta_regular"
-        android:hint="@string/password"
-        android:textColor="@color/black2"
+        android:hint="@string/email"
         android:textColorHint="@color/black5"
-        app:endIconMode="password_toggle"
         app:boxStrokeColor="@color/black3"
-        app:endIconTint="@color/black2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/forgotPasswordTitle"
-
-       >
+        app:layout_constraintEnd_toEndOf="@+id/buttonSend"
+        app:layout_constraintStart_toStartOf="@+id/buttonSend"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
+            android:inputType="textEmailAddress"
             android:textColor="@color/black2" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/textView_new_password"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="128dp"
-        android:fontFamily="@font/mukta_regular"
-        android:gravity="start"
-        android:text="@string/your_new_password_must_differ_from_previously_used_password"
-        android:textColor="@color/black3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
-
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonResetPassword"
+        android:id="@+id/buttonSend"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="64dp"
+        android:backgroundTint="@color/pry2"
         android:fontFamily="@font/mukta_semi_bold"
         android:paddingVertical="15dp"
-        android:text="@string/reset_password"
+        android:text="@string/send"
         android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textSize="18sp"
         app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_new_password" />
-
+        app:layout_constraintTop_toBottomOf="@id/editTextTextEmailAddress" />
 </androidx.constraintlayout.widget.ConstraintLayout>

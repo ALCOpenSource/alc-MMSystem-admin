@@ -14,10 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
-        app:passwordToggleEnabled="true"
         app:endIconMode="password_toggle"
         app:endIconTint="@color/black2"
-        app:passwordToggleTintMode="screen"
         android:fontFamily="@font/mukta_regular"
         android:hint="@string/password"
         android:textColor="@color/black2"
@@ -25,7 +23,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textView_sign_in_to_continue"
         app:boxStrokeColor="@color/black3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress">
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmailAddress">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:textColor="@color/black2"
@@ -60,7 +58,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_welcome" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/editTextEmailAddress"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"

@@ -16,4 +16,11 @@
     <string name="reset_password">Reset Password</string>
     <string name="your_new_password_must_differ_from_previously_used_password">*Your new password must differ from previously used password.</string>
     <string name="password_reset_successful">Password Reset Successful</string>
+    <string name="program_asst">PROGRAM ASST.</string>
+    <string name="mentor_gad">MENTOR-GAD</string>
+    <string name="share_title">share</string>
+    <string name="search_title">search</string>
+    <string name="add_mentor">Add Mentor</string>
+    <string name="add_mentors">Add Mentors</string>
+    <string name="send">Send</string>
 </resources>
