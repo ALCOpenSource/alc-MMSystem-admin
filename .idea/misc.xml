@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable/add_circle_plus_1.xml" value="0.119" />
         <entry key="app/src/main/res/drawable/calender_icon.xml" value="0.119" />
+        <entry key="app/src/main/res/drawable/download_dialog_backgroun_2.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/edit_big.xml" value="0.105" />
         <entry key="app/src/main/res/drawable/empty_notification_background.xml" value="0.119" />
         <entry key="app/src/main/res/drawable/ic_approval_requests.xml" value="0.105" />
@@ -15,13 +16,19 @@
         <entry key="app/src/main/res/layout/dialog_download.xml" value="0.15364583333333334" />
         <entry key="app/src/main/res/layout/dialog_share.xml" value="0.36385498046875" />
         <entry key="app/src/main/res/layout/fragment_admin_profile.xml" value="0.14990942028985507" />
+        <entry key="app/src/main/res/layout/fragment_criteria_input_selection_dialog.xml" value="0.20126190185546877" />
+        <entry key="app/src/main/res/layout/fragment_criteria_multi_choice.xml" value="0.1541501976284585" />
         <entry key="app/src/main/res/layout/fragment_edit_admin_profile.xml" value="0.14990942028985507" />
         <entry key="app/src/main/res/layout/fragment_mentor_manager.xml" value="0.13229166666666667" />
         <entry key="app/src/main/res/layout/fragment_program_details.xml" value="0.14990942028985507" />
         <entry key="app/src/main/res/layout/fragment_programs.xml" value="0.14990942028985507" />
+        <entry key="app/src/main/res/layout/fragment_report_details.xml" value="0.1921875" />
+        <entry key="app/src/main/res/layout/fragment_reports.xml" value="0.20923913043478262" />
         <entry key="app/src/main/res/layout/fragment_task_report_details.xml" value="0.26264343261718753" />
         <entry key="app/src/main/res/layout/fragment_task_reports.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_tasks.xml" value="0.33970184326171876" />
+        <entry key="app/src/main/res/layout/item_criteria_input_text_with_icon.xml" value="0.14427083333333332" />
+        <entry key="app/src/main/res/layout/item_report.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_task.xml" value="0.16485507246376813" />
         <entry key="app/src/main/res/layout/item_task_report.xml" value="0.5880452342487884" />
         <entry key="app/src/main/res/menu/menu_mentor_manger_profile.xml" value="0.15364583333333334" />

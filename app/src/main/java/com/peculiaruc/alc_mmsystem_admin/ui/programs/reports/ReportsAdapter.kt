@@ -1,4 +1,4 @@
-package com.peculiaruc.alc_mmsystem_admin.ui.programs.tasks
+package com.peculiaruc.alc_mmsystem_admin.ui.programs.reports
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,9 +9,9 @@ import com.peculiaruc.alc_mmsystem_admin.databinding.ItemReportBinding
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Report
 
 
-class TaskReportsAdapter(
+class ReportsAdapter(
     private val itemClickListener: ItemClickListener
-) : ListAdapter<Report, TaskReportsAdapter.TaskReportViewHolder>(DiffCallback) {
+) : ListAdapter<Report, ReportsAdapter.TaskReportViewHolder>(DiffCallback) {
 
     interface ItemClickListener {
         fun onReportItemClick(item: Report)

@@ -82,6 +82,7 @@
     <string name="task_report_sort_button">Sort</string>
 
     <string name="task_reports_title">Task Reports</string>
+    <string name="reports_title">Program Reports</string>
     <string-array name="reports_string_array">
         <item>All Reports</item>
         <item>Some Reports</item>
@@ -98,5 +99,19 @@
 
     <string name="report_share_dialog_message">Share report via email</string>
     <string name="report_download_dialog_success_message">Report Downloaded Successfully!</string>
+
+    <string name="critera_input_selection_title">Select Input Type</string>
+    <string name="critera_input_single">Single Input</string>
+    <string name="critera_input_yes_no">Yes/No</string>
+    <string name="critera_input_file">File Input</string>
+    <string name="critera_input_multiple">Multiple Input</string>
+    <string name="critera_input_multi_choice">Multi choice</string>
+    <string name="criteria_multi_choice_title">Input Multiple Select Options</string>
+
+    <string name="criteria_multi_choice_question_hint">Select Previous Held Roles.</string>
+    <string name="criteria_multi_choice1_hint">Learner</string>
+    <string name="criteria_multi_choice2_hint">Mentor</string>
+    <string name="criteria_multi_choice3_hint">Program Assistant</string>
+
 
 </resources>

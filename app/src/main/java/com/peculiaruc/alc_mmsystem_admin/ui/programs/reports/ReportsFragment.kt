@@ -1,4 +1,4 @@
-package com.peculiaruc.alc_mmsystem_admin.ui.programs.tasks
+package com.peculiaruc.alc_mmsystem_admin.ui.programs.reports
 
 import android.app.Dialog
 import android.content.ActivityNotFoundException
@@ -13,40 +13,41 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.peculiaruc.alc_mmsystem_admin.R
-import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentTaskReportsBinding
+import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentReportsBinding
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Report
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
 
-class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
-    TaskReportsAdapter.ItemClickListener {
-    val TAG = "TaskReportsFragmentTag"
-    override val layoutIdFragment: Int = R.layout.fragment_task_reports
-    override val viewModel: TaskReportsViewModel by viewModels()
+
+class ReportsFragment : BaseFragment<FragmentReportsBinding>(),
+    ReportsAdapter.ItemClickListener {
+    val TAG = "ReportsFragmentTag"
+    override val layoutIdFragment: Int = R.layout.fragment_reports
+    override val viewModel: ReportsViewModel by viewModels()
     private lateinit var recyclerView: RecyclerView
     private lateinit var spinner: Spinner
-    private lateinit var taskReportsAdapter: TaskReportsAdapter
+    private lateinit var ReportsAdapter: ReportsAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setTitle(true, getString(R.string.task_reports_title))
+        setTitle(true, getString(R.string.reports_title))
         setHasOptionsMenu(true)
 
-        viewModel.initTaskReports()
-        recyclerView = binding.taskReportsList
-        spinner = binding.taskSpinner
+        viewModel.initReports()
+        recyclerView = binding.reportsList
+        spinner = binding.reportSpinner
         setUpRecycleView()
         setUpSpinner()
     }
 
     fun setUpRecycleView() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        taskReportsAdapter = TaskReportsAdapter(this)
-        recyclerView.adapter = taskReportsAdapter
-        viewModel.taskReports.observe(viewLifecycleOwner) {
-            taskReportsAdapter.submitList(it)
+        ReportsAdapter = ReportsAdapter(this)
+        recyclerView.adapter = ReportsAdapter
+        viewModel.reports.observe(viewLifecycleOwner) {
+            ReportsAdapter.submitList(it)
         }
-        viewModel.filteredTaskReports.observe(viewLifecycleOwner) {
-            taskReportsAdapter.submitList(it)
+        viewModel.filteredReports.observe(viewLifecycleOwner) {
+            ReportsAdapter.submitList(it)
         }
     }
 
@@ -65,9 +66,8 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
 
     override fun onReportItemClick(item: Report) {
         val action =
-            TaskReportsFragmentDirections.actionTaskReportsFragmentToTaskReportDetailFragment(1)
+            ReportsFragmentDirections.actionReportsFragmentToReportDetailFragment(1)
         view?.findNavController()?.navigate(action)
-
     }
 
     override fun onDownloadClick(item: Report) {
@@ -101,7 +101,7 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
         var filteredlist: ArrayList<Report> = ArrayList()
         val length = text?.length ?: 0
         if (length > 0) {
-            viewModel.taskReports.value?.let {
+            viewModel.reports.value?.let {
                 for (item in it) {
                     if (item.title.lowercase().contains(text?.lowercase()!!)) {
                         filteredlist.add(item)
@@ -110,10 +110,10 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
             }
 
         } else {
-            filteredlist = viewModel.taskReports.value as ArrayList<Report>
+            filteredlist = viewModel.reports.value as ArrayList<Report>
         }
 
-        viewModel.filteredTaskReports.value = filteredlist
+        viewModel.filteredReports.value = filteredlist
     }
 
     private fun showDownloadDialog() {
@@ -128,7 +128,7 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
             )
             val doneButton = dialog.findViewById(R.id.downloadDoneButton) as Button
             val downloadImage = dialog.findViewById(R.id.downloadImage) as ImageView
-            downloadImage.setImageResource(R.drawable.download_dialog_backgroun_1)
+            downloadImage.setImageResource(R.drawable.download_dialog_backgroun_2)
             doneButton.setOnClickListener { dialog.dismiss() }
             dialog.show()
         }

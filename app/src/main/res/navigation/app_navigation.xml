@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_programsFragment_to_programDetailsFragment"
             app:destination="@id/programDetailsFragment" />
+        <action
+            android:id="@+id/action_programsFragment_to_CriteriaMultiChoiceFragment"
+            app:destination="@id/CriteriaMultiChoiceFragment" />
     </fragment>
 
     <fragment
@@ -71,6 +74,9 @@
         <action
             android:id="@+id/action_programDetailsFragment_to_taskReportsFragment"
             app:destination="@id/taskReportsFragment" />
+        <action
+            android:id="@+id/action_programDetailsFragment_to_reportsFragment"
+            app:destination="@id/reportsFragment" />
     </fragment>
 
     <fragment
@@ -90,4 +96,27 @@
             android:name="taskReportID"
             app:argType="integer" />
     </fragment>
+
+    <fragment
+        android:id="@+id/reportsFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.reports.ReportsFragment"
+        tools:layout="@layout/fragment_reports">
+        <action
+            android:id="@+id/action_reportsFragment_to_ReportDetailFragment"
+            app:destination="@id/ReportDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ReportDetailFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.reports.ReportDetailsFragment"
+        tools:layout="@layout/fragment_report_details">
+        <argument
+            android:name="reportID"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/CriteriaMultiChoiceFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.criteria.CriteriaMultiChoiceFragment"
+        tools:layout="@layout/fragment_criteria_multi_choice" />
 </navigation>
