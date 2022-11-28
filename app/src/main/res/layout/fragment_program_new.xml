@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/spacing_default">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_profile"
+            style="@style/imageCircle"
+            android:src="@drawable/program_avatar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_default"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/image_profile"
+            app:layout_constraintStart_toEndOf="@+id/image_profile"
+            app:layout_constraintTop_toTopOf="@+id/image_profile">
+
+            <TextView
+                style="@style/regularMuktaBlack5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="@string/set_program_avatar" />
+
+            <Button
+                style="@style/buttonOutline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/select_file" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/programNameLabel"
+            style="@style/regularMuktaBlack5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/programNameEditText"
+            android:text="@string/program_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_profile" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/programNameTextInput"
+            style="@style/outlineTextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/programNameLabel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/programNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/programDescriptionLabel"
+            style="@style/regularMuktaBlack5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/programDescriptionEditText"
+            android:text="@string/program_description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/programNameTextInput" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/programDescriptionTextInput"
+            style="@style/outlineTextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/programDescriptionLabel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/programDescriptionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text|textMultiLine"
+                android:lines="3"
+                android:maxLines="10" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_marginBottom="@dimen/spacing_small"
+            app:layout_constraintBottom_toTopOf="@+id/createProgramButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/programDescriptionTextInput">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView style="@style/squareProgramCard">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/cardAddMentorManager"
+                                style="@style/regularMuktaBlack2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_above="@+id/selectMentorManagerButton"
+                                android:layout_alignParentTop="true"
+                                android:gravity="center"
+                                android:text="@string/program_add_mentor_manager" />
+
+                            <Button
+                                android:id="@+id/selectMentorManagerButton"
+                                style="@style/cardButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/button_select" />
+                        </RelativeLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/mentor_manager_selected"
+                            style="@style/regularMuktaBlack2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/program_selected" />
+
+                        <ImageButton
+                            android:id="@+id/delete_mentor_manager_button"
+                            style="@style/deleteArrowImageButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/spacing_extra_small"
+                            android:contentDescription="@string/delete_button" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_default"
+                    android:layout_marginEnd="@dimen/spacing_default"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView style="@style/squareProgramCard">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/cardAddMentor"
+                                style="@style/regularMuktaBlack2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_above="@+id/selectMentorButton"
+                                android:layout_alignParentTop="true"
+                                android:gravity="center"
+                                android:text="@string/program_add_mentor" />
+
+                            <Button
+                                android:id="@+id/selectMentorButton"
+                                style="@style/cardButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/button_select" />
+                        </RelativeLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/mentor_selected"
+                            style="@style/regularMuktaBlack2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/program_selected" />
+
+                        <ImageButton
+                            android:id="@+id/delete_mentor_button"
+                            style="@style/deleteArrowImageButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/spacing_extra_small"
+                            android:contentDescription="@string/delete_button" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView style="@style/squareProgramCard">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/cardAddCriteria"
+                                style="@style/regularMuktaBlack2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_above="@+id/selectCriteriaButton"
+                                android:layout_alignParentTop="true"
+                                android:gravity="center"
+                                android:text="@string/program_set_criteria" />
+
+                            <Button
+                                android:id="@+id/selectCriteriaButton"
+                                style="@style/cardButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/button_select" />
+                        </RelativeLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/criteria_selected"
+                            style="@style/regularMuktaBlack2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/program_selected" />
+
+                        <ImageButton
+                            android:id="@+id/delete_criteria_button"
+                            style="@style/deleteArrowImageButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/spacing_extra_small"
+                            android:contentDescription="@string/delete_button" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <Button
+            android:id="@+id/createProgramButton"
+            style="@style/buttonLargeBoldText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/button_create_program"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

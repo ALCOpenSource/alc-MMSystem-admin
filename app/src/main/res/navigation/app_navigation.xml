@@ -15,10 +15,7 @@
         android:name="com.peculiaruc.alc_mmsystem_admin.ui.search.SearchFragment"
         tools:layout="@layout/fragment_search" />
 
-    <fragment
-        android:id="@+id/programsFragment"
-        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.ProgramsFragment"
-        tools:layout="@layout/fragment_programs" />
+
     <fragment
         android:id="@+id/messagesFragment"
         android:name="com.peculiaruc.alc_mmsystem_admin.ui.messages.MessagesFragment"
@@ -56,4 +53,136 @@
             app:argType="string" />
     </fragment>
 
+    <fragment
+        android:id="@+id/programsFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.ProgramsFragment"
+        tools:layout="@layout/fragment_programs">
+        <action
+            android:id="@+id/action_programsFragment_to_programDetailsFragment"
+            app:destination="@id/programDetailsFragment" />
+        <action
+            android:id="@+id/action_programsFragment_to_NewProgramFragment"
+            app:destination="@id/NewProgramFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/programDetailsFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.ProgramDetailsFragment"
+        tools:layout="@layout/fragment_program_details">
+        <argument
+            android:name="programID"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_programDetailsFragment_to_taskReportsFragment"
+            app:destination="@id/taskReportsFragment" />
+        <action
+            android:id="@+id/action_programDetailsFragment_to_reportsFragment"
+            app:destination="@id/reportsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/taskReportsFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.tasks.TaskReportsFragment"
+        tools:layout="@layout/fragment_task_reports">
+        <action
+            android:id="@+id/action_taskReportsFragment_to_TaskReportDetailFragment"
+            app:destination="@id/TaskReportDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/TaskReportDetailFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.tasks.TaskReportDetailsFragment"
+        tools:layout="@layout/fragment_task_report_details">
+        <argument
+            android:name="taskReportID"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/reportsFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.reports.ReportsFragment"
+        tools:layout="@layout/fragment_reports">
+        <action
+            android:id="@+id/action_reportsFragment_to_ReportDetailFragment"
+            app:destination="@id/ReportDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ReportDetailFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.reports.ReportDetailsFragment"
+        tools:layout="@layout/fragment_report_details">
+        <argument
+            android:name="reportID"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/CriteriaMultiChoiceFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.criteria.CriteriaMultiChoiceFragment"
+        tools:layout="@layout/fragment_criteria_multi_choice">
+        <argument
+            android:name="key"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/CriteriaMultipleInputsFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.criteria.CriteriaMultipleInputsFragment"
+        tools:layout="@layout/fragment_criteria_multiple_inputs">
+        <argument
+            android:name="key"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/NewProgramFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.NewProgramFragment"
+        tools:layout="@layout/fragment_program_new">
+        <action
+            android:id="@+id/action_NewProgramFragment_to_setUpCriteriaFragment"
+            app:destination="@id/setUpCriteriaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/criteriaSingleInputFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.criteria.CriteriaSingleInputFragment"
+        android:label="CriteriaSingleInputFragment">
+        <argument
+            android:name="item"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/setUpCriteriaFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.criteria.SetUpCriteriaFragment"
+        android:label="SetUpCriteriaFragment">
+        <action
+            android:id="@+id/action_setUpCriteriaFragment_to_criteriaSingleInputFragment"
+            app:destination="@id/criteriaSingleInputFragment" />
+        <action
+            android:id="@+id/action_setUpCriteriaFragment_to_CriteriaMultipleInputsFragment"
+            app:destination="@id/CriteriaMultipleInputsFragment" />
+        <action
+            android:id="@+id/action_setUpCriteriaFragment_to_CriteriaMultiChoiceFragment"
+            app:destination="@id/CriteriaMultiChoiceFragment" />
+        <action
+            android:id="@+id/action_setUpCriteriaFragment_to_criteriaYesNoInputFragment"
+            app:destination="@id/criteriaYesNoInputFragment" />
+        <action
+            android:id="@+id/action_setUpCriteriaFragment_to_criteriaFileInputFragment"
+            app:destination="@id/criteriaFileInputFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/criteriaYesNoInputFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.criteria.CriteriaYesNoInputFragment"
+        android:label="CriteriaYesNoInputFragment">
+        <argument
+            android:name="item"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/criteriaFileInputFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.criteria.CriteriaFileInputFragment"
+        android:label="CriteriaFileInputFragment">
+        <argument
+            android:name="isEdit"
+            app:argType="boolean" />
+    </fragment>
 </navigation>

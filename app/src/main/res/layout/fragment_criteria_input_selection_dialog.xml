@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/spacing_default">
+
+            <TextView
+                android:id="@+id/criteria_selection_title"
+                style="@style/largeMuktaExtraBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/criteria_input_selection_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/singleInputButton"
+                style="@style/criteriaInputSelectionButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/criteria_input_single"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/criteria_selection_title"
+                app:layout_constraintWidth_percent="0.47" />
+
+            <Button
+                android:id="@+id/inputButtonYesNo"
+                style="@style/criteriaInputSelectionButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/criteria_input_yes_no"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/criteria_selection_title"
+                app:layout_constraintWidth_percent="0.47" />
+
+            <Button
+                android:id="@+id/inputButtonMultiple"
+                style="@style/criteriaInputSelectionButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/criteria_input_multiple"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputButtonYesNo"
+                app:layout_constraintWidth_percent="0.47" />
+
+            <Button
+                android:id="@+id/inputButtonFile"
+                style="@style/criteriaInputSelectionButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/criteria_input_file"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/singleInputButton"
+                app:layout_constraintWidth_percent="0.47" />
+
+            <Button
+                android:id="@+id/inputButtonMultiChoice"
+                style="@style/criteriaInputSelectionButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/criteria_input_multi_choice"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputButtonFile"
+                app:layout_constraintWidth_percent="0.47" />
+
+            <Button
+                android:id="@+id/criteriaSelectionCancelButton"
+                style="@style/buttonOutlineRegularBoldText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_default"
+                android:paddingTop="@dimen/spacing_default"
+                android:paddingBottom="@dimen/spacing_default"
+                android:text="@string/button_cancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputButtonMultiChoice" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
