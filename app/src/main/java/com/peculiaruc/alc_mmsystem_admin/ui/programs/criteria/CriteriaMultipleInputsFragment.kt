@@ -8,7 +8,6 @@ import android.widget.AutoCompleteTextView
 import android.widget.LinearLayout
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
-import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.google.android.material.textfield.TextInputLayout
 import com.peculiaruc.alc_mmsystem_admin.R
@@ -24,7 +23,7 @@ import com.peculiaruc.alc_mmsystem_admin.ui.programs.models.Criteria
 class CriteriaMultipleInputsFragment : BaseFragment<FragmentCriteriaMultipleInputsBinding>() {
 
     override val layoutIdFragment: Int = R.layout.fragment_criteria_multiple_inputs
-    override val viewModel: CriteriaViewModel by viewModels()
+    override val viewModel = CriteriaViewModel.getInstance()
     private val TAG = "CriteriaTagMultiINput"
     private var questionsNumber = 1
     private lateinit var adapter: ArrayAdapter<CharSequence>

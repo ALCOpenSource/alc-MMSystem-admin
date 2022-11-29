@@ -6,11 +6,12 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import android.view.*
+import android.view.View
+import android.view.ViewGroup
+import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentReportDetailsBinding
@@ -23,7 +24,7 @@ import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
  */
 class ReportDetailsFragment : BaseFragment<FragmentReportDetailsBinding>() {
     override val layoutIdFragment: Int = R.layout.fragment_report_details
-    override val viewModel: ReportsViewModel by viewModels()
+    override val viewModel = ReportsViewModel.getInstance()
     val TAG = "ReportDTag"
 
     private val REPORT_ID_ARGUMENT = "reportID"

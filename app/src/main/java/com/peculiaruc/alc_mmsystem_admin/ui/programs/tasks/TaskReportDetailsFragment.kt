@@ -6,11 +6,12 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import android.view.*
+import android.view.View
+import android.view.ViewGroup
+import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentTaskReportDetailsBinding
@@ -23,7 +24,7 @@ import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
  */
 class TaskReportDetailsFragment : BaseFragment<FragmentTaskReportDetailsBinding>() {
     override val layoutIdFragment: Int = R.layout.fragment_task_report_details
-    override val viewModel: TaskReportsViewModel by viewModels()
+    override val viewModel = TaskReportsViewModel.getInstance()
     val TAG = "TaskReportDTag"
 
     private val TASK_REPORT_ID_ARGUMENT = "taskReportID"

@@ -3,7 +3,6 @@ package com.peculiaruc.alc_mmsystem_admin.ui.programs.criteria
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.google.android.material.textfield.TextInputLayout
 import com.peculiaruc.alc_mmsystem_admin.R
@@ -18,7 +17,7 @@ import com.peculiaruc.alc_mmsystem_admin.ui.programs.models.Criteria
  */
 class CriteriaMultiChoiceFragment : BaseFragment<FragmentCriteriaMultiChoiceBinding>() {
     override val layoutIdFragment: Int = R.layout.fragment_criteria_multi_choice
-    override val viewModel: CriteriaViewModel by viewModels()
+    override val viewModel = CriteriaViewModel.getInstance()
     private val TAG = "CriteriaTagChoices"
     private var choicesInputsIDs = ArrayList<Int>()
     private var choicesNumber = 3

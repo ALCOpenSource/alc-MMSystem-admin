@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.*
-import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -26,7 +25,7 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
     TaskReportsAdapter.ItemClickListener {
     val TAG = "TaskReportsFragmentTag"
     override val layoutIdFragment: Int = R.layout.fragment_task_reports
-    override val viewModel: TaskReportsViewModel by viewModels()
+    override val viewModel = TaskReportsViewModel.getInstance()
     private lateinit var recyclerView: RecyclerView
     private lateinit var spinner: Spinner
     private lateinit var taskReportsAdapter: TaskReportsAdapter

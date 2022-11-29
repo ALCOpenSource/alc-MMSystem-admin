@@ -5,7 +5,6 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.core.widget.addTextChangedListener
-import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.google.android.material.textfield.TextInputLayout
 import com.peculiaruc.alc_mmsystem_admin.R
@@ -21,7 +20,7 @@ import com.peculiaruc.alc_mmsystem_admin.ui.programs.models.FileField
  */
 class CriteriaFileInputFragment : BaseFragment<FragmentCriteriaInputFileBinding>() {
     override val layoutIdFragment: Int = R.layout.fragment_criteria_input_file
-    override val viewModel: CriteriaViewModel by viewModels()
+    override val viewModel = CriteriaViewModel.getInstance()
     private val TAG = "CriteriaTagFile"
     private lateinit var fileTypeAdapter: ArrayAdapter<CharSequence>
     private lateinit var fileQtyAdapter: ArrayAdapter<CharSequence>

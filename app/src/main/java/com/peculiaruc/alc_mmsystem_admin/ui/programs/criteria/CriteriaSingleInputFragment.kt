@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.core.view.isVisible
-import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.google.android.material.textfield.TextInputLayout
 import com.peculiaruc.alc_mmsystem_admin.R
@@ -19,7 +18,7 @@ import com.peculiaruc.alc_mmsystem_admin.ui.programs.models.Criteria
  */
 class CriteriaSingleInputFragment : BaseFragment<FragmentCriteriaInputSingleBinding>() {
     override val layoutIdFragment: Int = R.layout.fragment_criteria_input_single
-    override val viewModel: CriteriaViewModel by viewModels()
+    override val viewModel = CriteriaViewModel.getInstance()
     private val TAG = "CriteriaTagSingle"
     private var inputsNumber = 1
     private var inputsIDs = ArrayList<Int>()
@@ -94,8 +93,8 @@ class CriteriaSingleInputFragment : BaseFragment<FragmentCriteriaInputSingleBind
         input.editText?.setText(criteriaString)
         binding.inputsContainer.addView(input)
         criteriaInput = input
-        binding.addInputButton.isVisible=false
-        binding.addInputTextView.isVisible=false
+        binding.addInputButton.isVisible = false
+        binding.addInputTextView.isVisible = false
     }
 
     private fun changeItemInData() {

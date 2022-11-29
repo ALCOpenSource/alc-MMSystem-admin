@@ -23,7 +23,8 @@ class ProgramsViewModel : ViewModel() {
 
     private var _program = MutableLiveData<ProgramAdmin>()
     var program: LiveData<ProgramAdmin> = _program
-    private var dummyText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissimpharetra metus, ut cursus purus efficitur et. Duis ac enim tellus. Phasellus eget tortor dapibus, laoreet mauris sed, dignissim lectus. Phasellus eget tortor dapibus, laoreet mauris sed, dignissim lectus. "
+    private var dummyText =
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissimpharetra metus, ut cursus purus efficitur et. Duis ac enim tellus. Phasellus eget tortor dapibus, laoreet mauris sed, dignissim lectus. Phasellus eget tortor dapibus, laoreet mauris sed, dignissim lectus. "
 
     /**
      * init Programs
@@ -31,7 +32,7 @@ class ProgramsViewModel : ViewModel() {
      */
     fun initPrograms() {
         for (i in 1..20) {
-            val boolean=Random.nextBoolean()
+            val boolean = Random.nextBoolean()
             val program =
                 ProgramAdmin(
                     i, "Google Africa Scholarship Program $i", "", dummyText,

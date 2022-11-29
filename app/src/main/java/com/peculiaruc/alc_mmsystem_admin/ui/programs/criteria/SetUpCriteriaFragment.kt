@@ -8,7 +8,6 @@ import android.view.Window
 import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
-import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.chip.Chip
@@ -26,7 +25,7 @@ import com.peculiaruc.alc_mmsystem_admin.ui.programs.models.FileField
  */
 class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
     override val layoutIdFragment: Int = R.layout.fragment_criteria_setup
-    override val viewModel: CriteriaViewModel by viewModels()
+    override val viewModel = CriteriaViewModel.getInstance()
 
     var criteriaMultipleInputs = HashMap<String, Int>()
     var multiChoicesInputs = HashMap<String, ArrayList<String>>()

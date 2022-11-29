@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.SearchView
-import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.peculiaruc.alc_mmsystem_admin.R
@@ -21,7 +20,7 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
     ProgramsAdapter.ItemClickListener {
 
     override val layoutIdFragment: Int = R.layout.fragment_programs
-    override val viewModel: ProgramsViewModel by viewModels()
+    override val viewModel = ProgramsViewModel.getInstance()
     private lateinit var programsAdapter: ProgramsAdapter
     private val TAG = "ProgramsTag"
     private var newProgramActionArg = -1
@@ -30,7 +29,7 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewModel.initprograms()
+        viewModel.initPrograms()
         viewModel.programs.observe(viewLifecycleOwner) {
             programsAdapter.submitList(it)
         }
@@ -60,20 +59,20 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
             activateCompletedChip()
         }
 
-        binding.chipAll.setOnCheckedChangeListener() { compoundButton, b ->
-            if (compoundButton.isChecked == true) {
+        binding.chipAll.setOnCheckedChangeListener { compoundButton, b ->
+            if (compoundButton.isChecked) {
                 activateAllChip()
             }
         }
 
-        binding.chipActive.setOnCheckedChangeListener() { compoundButton, b ->
-            if (compoundButton.isChecked == true) {
+        binding.chipActive.setOnCheckedChangeListener { compoundButton, b ->
+            if (compoundButton.isChecked) {
                 activateActiveChip()
             }
         }
 
-        binding.chipCompleted.setOnCheckedChangeListener() { compoundButton, b ->
-            if (compoundButton.isChecked == true) {
+        binding.chipCompleted.setOnCheckedChangeListener { compoundButton, b ->
+            if (compoundButton.isChecked) {
                 activateCompletedChip()
             }
         }
@@ -160,7 +159,7 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         Log.i(TAG, "onCreateOptionsMenu")
         inflater.inflate(R.menu.menu_programs_search, menu)
-        var reportBt = menu.findItem(R.id.programReportsBt)
+        val reportBt = menu.findItem(R.id.programReportsBt)
         val search: MenuItem = menu.findItem(R.id.appSearchBar)
         val searchView = search.actionView as SearchView
 
