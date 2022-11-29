@@ -1,96 +1,81 @@
 package com.peculiaruc.alc_mmsystem_admin.ui.programs
 
 import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import com.google.android.material.bottomsheet.BottomSheetDialog
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.peculiaruc.alc_mmsystem_admin.R
+import com.peculiaruc.alc_mmsystem_admin.databinding.ProgramsFragmentBinding
+import java.util.*
 
-class ProgramsFragment : Fragment() {
+private const val TAG = "ProgramsFragmentTag"
+const val IMAGE_COUNT = 20
 
-    private val TAG = "ProgramsTag"
+class ProgramsFragment : Fragment(R.layout.programs_fragment) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_programs, container, false)
-        val root = inflater.inflate(R.layout.fragment_programs, container, false)
-        val bt = root.findViewById<Button>(R.id.programDetailsButton)
-        bt.setOnClickListener {
-            val action =
-                ProgramsFragmentDirections.actionProgramsFragmentToProgramDetailsFragment(1)
-            view?.findNavController()?.navigate(action)
+    private var binding: ProgramsFragmentBinding? = null
+    private lateinit var programsAdapter: ProgramsAdapter
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding = ProgramsFragmentBinding.bind(view)
+
+        setupToolbar()
+
+        val data = ArrayList<ProgramData>()
+
+        for (i in 0..IMAGE_COUNT) {
+            val programsData = ProgramData(
+                id = i,
+                image = "https://i.ytimg.com/vi/j9FEFDm-CgQ/maxresdefault.jpg",
+                title = "Google Africa Scholarships 2022 - $i",
+                date = GregorianCalendar(2022, 11, 11).toString(),
+                description = "Some desc",
+                isDeleted = false,
+                mentorManagers = 10,
+                mentors = 20
+            )
+            data.add(programsData)
         }
-        val criteriaBt = root.findViewById<Button>(R.id.criteriaButton)
-        criteriaBt.setOnClickListener {
-            /*var dialogFragment=CriteriaInputSelectionDialogFragment()
-            dialogFragment.view?.layoutParams= ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT)
-            dialogFragment.show(childFragmentManager,"")*/
-            // on below line we are creating a new bottom sheet dialog.
-            context?.let { it1 ->
-                val dialog = BottomSheetDialog(it1)
 
-                // on below line we are inflating a layout file which we have created.
-                val dialogView =
-                    layoutInflater.inflate(R.layout.fragment_criteria_input_selection_dialog, null)
+        programsAdapter = ProgramsAdapter(data)
 
-                // on below line we are creating a variable for our button
-                // which we are using to dismiss our dialog.
-                val btnCancel = dialogView.findViewById<Button>(R.id.criteriaSelectionCancelButton)
-                val btnSingleInput = dialogView.findViewById<Button>(R.id.singleInputButton)
-                val btnYesNoInput = dialogView.findViewById<Button>(R.id.inputButtonYesNo)
-                val btnFileInput = dialogView.findViewById<Button>(R.id.inputButtonFile)
-                val btnMultipleInput = dialogView.findViewById<Button>(R.id.inputButtonMultiple)
-                val btnMultiChoiceInput =
-                    dialogView.findViewById<Button>(R.id.inputButtonMultiChoice)
-
-                btnCancel.setOnClickListener {
-                    //dialog.dismiss()
-                    Log.i(TAG, "btn cancled clicked")
-                    val action =
-                        ProgramsFragmentDirections.actionProgramsFragmentToCriteriaMultiChoiceFragment()
-                    view?.findNavController()?.navigate(action)
-                }
-                btnSingleInput.setOnClickListener {
-                    Log.i(TAG, "btnSingleInput clicked")
-                }
-                btnYesNoInput.setOnClickListener {
-                    Log.i(TAG, "btnYesNoInput clicked")
-                }
-                btnFileInput.setOnClickListener {
-                    Log.i(TAG, "btnFileInput clicked")
-                }
-                btnMultipleInput.setOnClickListener {
-                    Log.i(TAG, "btn multiple choices clicked")
-                }
-                btnMultiChoiceInput.setOnClickListener {
-                    Log.i(TAG, "btnMultiChoiceInput clicked")
-                    val action =
-                        ProgramsFragmentDirections.actionProgramsFragmentToCriteriaMultiChoiceFragment()
-                    view?.findNavController()?.navigate(action)
-                    dialog.dismiss()
-                }
-
-                dialog.setCancelable(false)
-
-                // on below line we are setting
-                // content view to our view.
-                dialog.setContentView(dialogView)
-
-                // on below line we are calling
-                // a show method to display a dialog.
-                dialog.show()
-            }
+        with(binding!!) {
+            recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            recyclerView.hasFixedSize()
+            recyclerView.adapter = programsAdapter
         }
-        return root
     }
 
+    private fun setupToolbar() {
+        with(binding) {
+            this?.toolbar!!.title.text = getString(R.string.programs)
+            toolbar.button.text = getString(R.string.program_reports)
+            toolbar.back.setOnClickListener { goBack() }
+            toolbar.search.setOnClickListener { searchPrograms() }
+            toolbar.button.setOnClickListener { goToReports() }
+            fab.setOnClickListener { createProgram() }
+        }
+    }
 
+    private fun goToReports() {
+        val action = ProgramsFragmentDirections.actionProgramsFragmentToProgramsReportFragment()
+        findNavController().navigate(action)
+    }
+
+    private fun searchPrograms() {
+        TODO("Not yet implemented")
+    }
+
+    private fun goBack() {
+        TODO("Not yet implemented")
+    }
+
+    private fun createProgram() {
+        val action = ProgramsFragmentDirections.actionProgramsFragmentToProgramsCreateFragment()
+        findNavController().navigate(action)
+
+    }
 }

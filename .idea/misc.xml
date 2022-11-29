@@ -3,37 +3,53 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/drawable/add_circle_plus_1.xml" value="0.119" />
-        <entry key="app/src/main/res/drawable/calender_icon.xml" value="0.119" />
-        <entry key="app/src/main/res/drawable/download_dialog_backgroun_2.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/edit_big.xml" value="0.105" />
-        <entry key="app/src/main/res/drawable/empty_notification_background.xml" value="0.119" />
-        <entry key="app/src/main/res/drawable/ic_approval_requests.xml" value="0.105" />
-        <entry key="app/src/main/res/drawable/ic_arrow_delete.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/search_icon.xml" value="0.105" />
-        <entry key="app/src/main/res/drawable/task.xml" value="0.105" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.16485507246376813" />
-        <entry key="app/src/main/res/layout/dialog_download.xml" value="0.15364583333333334" />
-        <entry key="app/src/main/res/layout/dialog_share.xml" value="0.36385498046875" />
-        <entry key="app/src/main/res/layout/fragment_admin_profile.xml" value="0.14990942028985507" />
-        <entry key="app/src/main/res/layout/fragment_criteria_input_selection_dialog.xml" value="0.20126190185546877" />
-        <entry key="app/src/main/res/layout/fragment_criteria_multi_choice.xml" value="0.1541501976284585" />
-        <entry key="app/src/main/res/layout/fragment_edit_admin_profile.xml" value="0.14990942028985507" />
-        <entry key="app/src/main/res/layout/fragment_mentor_manager.xml" value="0.13229166666666667" />
-        <entry key="app/src/main/res/layout/fragment_program_details.xml" value="0.14990942028985507" />
-        <entry key="app/src/main/res/layout/fragment_programs.xml" value="0.14990942028985507" />
-        <entry key="app/src/main/res/layout/fragment_report_details.xml" value="0.1921875" />
-        <entry key="app/src/main/res/layout/fragment_reports.xml" value="0.20923913043478262" />
-        <entry key="app/src/main/res/layout/fragment_task_report_details.xml" value="0.26264343261718753" />
-        <entry key="app/src/main/res/layout/fragment_task_reports.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_tasks.xml" value="0.33970184326171876" />
-        <entry key="app/src/main/res/layout/item_criteria_input_text_with_icon.xml" value="0.14427083333333332" />
-        <entry key="app/src/main/res/layout/item_report.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/item_task.xml" value="0.16485507246376813" />
-        <entry key="app/src/main/res/layout/item_task_report.xml" value="0.5880452342487884" />
-        <entry key="app/src/main/res/menu/menu_mentor_manger_profile.xml" value="0.15364583333333334" />
-        <entry key="app/src/main/res/menu/menu_profile.xml" value="0.15364583333333334" />
-        <entry key="app/src/main/res/menu/menu_reports_search.xml" value="0.15364583333333334" />
+        <entry key="../../../../layout/custom_preview.xml" value="0.10653266331658291" />
+        <entry key="../../Library/Android/sdk/platforms/android-32/data/res/layout/select_dialog_item.xml" value="0.24722222222222223" />
+        <entry key="app/src/main/res/drawable/custom_shape.xml" value="0.1965" />
+        <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1585" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/activity_team2.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/dialog_download.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/dialog_program_archived.xml" value="0.24722222222222223" />
+        <entry key="app/src/main/res/layout/dialog_program_created.xml" value="0.2759259259259259" />
+        <entry key="app/src/main/res/layout/dialog_program_report_downloaded.xml" value="0.2759259259259259" />
+        <entry key="app/src/main/res/layout/dialog_program_share_report.xml" value="0.2759259259259259" />
+        <entry key="app/src/main/res/layout/dialog_share.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/drawer_header.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/filter_horizontal.xml" value="0.2759259259259259" />
+        <entry key="app/src/main/res/layout/filter_vertical.xml" value="0.25277777777777777" />
+        <entry key="app/src/main/res/layout/fragment_admin_profile.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/fragment_certificate.xml" value="0.2994791666666667" />
+        <entry key="app/src/main/res/layout/fragment_criteria_input_selection_dialog.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/fragment_criteria_multi_choice.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/fragment_edit_admin_profile.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/fragment_mentor_manager.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/fragment_messages.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/fragment_notifications_empty.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/fragment_program_details.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/fragment_programs.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/fragment_report_details.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/fragment_reports.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/fragment_task_report_details.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/fragment_task_reports.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/item_certificate.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/item_criteria_input_text_with_icon.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/item_mentor.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/item_program.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/item_report.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/item_task.xml" value="0.2898148148148148" />
+        <entry key="app/src/main/res/layout/program_create_fragment.xml" value="0.2994791666666667" />
+        <entry key="app/src/main/res/layout/program_details_fragment.xml" value="0.2759259259259259" />
+        <entry key="app/src/main/res/layout/program_details_more_item.xml" value="0.2759259259259259" />
+        <entry key="app/src/main/res/layout/program_item.xml" value="0.2759259259259259" />
+        <entry key="app/src/main/res/layout/program_report_details_fragment.xml" value="0.2759259259259259" />
+        <entry key="app/src/main/res/layout/program_report_fragment.xml" value="0.25277777777777777" />
+        <entry key="app/src/main/res/layout/program_report_item.xml" value="0.2759259259259259" />
+        <entry key="app/src/main/res/layout/programs_fragment.xml" value="0.2936670071501532" />
+        <entry key="app/src/main/res/layout/toolbar.xml" value="0.2759259259259259" />
+        <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.2759259259259259" />
       </map>
     </option>
   </component>
@@ -42,12 +58,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.11049041748046876" />
-      </ProjectState>
-    </option>
   </component>
 </project>

@@ -7,63 +7,65 @@
         android:layout_height="match_parent"
         android:padding="@dimen/spacing_default">
 
-
         <TextView
-            android:id="@+id/taskReportTitle"
+            android:id="@+id/title"
             style="@style/largeMuktaExtraBold"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/program_report_title"
-            app:layout_constraintEnd_toStartOf="@+id/task_report_close_button"
+            app:layout_constraintEnd_toStartOf="@+id/close"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/taskReportDescription"
+            android:id="@+id/details"
             style="@style/regularMuktaBlack5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="By Ibrahim Kabir  -  19th - 25th Oct 22"
+            android:text="@string/default_details"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/taskReportTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/title" />
 
         <ImageButton
-            android:id="@+id/task_report_close_button"
+            android:id="@+id/close"
             style="@style/closeImageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="TODO"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/taskReportTitle" />
+            app:layout_constraintTop_toTopOf="@+id/title" />
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/taskReportShareButton"
+            app:layout_constraintBottom_toTopOf="@+id/reportShareButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/taskReportDescription">
+            app:layout_constraintTop_toBottomOf="@+id/details">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp">
 
                 <TextView
-                    android:id="@+id/achivementTitle"
+                    android:id="@+id/achievementTitle"
                     style="@style/mediumMukta"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:text="@string/achievements_title"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/achivementText"
+                    android:id="@+id/achievementText"
                     style="@style/regularMuktaBlack5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/text_description"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/achivementTitle" />
+                    app:layout_constraintTop_toBottomOf="@+id/achievementTitle" />
 
                 <TextView
                     android:id="@+id/blockerTitle"
@@ -73,7 +75,7 @@
                     android:layout_marginTop="@dimen/spacing_default"
                     android:text="@string/blocker_title"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/achivementText" />
+                    app:layout_constraintTop_toBottomOf="@+id/achievementText" />
 
                 <TextView
                     android:id="@+id/blockerText"
@@ -106,7 +108,7 @@
         </ScrollView>
 
         <Button
-            android:id="@+id/taskReportShareButton"
+            android:id="@+id/reportShareButton"
             style="@style/buttonOutlineRegularBoldText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -116,7 +118,7 @@
             app:layout_constraintWidth_percent="0.45" />
 
         <Button
-            android:id="@+id/taskReportDownloadButton"
+            android:id="@+id/reportDownloadButton"
             style="@style/buttonRegularBoldText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

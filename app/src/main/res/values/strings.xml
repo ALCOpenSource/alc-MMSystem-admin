@@ -37,7 +37,7 @@
 
     <!--  ************ Mentor Manger Profile ****************** -->
     <string name="menu_chat">Chat</string>
-    <string name="about">About</string>
+    <string name="about">About:</string>
     <string name="mentors">Mentors</string>
     <string name="tasks">Tasks</string>
     <string name="reports">Reports</string>
@@ -112,6 +112,27 @@
     <string name="criteria_multi_choice1_hint">Learner</string>
     <string name="criteria_multi_choice2_hint">Mentor</string>
     <string name="criteria_multi_choice3_hint">Program Assistant</string>
+
+    <string name="google_africa_scholarship_program_2022">Google Africa Scholarship Program 2022</string>
+    <string name="default_date">07</string>
+    <string name="set_a_program_avatar">Set a program avatar</string>
+    <string name="select_file">Select file</string>
+    <string name="program_name">Program Name</string>
+    <string name="create_program">Create Program</string>
+    <string name="program_description">Program Description</string>
+    <string name="program_created_successfully">Program Created Successfully!</string>
+    <string name="google_africa_scholarship_report">Google Africa Scholarship Report</string>
+    <string name="share_report_via_email">Share report via email</string>
+    <string name="default_details">By David M. N. - 19th - 25th Oct 2022</string>
+    <string name="programs">Programs</string>
+    <string name="default_text">Text</string>
+    <string name="all">All</string>
+    <string name="active">Active</string>
+    <string name="completed">Completed</string>
+    <string name="program_reports">Program Reports</string>
+    <string name="program_archived">Program Archived</string>
+    <string name="create_new_program">Create New Program</string>
+    <string name="create_criteria">Create Criteria</string>
 
 
 </resources>

@@ -14,7 +14,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/program_report_title"
-            app:layout_constraintEnd_toStartOf="@+id/report_close_button"
+            app:layout_constraintEnd_toStartOf="@+id/reportCloseButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,7 +28,7 @@
             app:layout_constraintTop_toBottomOf="@+id/reportTitle" />
 
         <ImageButton
-            android:id="@+id/report_close_button"
+            android:id="@+id/reportCloseButton"
             style="@style/closeImageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
                 android:layout_height="0dp">
 
                 <TextView
-                    android:id="@+id/achivemementTitle"
+                    android:id="@+id/achivementTitle"
                     style="@style/mediumMukta"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -57,13 +57,13 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/achivemementText"
+                    android:id="@+id/achivementText"
                     style="@style/regularMuktaBlack5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/text_description"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/achivemementTitle" />
+                    app:layout_constraintTop_toBottomOf="@+id/achivementTitle" />
 
                 <TextView
                     android:id="@+id/blockerTitle"
@@ -73,7 +73,7 @@
                     android:layout_marginTop="@dimen/spacing_default"
                     android:text="@string/blocker_title"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/achivemementText" />
+                    app:layout_constraintTop_toBottomOf="@+id/achivementText" />
 
                 <TextView
                     android:id="@+id/blockerText"

@@ -15,17 +15,7 @@
         android:name="com.peculiaruc.alc_mmsystem_admin.ui.search.SearchFragment"
         tools:layout="@layout/fragment_search" />
 
-    <fragment
-        android:id="@+id/programsFragment"
-        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.ProgramsFragment"
-        tools:layout="@layout/fragment_programs">
-        <action
-            android:id="@+id/action_programsFragment_to_programDetailsFragment"
-            app:destination="@id/programDetailsFragment" />
-        <action
-            android:id="@+id/action_programsFragment_to_CriteriaMultiChoiceFragment"
-            app:destination="@id/CriteriaMultiChoiceFragment" />
-    </fragment>
+
 
     <fragment
         android:id="@+id/messagesFragment"
@@ -119,4 +109,55 @@
         android:id="@+id/CriteriaMultiChoiceFragment"
         android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.criteria.CriteriaMultiChoiceFragment"
         tools:layout="@layout/fragment_criteria_multi_choice" />
+
+
+    <fragment
+        android:id="@+id/programsFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.ProgramsFragment"
+        tools:layout="@layout/programs_fragment">
+        <action
+            android:id="@+id/action_programsFragment_to_programDetailsFragment"
+            app:destination="@id/programDetailsFragment" />
+        <action
+            android:id="@+id/action_programsFragment_to_CriteriaMultiChoiceFragment"
+            app:destination="@id/CriteriaMultiChoiceFragment" />
+        <action
+            android:id="@+id/action_programsFragment_to_programsDetailsFragment"
+            app:destination="@id/programsDetailsFragment" />
+        <action
+            android:id="@+id/action_programsFragment_to_programsReportFragment"
+            app:destination="@id/programsReportFragment" />
+        <action
+            android:id="@+id/action_programsFragment_to_programsCreateFragment"
+            app:destination="@id/programsCreateFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/programsDetailsFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.ProgramsDetailsFragment"
+        tools:layout="@layout/program_details_fragment" >
+        <action
+            android:id="@+id/action_programsDetailsFragment_to_CriteriaMultiChoiceFragment"
+            app:destination="@id/CriteriaMultiChoiceFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/programsReportFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.ProgramsReportFragment"
+        tools:layout="@layout/program_report_fragment" >
+        <action
+            android:id="@+id/action_programsReportFragment_to_programsReportDetailsFragment"
+            app:destination="@id/programsReportDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/programsReportDetailsFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.ProgramsReportDetailsFragment"
+        tools:layout="@layout/program_report_details_fragment" />
+
+    <fragment
+        android:id="@+id/programsCreateFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.ProgramsCreateFragment"
+        tools:layout="@layout/program_create_fragment" />
+
 </navigation>
