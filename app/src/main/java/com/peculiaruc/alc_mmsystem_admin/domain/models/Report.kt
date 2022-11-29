@@ -9,5 +9,4 @@ package com.peculiaruc.alc_mmsystem_admin.domain.models
  * @property user
  * @constructor Create empty Report
  */
-data class Report (val id:Int, val title: String, val time: String, val user: String) {
-}
+data class Report (val id:Int, val title: String, val time: String, val user: String)

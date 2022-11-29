@@ -137,7 +137,7 @@
     <string name="criteria_input_multi_choice">Multi choice</string>
     <!--  ************ Admin Programs criteria multi choice ****************** -->
     <string name="criteria_multi_choice_title">Input Multiple Select Options</string>
-    <string name="criteria_multipule_inputs_title">Input Question</string>
+    <string name="criteria_multiple_inputs_title">Input Question</string>
     <string name="criteria_add_choice">Add another choice</string>
     <string name="criteria_delete_choice">delete multi-choice input</string>
     <string name="criteria_edit_choice">edit multi-choice input</string>

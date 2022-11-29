@@ -41,27 +41,27 @@ class CriteriaSingleInputFragment : BaseFragment<FragmentCriteriaInputSingleBind
             inputs = Criteria.criteriaSingleInputs.value!!
             setUpCriteria()
         }
-        binding.addInputButton.setOnClickListener() {
+        binding.addInputButton.setOnClickListener {
             binding.inputsContainer.addView(addInput())
         }
 
-        binding.inputCriteriaCancelBT.setOnClickListener() {
-            Log.i(TAG, "inputs:" + inputs)
+        binding.inputCriteriaCancelBT.setOnClickListener {
+            Log.i(TAG, "inputs:$inputs")
             view.findNavController().popBackStack()
         }
 
-        binding.inputCriteriaDonelBT.setOnClickListener() {
+        binding.inputCriteriaDoneBT.setOnClickListener {
             if (criteriaString.isEmpty()) {
-                Log.i(TAG, "inputsIDs:" + inputsIDs)
-                for (i in 0..inputsIDs.size - 1) {
-                    Log.i(TAG, "i:" + i)
+                Log.i(TAG, "inputsIDs:$inputsIDs")
+                for (i in 0 until inputsIDs.size) {
+                    Log.i(TAG, "i:$i")
 
-                    val textInput = binding.root.findViewById<TextInputLayout>(inputsIDs.get(i))
+                    val textInput = binding.root.findViewById<TextInputLayout>(inputsIDs[i])
                     if (!textInput.editText?.text.isNullOrEmpty()) {
                         inputs.add(textInput.editText?.text.toString())
                     }
                 }
-                Log.i(TAG, "input list :" + inputs)
+                Log.i(TAG, "input list :$inputs")
                 Criteria.criteriaSingleInputs.value = inputs
             } else {
                 changeItemInData()
@@ -100,9 +100,9 @@ class CriteriaSingleInputFragment : BaseFragment<FragmentCriteriaInputSingleBind
 
     private fun changeItemInData() {
         val editedString = criteriaInput.editText?.text.toString()
-        Log.i(TAG, "1 input list :" + inputs)
-        Log.i(TAG, "criteriaString :" + criteriaString + "    editedString:" + editedString)
-        if (!(editedString.isEmpty()) && (!editedString.equals(
+        Log.i(TAG, "1 input list :$inputs")
+        Log.i(TAG, "criteriaString :$criteriaString    editedString:$editedString")
+        if (editedString.isNotEmpty() && (!editedString.equals(
                 criteriaString,
                 true
             ))

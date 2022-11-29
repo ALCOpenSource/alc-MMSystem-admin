@@ -13,8 +13,6 @@ import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentCriteriaInputFileBi
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
 import com.peculiaruc.alc_mmsystem_admin.ui.programs.models.Criteria
 import com.peculiaruc.alc_mmsystem_admin.ui.programs.models.FileField
-import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
 
 /**
  * Criteria file input fragment
@@ -81,7 +79,7 @@ class CriteriaFileInputFragment : BaseFragment<FragmentCriteriaInputFileBinding>
         binding.inputCriteriaCancelBT.setOnClickListener {
             view.findNavController().popBackStack()
         }
-        binding.inputCriteriaDonelBT.setOnClickListener {
+        binding.inputCriteriaDoneBT.setOnClickListener {
             if (criteriaIsEdit) {
                 fileInputs.clear()
             }
@@ -94,7 +92,7 @@ class CriteriaFileInputFragment : BaseFragment<FragmentCriteriaInputFileBinding>
             Criteria.criteriaFileQuestionInput.value =
                 binding.questionInputText.editText?.text.toString()
             Criteria.criteriaFileInputs.value = fileInputs
-            Log.i(TAG, "fileInputs:" + fileInputs)
+            Log.i(TAG, "fileInputs:$fileInputs")
 
             view.findNavController().popBackStack()
         }

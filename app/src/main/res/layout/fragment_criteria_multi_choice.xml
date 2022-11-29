@@ -69,7 +69,7 @@
             app:layout_constraintWidth_percent="0.45" />
 
         <Button
-            android:id="@+id/multichoiceCriteriaDonelBT"
+            android:id="@+id/multichoiceCriteriaDoneBT"
             style="@style/buttonRegularBoldText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

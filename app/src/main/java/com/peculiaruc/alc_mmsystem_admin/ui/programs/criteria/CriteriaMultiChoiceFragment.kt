@@ -44,24 +44,24 @@ class CriteriaMultiChoiceFragment : BaseFragment<FragmentCriteriaMultiChoiceBind
         }
 
 
-        binding.addChoiceButton.setOnClickListener() {
+        binding.addChoiceButton.setOnClickListener {
             binding.inputsContainer.addView(addChoiceInput())
         }
 
-        binding.multichoiceCriteriaCancelBT.setOnClickListener() {
+        binding.multichoiceCriteriaCancelBT.setOnClickListener {
             view.findNavController().popBackStack()
         }
-        binding.multichoiceCriteriaDonelBT.setOnClickListener() {
+        binding.multichoiceCriteriaDoneBT.setOnClickListener {
             if (criteriaKey.isEmpty()) {
                 val choices = getChoicesFromTextInputs()
-                Log.i(TAG, "choices ids:" + choicesInputsIDs)
-                Log.i(TAG, "choices:" + choices)
+                Log.i(TAG, "choices ids:$choicesInputsIDs")
+                Log.i(TAG, "choices:$choices")
 
                 if (!binding.questionInputText.editText?.text.isNullOrEmpty()) {
 
                     choicesInputs.put(binding.questionInputText.editText?.text.toString(), choices)
                 }
-                Log.i(TAG, "choicesInputs:" + choicesInputs)
+                Log.i(TAG, "choicesInputs:$choicesInputs")
 
                 Criteria.criteriaMultiChoicesInputs.value = choicesInputs
                 Log.i(
@@ -109,7 +109,7 @@ class CriteriaMultiChoiceFragment : BaseFragment<FragmentCriteriaMultiChoiceBind
                 textInput.visibility = View.GONE
                 choicesInputsIDs.remove(textInput.id)
                 Log.i(TAG, "remove:" + textInput.editText?.text + "    id:" + textInput.id)
-                Log.i(TAG, "choicesInputsIDs: " + choicesInputsIDs)
+                Log.i(TAG, "choicesInputsIDs: $choicesInputsIDs")
                 choicesNumber--
             }
         }
@@ -132,12 +132,12 @@ class CriteriaMultiChoiceFragment : BaseFragment<FragmentCriteriaMultiChoiceBind
 
     private fun changeItemInData() {
         val editedString = binding.questionInputText.editText?.text.toString()
-        Log.i(TAG, "1 input list :" + choicesInputs)
-        if (!(editedString.isEmpty())) {
+        Log.i(TAG, "1 input list :$choicesInputs")
+        if (editedString.isNotEmpty()) {
             val choices = getChoicesFromTextInputs()
             choicesInputs.remove(criteriaKey)
             choicesInputs.put(editedString, choices)
-            Log.i(TAG, "2 input list :" + choicesInputs)
+            Log.i(TAG, "2 input list :$choicesInputs")
 
             Criteria.criteriaMultiChoicesInputs.value = choicesInputs
             Log.i(

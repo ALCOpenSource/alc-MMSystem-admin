@@ -70,7 +70,7 @@
             app:layout_constraintWidth_percent="0.45" />
 
         <Button
-            android:id="@+id/inputCriteriaDonelBT"
+            android:id="@+id/inputCriteriaDoneBT"
             style="@style/buttonRegularBoldText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

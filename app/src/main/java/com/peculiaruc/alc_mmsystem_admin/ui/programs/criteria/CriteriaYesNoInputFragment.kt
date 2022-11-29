@@ -41,17 +41,17 @@ class CriteriaYesNoInputFragment : BaseFragment<FragmentCriteriaInputYesNoBindin
             inputs = Criteria.criteriaYesNoInputs.value!!
             setUpCriteria()
         }
-        binding.addInputButton.setOnClickListener() {
+        binding.addInputButton.setOnClickListener {
             binding.inputsContainer.addView(addInput())
         }
 
-        binding.inputCriteriaCancelBT.setOnClickListener() {
-            Log.i(TAG, "inputs:" + inputs)
+        binding.inputCriteriaCancelBT.setOnClickListener {
+            Log.i(TAG, "inputs:$inputs")
             view.findNavController().popBackStack()
         }
 
-        binding.inputCriteriaDonelBT.setOnClickListener() {
-            Log.i(TAG, "inputs:" + inputs)
+        binding.inputCriteriaDoneBT.setOnClickListener {
+            Log.i(TAG, "inputs:$inputs")
             if (criteriaString.isEmpty()) {
                 for (key in inputsIDs) {
                     val textInput = binding.root.findViewById<TextInputLayout>(key)
@@ -59,7 +59,7 @@ class CriteriaYesNoInputFragment : BaseFragment<FragmentCriteriaInputYesNoBindin
                         inputs.add(textInput.editText?.text.toString())
                     }
                 }
-                Log.i(TAG, "input list :" + inputs)
+                Log.i(TAG, "input list :$inputs")
                 Criteria.criteriaYesNoInputs.value = inputs
             } else {
                 changeItemInData()
@@ -96,9 +96,9 @@ class CriteriaYesNoInputFragment : BaseFragment<FragmentCriteriaInputYesNoBindin
 
     private fun changeItemInData() {
         val editedString = criteriaInput.editText?.text.toString()
-        Log.i(TAG, "1 input list :" + inputs)
-        Log.i(TAG, "criteriaString :" + criteriaString + "    editedString:" + editedString)
-        if (!(editedString.isEmpty()) && (!editedString.equals(
+        Log.i(TAG, "1 input list :$inputs")
+        Log.i(TAG, "criteriaString :$criteriaString    editedString:$editedString")
+        if (editedString.isNotEmpty() && (!editedString.equals(
                 criteriaString,
                 true
             ))

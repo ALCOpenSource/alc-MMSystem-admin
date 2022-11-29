@@ -35,13 +35,13 @@ class ReportDetailsFragment : BaseFragment<FragmentReportDetailsBinding>() {
         arguments?.let {
             reportID = it.getInt(REPORT_ID_ARGUMENT)
         }
-        binding.reportCloseButton.setOnClickListener() {
+        binding.reportCloseButton.setOnClickListener {
             view.findNavController().popBackStack()
         }
-        binding.reportShareButton.setOnClickListener() {
+        binding.reportShareButton.setOnClickListener {
             showShareDialog()
         }
-        binding.reportDownloadButton.setOnClickListener() {
+        binding.reportDownloadButton.setOnClickListener {
             showDownloadDialog()
         }
     }

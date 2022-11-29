@@ -2,7 +2,6 @@ package com.peculiaruc.alc_mmsystem_admin.ui.programs.criteria
 
 import android.app.Dialog
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
@@ -28,7 +27,6 @@ import com.peculiaruc.alc_mmsystem_admin.ui.programs.models.FileField
 class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
     override val layoutIdFragment: Int = R.layout.fragment_criteria_setup
     override val viewModel: CriteriaViewModel by viewModels()
-    private val TAG = "CriteriaTagSetup"
 
     var criteriaMultipleInputs = HashMap<String, Int>()
     var multiChoicesInputs = HashMap<String, ArrayList<String>>()
@@ -68,10 +66,10 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
         }
 
 
-        binding.addCriteriaButton.setOnClickListener() {
+        binding.addCriteriaButton.setOnClickListener {
             openSetCriteriaBottomSheet()
         }
-        binding.createCriteriaButton.setOnClickListener() {
+        binding.createCriteriaButton.setOnClickListener {
             showCreateSuccessfulDialog()
         }
     }
@@ -119,10 +117,8 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
 
         btnCancel.setOnClickListener {
             dialog.dismiss()
-            Log.i(TAG, "btn cancled clicked")
         }
         btnSingleInput.setOnClickListener {
-            Log.i(TAG, "btnSingleInput clicked")
             val action =
                 SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaSingleInputFragment(
                     ""
@@ -131,7 +127,6 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
             dialog.dismiss()
         }
         btnYesNoInput.setOnClickListener {
-            Log.i(TAG, "btnYesNoInput clicked")
             val action =
                 SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaYesNoInputFragment(
                     ""
@@ -140,7 +135,6 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
             dialog.dismiss()
         }
         btnFileInput.setOnClickListener {
-            Log.i(TAG, "btnFileInput clicked")
             val action =
                 SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaFileInputFragment(
                     false
@@ -149,7 +143,6 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
             dialog.dismiss()
         }
         btnMultipleInput.setOnClickListener {
-            Log.i(TAG, "btn multiple choices clicked")
             val action =
                 SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaMultipleInputsFragment(
                     ""
@@ -158,7 +151,6 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
             dialog.dismiss()
         }
         btnMultiChoiceInput.setOnClickListener {
-            Log.i(TAG, "btnMultiChoiceInput clicked")
             val action =
                 SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaMultiChoiceFragment(
                     ""
@@ -183,7 +175,7 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
             if (it.size > 0) {
                 criteriaSingleInputs = it
                 for (i in 0 until criteriaSingleInputs.size) {
-                    val item = criteriaSingleInputs.get(i)
+                    val item = criteriaSingleInputs[i]
                     val input: ConstraintLayout =
                         layoutInflater.inflate(
                             R.layout.item_criteria_setup_input,
@@ -196,14 +188,9 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
                     val deleteButton =
                         input.findViewById<ImageButton>(R.id.item_delete_input_button)
                     deleteButton.tag = i
-                    deleteButton.setOnClickListener() {
-                        Log.i(TAG, "before criteriaSingleInputs:" + criteriaSingleInputs)
-                        Log.i(
-                            TAG,
-                            "tag=" + it.tag + "  item:" + criteriaSingleInputs.get(it.tag as Int)
-                        )
-                        criteriaSingleInputs.remove(criteriaSingleInputs.get(it.tag as Int))
-                        Log.i(TAG, "after criteriaSingleInputs:" + criteriaSingleInputs)
+                    deleteButton.setOnClickListener {
+
+                        criteriaSingleInputs.remove(criteriaSingleInputs[it.tag as Int])
 
                         Criteria.criteriaSingleInputs.value = criteriaSingleInputs
 
@@ -211,7 +198,7 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
                     }
                     val editButton = input.findViewById<ImageButton>(R.id.item_edit_input_button)
                     editButton.tag = item
-                    editButton.setOnClickListener() {
+                    editButton.setOnClickListener {
                         val action =
                             SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaSingleInputFragment(
                                 editButton.tag as String
@@ -230,12 +217,11 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
      * show already created yes/no inputs criteria
      */
     fun setUpYesNoInputsLayout() {
-        Log.i(TAG, "criteriayesnoInputs:" + Criteria.criteriaYesNoInputs.value)
         Criteria.criteriaYesNoInputs.value?.let {
             if (it.size > 0) {
                 criteriaYesNoInputs = it
                 for (i in 0 until criteriaYesNoInputs.size) {
-                    val item = criteriaYesNoInputs.get(i)
+                    val item = criteriaYesNoInputs[i]
                     val input: ConstraintLayout =
                         layoutInflater.inflate(
                             R.layout.item_criteria_setup_yesno_input,
@@ -247,14 +233,14 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
                     val deleteButton =
                         input.findViewById<ImageButton>(R.id.item_delete_yesno_input_button)
                     deleteButton.tag = i
-                    deleteButton.setOnClickListener() {
-                        criteriaYesNoInputs.remove(criteriaYesNoInputs.get(it.tag as Int))
+                    deleteButton.setOnClickListener {
+                        criteriaYesNoInputs.remove(criteriaYesNoInputs[it.tag as Int])
                         Criteria.criteriaYesNoInputs.value = criteriaYesNoInputs
                     }
                     val editButton =
                         input.findViewById<ImageButton>(R.id.item_edit_yesno_input_button)
                     editButton.tag = item
-                    editButton.setOnClickListener() {
+                    editButton.setOnClickListener {
                         val action =
                             SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaYesNoInputFragment(
                                 editButton.tag as String
@@ -273,34 +259,28 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
      *show already created multichoices inputs criteria
      */
     fun setUpMultiChoiceInputsLayout() {
-        Log.i(TAG, "criteriaMultiChoicesInputs:" + Criteria.criteriaMultiChoicesInputs.value)
         Criteria.criteriaMultiChoicesInputs.value?.let {
             if (it.size > 0) {
                 multiChoicesInputs = it
                 for (item in multiChoicesInputs) {
-                    if (item.key.length > 0 && item.value.size > 0) {
+                    if (item.key.isNotEmpty() && item.value.size > 0) {
                         binding.multiChoiceQuestionTextview.text = item.key
-                        Log.i(TAG, "item value:" + item.value)
                         for (choice in item.value) {
-                            Log.i(TAG, "choice:" + choice)
-
                             val chip: Chip =
                                 layoutInflater.inflate(
                                     R.layout.item_criteria_chip,
-                                    binding.multiChoiceChipGroupe, false
+                                    binding.multiChoiceChipGroup, false
                                 ) as Chip
                             chip.text = choice
-                            Log.i(TAG, "chip:" + chip.text)
-
-                            binding.multiChoiceChipGroupe.addView(chip)
+                            binding.multiChoiceChipGroup.addView(chip)
                         }
                         binding.choicesDeleteInputButton.tag = item.key
-                        binding.choicesDeleteInputButton.setOnClickListener() {
+                        binding.choicesDeleteInputButton.setOnClickListener {
                             multiChoicesInputs.remove(it.tag as String)
                             Criteria.criteriaMultiChoicesInputs.value = multiChoicesInputs
                         }
                         binding.choicesEditInputButton.tag = item.key
-                        binding.choicesEditInputButton.setOnClickListener() {
+                        binding.choicesEditInputButton.setOnClickListener {
                             val action =
                                 SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaMultiChoiceFragment(
                                     binding.choicesEditInputButton.tag as String
@@ -320,14 +300,12 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
      * show already created file inputs criteria
      */
     fun setUpFileInputsLayout() {
-        Log.i(TAG, "Criteria.criteriaFileInputs:" + Criteria.criteriaFileInputs.value)
-
         Criteria.criteriaFileInputs.value?.let {
             if (it.size > 0) {
                 criteriaFileInputs = it
                 binding.fileQuestionTextview.text = Criteria.criteriaFileQuestionInput.value
                 for (i in 0 until criteriaFileInputs.size) {
-                    val field = criteriaFileInputs.get(i)
+                    val field = criteriaFileInputs[i]
                     val input: ConstraintLayout =
                         layoutInflater.inflate(
                             R.layout.item_criteria_setup_file_input,
@@ -339,19 +317,19 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
                     val deleteButton = input.findViewById<ImageButton>(R.id.item_input_delete_file)
                     deleteButton.tag = i
                     fileButton.text = field.fileName + "." + field.fileType
-                    deleteButton.setOnClickListener() {
-                        criteriaFileInputs.remove(criteriaFileInputs.get(it.tag as Int))
+                    deleteButton.setOnClickListener {
+                        criteriaFileInputs.remove(criteriaFileInputs[it.tag as Int])
                         Criteria.criteriaFileInputs.value = criteriaFileInputs
                     }
                     binding.criteriaFileInputsContainer.addView(input)
 
                 }
-                binding.fileDeleteButton.setOnClickListener() {
+                binding.fileDeleteButton.setOnClickListener {
                     criteriaFileInputs.clear()
                     Criteria.criteriaFileInputs.value = criteriaFileInputs
                     binding.fileInputContainer.isVisible = false
                 }
-                binding.fileEditButton.setOnClickListener() {
+                binding.fileEditButton.setOnClickListener {
                     val action =
                         SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaFileInputFragment(
                             true
@@ -369,7 +347,6 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
      * show already created multiple inputs criteria
      */
     fun setUpMultipleInputsLayout() {
-        Log.i(TAG, "Criteria.criteriaMultipleInputs:" + Criteria.criteriaMultipleInputs.value)
         Criteria.criteriaMultipleInputs.value?.let {
             if (it.size > 0) {
                 criteriaMultipleInputs = it
@@ -388,13 +365,13 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
                     val deleteButton =
                         input.findViewById<ImageButton>(R.id.item_delete_input_button)
                     deleteButton.tag = item.key
-                    deleteButton.setOnClickListener() {
+                    deleteButton.setOnClickListener {
                         criteriaMultipleInputs.remove(it.tag)
                         Criteria.criteriaMultipleInputs.value = criteriaMultipleInputs
                     }
                     val editButton = input.findViewById<ImageButton>(R.id.item_edit_input_button)
                     editButton.tag = item.key
-                    editButton.setOnClickListener() {
+                    editButton.setOnClickListener {
                         val action =
                             SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaMultipleInputsFragment(
                                 editButton.tag as String
@@ -448,7 +425,7 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
      *
      */
     fun clearMultiChoiceInputsLayout() {
-        binding.multiChoiceChipGroupe.removeAllViews()
+        binding.multiChoiceChipGroup.removeAllViews()
         binding.multiChoiceContainer.isVisible = false
     }
 

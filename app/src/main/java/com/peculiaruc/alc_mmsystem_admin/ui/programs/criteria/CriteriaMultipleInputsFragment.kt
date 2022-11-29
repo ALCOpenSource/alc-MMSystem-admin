@@ -36,7 +36,7 @@ class CriteriaMultipleInputsFragment : BaseFragment<FragmentCriteriaMultipleInpu
     private var editedInputID = 0
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setTitle(true, getString(R.string.criteria_multipule_inputs_title))
+        setTitle(true, getString(R.string.criteria_multiple_inputs_title))
         arguments?.let {
             criteriaKey = it.getString(CRITERIA_KEY, "")
         }
@@ -61,22 +61,22 @@ class CriteriaMultipleInputsFragment : BaseFragment<FragmentCriteriaMultipleInpu
         }
 
         binding.multipleCriteriaCancelBT.setOnClickListener() {
-            Log.i(TAG, "inputs:" + inputs)
-            Log.i(TAG, "questions:" + questions)
+            Log.i(TAG, "inputs:$inputs")
+            Log.i(TAG, "questions:$questions")
             view.findNavController().popBackStack()
         }
 
-        binding.multipleCriteriaDonelBT.setOnClickListener() {
-            Log.i(TAG, "inputs:" + inputs)
-            Log.i(TAG, "questions:" + questions)
+        binding.multipleCriteriaDoneBT.setOnClickListener() {
+            Log.i(TAG, "inputs:$inputs")
+            Log.i(TAG, "questions:$questions")
             if (criteriaKey.isEmpty()) {
                 for (key in questions.keys) {
-                    questions.get(key)?.let { it1 ->
-                        inputs.get(key)
+                    questions[key]?.let { it1 ->
+                        inputs[key]
                             ?.let { it2 -> inputList.put(it1, it2) }
                     }
                 }
-                Log.i(TAG, "input list :" + inputList)
+                Log.i(TAG, "input list :$inputList")
                 Criteria.criteriaMultipleInputs.value = inputList
             } else {
                 changeItemInData()
@@ -141,7 +141,7 @@ class CriteriaMultipleInputsFragment : BaseFragment<FragmentCriteriaMultipleInpu
         val textInputDropDown =
             inputLayout.findViewById(R.id.inputTextDropDown1) as TextInputLayout
         textInputDropDown.editText?.setText(
-            resources.getStringArray(R.array.inputs_string_array).get(inputsNb - 2)
+            resources.getStringArray(R.array.inputs_string_array)[inputsNb - 2]
         )
         textInputDropDown.id = View.generateViewId()
         textInputQuestion.id = View.generateViewId()
@@ -159,7 +159,7 @@ class CriteriaMultipleInputsFragment : BaseFragment<FragmentCriteriaMultipleInpu
     }
 
     private fun setUpCriteria() {
-        inputList.get(criteriaKey)?.let {
+        inputList[criteriaKey]?.let {
             binding.inputsContainer.addView(addInputWithData(criteriaKey, it))
         }
         binding.addInputButton.isVisible = false
@@ -168,9 +168,9 @@ class CriteriaMultipleInputsFragment : BaseFragment<FragmentCriteriaMultipleInpu
 
 
     private fun changeItemInData() {
-        val editedString = questions.get(editedInputID)
+        val editedString = questions[editedInputID]
         if (!editedString.isNullOrEmpty()) {
-            val editedInputsNB = inputs.get(editedInputID)
+            val editedInputsNB = inputs[editedInputID]
 
             editedInputsNB?.let {
                 inputList.remove(criteriaKey)

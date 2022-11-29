@@ -97,10 +97,10 @@ class TaskReportsAdapter(
             binding.itemTitle.text = report.title
             binding.itemDescription.text = "By " + report.user + " - " + report.time
 
-            binding.downloadButton.setOnClickListener() {
+            binding.downloadButton.setOnClickListener {
                 itemClickListener.onDownloadClick(report)
             }
-            binding.shareButton.setOnClickListener() {
+            binding.shareButton.setOnClickListener {
                 itemClickListener.onShareClick(report)
             }
         }

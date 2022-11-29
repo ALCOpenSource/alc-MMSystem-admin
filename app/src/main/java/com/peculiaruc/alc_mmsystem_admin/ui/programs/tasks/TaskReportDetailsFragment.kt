@@ -35,13 +35,13 @@ class TaskReportDetailsFragment : BaseFragment<FragmentTaskReportDetailsBinding>
         arguments?.let {
             reportID = it.getInt(TASK_REPORT_ID_ARGUMENT)
         }
-        binding.taskReportCloseButton.setOnClickListener() {
+        binding.taskReportCloseButton.setOnClickListener {
             view.findNavController().popBackStack()
         }
-        binding.taskReportShareButton.setOnClickListener() {
+        binding.taskReportShareButton.setOnClickListener {
             showShareDialog()
         }
-        binding.taskReportDownloadButton.setOnClickListener() {
+        binding.taskReportDownloadButton.setOnClickListener {
             showDownloadDialog()
         }
     }
