@@ -3,7 +3,6 @@ package com.peculiaruc.alc_mmsystem_admin.ui.programs.reports
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Report
 
 /**
@@ -31,4 +30,12 @@ class ReportsViewModel : ViewModel() {
         _reports.value = reportsList
     }
 
+    companion object {
+        private lateinit var instance: ReportsViewModel
+
+        fun getInstance(): ReportsViewModel {
+            instance = if (::instance.isInitialized) instance else ReportsViewModel()
+            return instance
+        }
+    }
 }

@@ -3,7 +3,6 @@ package com.peculiaruc.alc_mmsystem_admin.ui.programs.tasks
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Report
 
 /**
@@ -31,5 +30,13 @@ class TaskReportsViewModel : ViewModel() {
         _taskReports.value = taskReportsList
     }
 
+    companion object {
+        private lateinit var instance: TaskReportsViewModel
+
+        fun getInstance(): TaskReportsViewModel {
+            instance = if (::instance.isInitialized) instance else TaskReportsViewModel()
+            return instance
+        }
+    }
 }
 
