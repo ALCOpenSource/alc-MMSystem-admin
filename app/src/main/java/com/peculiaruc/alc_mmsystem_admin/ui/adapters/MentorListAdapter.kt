@@ -1,4 +1,4 @@
-package com.peculiaruc.alc_mmsystem_admin.ui.fragments
+package com.peculiaruc.alc_mmsystem_admin.ui.adapters
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater

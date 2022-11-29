@@ -10,12 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentMentorBinding
+import com.peculiaruc.alc_mmsystem_admin.ui.adapters.MentorListAdapter
 
-import com.peculiaruc.alc_mmsystem_admin.ui.database.PlaceholderContent
 
-/**
- * A fragment representing a list of Items.
- */
 class MentorFragment : Fragment() {
 
     private lateinit var binding: FragmentMentorBinding
@@ -64,12 +61,5 @@ class MentorFragment : Fragment() {
         recyclerView.adapter = mentorListAdapter
     }
 
-//    @Deprecated("Deprecated in Java")
-//    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-//        inflater.inflate(R.menu.mentor_list_menu, menu)
-//
-//        val searchItem = menu.findItem(R.id.search)
-//        val searchView = searchItem.actionView as SearchView
-//        searchView.queryHint ="Samuel Kabede"
-//    }
+
 }

@@ -23,7 +23,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textView_sign_in_to_continue"
         app:boxStrokeColor="@color/black3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmailAddress">
+        app:layout_constraintTop_toBottomOf="@+id/editText_Chat">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:textColor="@color/black2"
@@ -58,7 +58,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_welcome" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextEmailAddress"
+        android:id="@+id/editText_Chat"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"

@@ -24,6 +24,10 @@
     <string name="add_mentors">Add Mentors</string>
     <string name="send">Send</string>
     <string name="all_mentors">All Mentors</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="this_is_a_tab_layout">This is a tab layout</string>
+    <string name="chat_with_mentor">Chat With Mentor</string>
 
     <string-array name="mentor_dropdown_text">
         <item>All Mentors</item>

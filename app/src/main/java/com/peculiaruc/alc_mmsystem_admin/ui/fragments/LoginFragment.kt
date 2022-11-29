@@ -28,12 +28,15 @@ class LoginFragment : Fragment() {
         mSpannableString.setSpan(UnderlineSpan(), 0, mSpannableString.length,0)
         binding.apply {
             signUpLink.text = mSpannableString
-
+            forgotPasswordLink.setOnClickListener {
+                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToForgotPasswordFragment())
+            }
+            buttonLogin.setOnClickListener {
+                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
+            }
         }
 
-        binding.forgotPasswordLink.setOnClickListener {
-           findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToForgotPasswordFragment())
-        }
+
 
 
         return binding.root
