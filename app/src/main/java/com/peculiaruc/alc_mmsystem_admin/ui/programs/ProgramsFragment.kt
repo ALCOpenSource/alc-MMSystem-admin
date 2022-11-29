@@ -10,6 +10,10 @@ import com.peculiaruc.alc_mmsystem_admin.databinding.ProgramsFragmentBinding
 import java.util.*
 
 private const val TAG = "ProgramsFragmentTag"
+
+/*
+* ProgramsFragment
+* */
 const val IMAGE_COUNT = 20
 
 class ProgramsFragment : Fragment(R.layout.programs_fragment) {

@@ -9,6 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.imageview.ShapeableImageView
 import com.peculiaruc.alc_mmsystem_admin.R
 
+/*
+* ProgramsAdapter
+* */
 class ProgramsAdapter(private val data: ArrayList<ProgramData>) :
     RecyclerView.Adapter<ProgramsAdapter.ProgramsAdapterViewHolder>() {
 

@@ -9,6 +9,9 @@ import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.peculiaruc.alc_mmsystem_admin.R
 
+/*
+* ShareReportDialogFragment
+* */
 class ShareReportDialogFragment : DialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

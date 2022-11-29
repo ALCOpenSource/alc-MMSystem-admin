@@ -9,6 +9,9 @@ import java.util.*
 
 private const val TAG = "ProgramsReportFragmentTag"
 
+/*
+* ProgramsReportDetailsFragment
+* */
 class ProgramsReportDetailsFragment : Fragment(R.layout.program_report_details_fragment) {
 
     private var binding: ProgramReportDetailsFragmentBinding? = null

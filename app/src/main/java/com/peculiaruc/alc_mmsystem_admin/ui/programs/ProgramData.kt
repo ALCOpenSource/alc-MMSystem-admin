@@ -1,5 +1,8 @@
 package com.peculiaruc.alc_mmsystem_admin.ui.programs
 
+/*
+* ProgramData
+* */
 data class ProgramData(
     val id: Int = 0,
     val image: String = "",

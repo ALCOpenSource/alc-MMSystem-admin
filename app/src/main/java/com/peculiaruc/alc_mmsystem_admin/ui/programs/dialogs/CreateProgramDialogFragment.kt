@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.DialogFragment
 import com.peculiaruc.alc_mmsystem_admin.R
-
+/*
+* CreateProgramDialogFragment
+* */
 class CreateProgramDialogFragment : DialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

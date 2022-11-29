@@ -13,6 +13,9 @@ import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.ui.programs.dialogs.DownloadReportDialogFragment
 import com.peculiaruc.alc_mmsystem_admin.ui.programs.dialogs.ShareReportDialogFragment
 
+/*
+* ProgramsReportAdapter
+* */
 class ProgramsReportAdapter(private val data: ArrayList<ProgramReportData>) :
     RecyclerView.Adapter<ProgramsReportAdapter.ProgramsAdapterViewHolder>() {
 
