@@ -13,7 +13,7 @@ import java.util.*
 
 private const val TAG = "ProgramsCreateFragmentTag"
 
-/*
+/**
 * ProgramsCreateFragment
 * */
 class ProgramsCreateFragment : Fragment(R.layout.program_create_fragment) {
@@ -71,6 +71,6 @@ class ProgramsCreateFragment : Fragment(R.layout.program_create_fragment) {
     }
 
     private fun goBack() {
-        TODO("Not yet implemented")
+        requireActivity().finish()
     }
 }

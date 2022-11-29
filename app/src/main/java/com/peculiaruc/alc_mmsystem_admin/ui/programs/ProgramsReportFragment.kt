@@ -11,7 +11,7 @@ import java.util.*
 
 private const val TAG = "ProgramsReportFragmentTag"
 
-/*
+/**
 * ProgramsReportFragment
 * */
 class ProgramsReportFragment : Fragment(R.layout.program_report_fragment) {
@@ -72,10 +72,24 @@ class ProgramsReportFragment : Fragment(R.layout.program_report_fragment) {
     }
 
     private fun goBack() {
-        TODO("Not yet implemented")
+        with(binding) {
+            if (this?.toolbar!!.searchHere.visibility == View.VISIBLE) {
+                toolbar.search.visibility = View.VISIBLE
+                toolbar.title.visibility = View.VISIBLE
+                toolbar.button.visibility = View.VISIBLE
+                toolbar.searchHere.visibility = View.GONE
+            } else {
+                requireActivity().finish()
+            }
+        }
     }
 
     private fun searchProgramReports() {
-        TODO("Not yet implemented")
+        with(binding) {
+            this?.toolbar!!.search.visibility = View.GONE
+            toolbar.title.visibility = View.GONE
+            toolbar.button.visibility = View.GONE
+            toolbar.searchHere.visibility = View.VISIBLE
+        }
     }
 }

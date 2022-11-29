@@ -49,4 +49,18 @@
         app:layout_constraintTop_toTopOf="@+id/back"
         app:tint="@color/black" />
 
+    <SearchView
+        android:id="@+id/searchHere"
+        android:visibility="gone"
+        android:layout_margin="5dp"
+        android:background="@drawable/custom_search"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:iconifiedByDefault="false"
+        app:layout_constraintStart_toEndOf="@+id/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/back"
+        app:layout_constraintBottom_toBottomOf="@+id/back"
+        android:queryHint="Search"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,15 +13,15 @@ import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.ui.programs.dialogs.DownloadReportDialogFragment
 import com.peculiaruc.alc_mmsystem_admin.ui.programs.dialogs.ShareReportDialogFragment
 
-/*
-* ProgramsReportAdapter
-* */
+/**
+ * ProgramsReportAdapter
+ * */
 class ProgramsReportAdapter(private val data: ArrayList<ProgramReportData>) :
     RecyclerView.Adapter<ProgramsReportAdapter.ProgramsAdapterViewHolder>() {
 
-    /*
-    * ProgramsAdapterViewHolder
-    * */
+    /**
+     * ProgramsAdapterViewHolder
+     * */
     class ProgramsAdapterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val title: TextView
         val details: TextView

@@ -15,7 +15,7 @@ import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentReportDetailsBinding
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
 
-/*
+/**
 * Add documentation
 * */
 class ReportDetailsFragment : BaseFragment<FragmentReportDetailsBinding>() {

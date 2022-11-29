@@ -9,15 +9,15 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.peculiaruc.alc_mmsystem_admin.R
 
-/*
-* ProgramDetailsAdapter
-* */
+/**
+ * ProgramDetailsAdapter
+ * */
 class ProgramDetailsAdapter(private val data: ArrayList<ProgramData>) :
     RecyclerView.Adapter<ProgramDetailsAdapter.ProgramsAdapterViewHolder>() {
 
-    /*
-    * ProgramsAdapterViewHolder
-    * */
+    /**
+     * ProgramsAdapterViewHolder
+     * */
     class ProgramsAdapterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val count: TextView
         val description: TextView

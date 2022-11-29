@@ -8,7 +8,7 @@ import android.widget.Button
 import androidx.fragment.app.DialogFragment
 import com.peculiaruc.alc_mmsystem_admin.R
 
-/*
+/**
 * DownloadReportDialogFragment
 * */
 class DownloadReportDialogFragment : DialogFragment() {

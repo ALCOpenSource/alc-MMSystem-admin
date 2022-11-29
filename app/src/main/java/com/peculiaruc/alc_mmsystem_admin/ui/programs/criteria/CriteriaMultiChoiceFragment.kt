@@ -9,7 +9,7 @@ import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentCriteriaMultiChoiceBinding
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
 
-/*
+/**
 * Add documentation
 * */
 class CriteriaMultiChoiceFragment : BaseFragment<FragmentCriteriaMultiChoiceBinding>() {

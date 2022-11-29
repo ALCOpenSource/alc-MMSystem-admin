@@ -12,7 +12,7 @@ import java.util.*
 private const val TAG = "ProgramsFragmentTag"
 const val IMAGE_COUNT = 20
 
-/*
+/**
 * ProgramsFragment
 * */
 class ProgramsFragment : Fragment(R.layout.programs_fragment) {
@@ -69,11 +69,25 @@ class ProgramsFragment : Fragment(R.layout.programs_fragment) {
     }
 
     private fun searchPrograms() {
-        TODO("Not yet implemented")
+        with(binding) {
+            this?.toolbar!!.search.visibility = View.GONE
+            toolbar.title.visibility = View.GONE
+            toolbar.button.visibility = View.GONE
+            toolbar.searchHere.visibility = View.VISIBLE
+        }
     }
 
     private fun goBack() {
-        TODO("Not yet implemented")
+        with(binding) {
+            if (this?.toolbar!!.searchHere.visibility == View.VISIBLE) {
+                toolbar.search.visibility = View.VISIBLE
+                toolbar.title.visibility = View.VISIBLE
+                toolbar.button.visibility = View.VISIBLE
+                toolbar.searchHere.visibility = View.GONE
+            } else {
+                requireActivity().finish()
+            }
+        }
     }
 
     private fun createProgram() {

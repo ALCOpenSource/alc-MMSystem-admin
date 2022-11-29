@@ -10,7 +10,7 @@ import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
 
 private const val TAG = "ProgramDetailsTag"
 
-/*
+/**
 * ProgramDetailsFragment
 * */
 class ProgramDetailsFragment : BaseFragment<FragmentProgramDetailsBinding>() {

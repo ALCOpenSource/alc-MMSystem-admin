@@ -16,9 +16,9 @@ import java.util.*
 
 private const val TAG = "ProgramDetailsTag"
 
-/*
+/**
 * ProgramsDetailsFragment
-* */
+*/
 class ProgramsDetailsFragment : Fragment(R.layout.program_details_fragment) {
 
     private var binding: ProgramDetailsFragmentBinding? = null
@@ -82,6 +82,6 @@ class ProgramsDetailsFragment : Fragment(R.layout.program_details_fragment) {
     }
 
     private fun goBack() {
-        TODO("Not yet implemented")
+        requireActivity().finish()
     }
 }

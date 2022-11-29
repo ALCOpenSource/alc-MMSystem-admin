@@ -17,7 +17,7 @@ import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentTaskReportsBinding
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Report
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
 
-/*
+/**
 * Add documentation
 * */
 class TaskReportsFragment :
