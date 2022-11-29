@@ -19,6 +19,9 @@ import com.peculiaruc.alc_mmsystem_admin.ui.programs.dialogs.ShareReportDialogFr
 class ProgramsReportAdapter(private val data: ArrayList<ProgramReportData>) :
     RecyclerView.Adapter<ProgramsReportAdapter.ProgramsAdapterViewHolder>() {
 
+    /*
+    * ProgramsAdapterViewHolder
+    * */
     class ProgramsAdapterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val title: TextView
         val details: TextView

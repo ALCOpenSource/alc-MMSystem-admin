@@ -6,6 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Report
 
+/*
+* Add documentation
+* */
 class TaskReportsViewModel : ViewModel() {
 
     private var taskReportsList = ArrayList<Report>()
@@ -21,7 +24,6 @@ class TaskReportsViewModel : ViewModel() {
         }
         _taskReports.value = taskReportsList
     }
-
 }
 
 class TaskReportsViewModelFactory() : ViewModelProvider.Factory {

@@ -17,7 +17,9 @@ import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentReportsBinding
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Report
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
 
-
+/*
+* Add documentation
+* */
 class ReportsFragment : BaseFragment<FragmentReportsBinding>(),
     ReportsAdapter.ItemClickListener {
     val TAG = "ReportsFragmentTag"

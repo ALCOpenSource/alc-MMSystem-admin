@@ -1,18 +1,17 @@
 package com.peculiaruc.alc_mmsystem_admin.ui.programs.criteria
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.LinearLayout
-import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
-import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentCriteriaMultiChoiceBinding
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
 
+/*
+* Add documentation
+* */
 class CriteriaMultiChoiceFragment : BaseFragment<FragmentCriteriaMultiChoiceBinding>() {
     override val layoutIdFragment: Int = R.layout.fragment_criteria_multi_choice
     override val viewModel: CriteriaViewModel by viewModels()
@@ -30,7 +29,7 @@ class CriteriaMultiChoiceFragment : BaseFragment<FragmentCriteriaMultiChoiceBind
         binding.choiceInputText1.setEndIconOnClickListener {
             if (choicesNumber > 1) {
                 binding.choiceInputText1.visibility = View.GONE
-                choicesInputs.remove("choiceInputText1")//.remove("choiceInputText1",binding.choiceInputText1.id)
+                choicesInputs.remove("choiceInputText1") // .remove("choiceInputText1",binding.choiceInputText1.id)
                 choicesNumber--
             }
         }
@@ -68,8 +67,6 @@ class CriteriaMultiChoiceFragment : BaseFragment<FragmentCriteriaMultiChoiceBind
             textInput.id = View.generateViewId()
             textInput.hint = "hint" + choicesNumber
             choicesInputs.put("choiceInputText" + choicesNumber, textInput.id)
-
-
         }
 
         binding.multichoiceCriteriaCancelBT.setOnClickListener() {
@@ -77,16 +74,15 @@ class CriteriaMultiChoiceFragment : BaseFragment<FragmentCriteriaMultiChoiceBind
         }
         binding.multichoiceCriteriaDonelBT.setOnClickListener() {
             /***** in the previous Fragment
-            val navController = findNavController()
-            // Instead of String any types of data can be used
-            navController.currentBackStackEntry?.savedStateHandle?.getLiveData<String>("key")
-            ?.observe(viewLifecycleOwner) {
+             val navController = findNavController()
+             // Instead of String any types of data can be used
+             navController.currentBackStackEntry?.savedStateHandle?.getLiveData<String>("key")
+             ?.observe(viewLifecycleOwner) {
 
-            }
-            }*/
-            //view.findNavController().previousBackStackEntry?.savedStateHandle?.set("key", "value that needs to be passed")
+             }
+             }*/
+            // view.findNavController().previousBackStackEntry?.savedStateHandle?.set("key", "value that needs to be passed")
             view.findNavController().popBackStack()
         }
     }
-
 }

@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.peculiaruc.alc_mmsystem_admin.databinding.ItemReportBinding
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Report
 
-
+/*
+* Add documentation
+* */
 class TaskReportsAdapter(
     private val itemClickListener: ItemClickListener
 ) : ListAdapter<Report, TaskReportsAdapter.TaskReportViewHolder>(DiffCallback) {
@@ -50,7 +52,6 @@ class TaskReportsAdapter(
         holder.bind(getItem(position))
     }
 
-
     inner class TaskReportViewHolder(
         private var binding: ItemReportBinding
     ) : RecyclerView.ViewHolder(binding.root) {
@@ -65,6 +66,5 @@ class TaskReportsAdapter(
                 itemClickListener.onShareClick(report)
             }
         }
-
     }
 }

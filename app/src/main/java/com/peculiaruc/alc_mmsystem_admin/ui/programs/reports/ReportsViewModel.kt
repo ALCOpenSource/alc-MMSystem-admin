@@ -6,6 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Report
 
+/*
+* Add documentation
+* */
 class ReportsViewModel : ViewModel() {
 
     private var reportsList = ArrayList<Report>()

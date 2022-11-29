@@ -17,7 +17,11 @@ import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentTaskReportsBinding
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Report
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
 
-class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
+/*
+* Add documentation
+* */
+class TaskReportsFragment :
+    BaseFragment<FragmentTaskReportsBinding>(),
     TaskReportsAdapter.ItemClickListener {
     val TAG = "TaskReportsFragmentTag"
     override val layoutIdFragment: Int = R.layout.fragment_task_reports
@@ -59,7 +63,6 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
             )
             spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinner.adapter = spinnerAdapter
-
         }
     }
 
@@ -67,7 +70,6 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
         val action =
             TaskReportsFragmentDirections.actionTaskReportsFragmentToTaskReportDetailFragment(1)
         view?.findNavController()?.navigate(action)
-
     }
 
     override fun onDownloadClick(item: Report) {
@@ -94,7 +96,6 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
                 return true
             }
         })
-
     }
 
     private fun filter(text: String?) {
@@ -108,7 +109,6 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
                     }
                 }
             }
-
         } else {
             filteredlist = viewModel.taskReports.value as ArrayList<Report>
         }

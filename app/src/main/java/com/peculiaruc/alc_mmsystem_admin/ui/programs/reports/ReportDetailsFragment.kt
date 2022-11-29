@@ -15,6 +15,9 @@ import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentReportDetailsBinding
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
 
+/*
+* Add documentation
+* */
 class ReportDetailsFragment : BaseFragment<FragmentReportDetailsBinding>() {
     override val layoutIdFragment: Int = R.layout.fragment_report_details
     override val viewModel: ReportsViewModel by viewModels()

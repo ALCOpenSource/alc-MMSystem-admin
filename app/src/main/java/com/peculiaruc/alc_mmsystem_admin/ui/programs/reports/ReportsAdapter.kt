@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.peculiaruc.alc_mmsystem_admin.databinding.ItemReportBinding
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Report
 
-
+/*
+* Add documentation
+* */
 class ReportsAdapter(
     private val itemClickListener: ItemClickListener
 ) : ListAdapter<Report, ReportsAdapter.TaskReportViewHolder>(DiffCallback) {

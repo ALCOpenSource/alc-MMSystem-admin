@@ -10,12 +10,11 @@ import com.peculiaruc.alc_mmsystem_admin.databinding.ProgramsFragmentBinding
 import java.util.*
 
 private const val TAG = "ProgramsFragmentTag"
+const val IMAGE_COUNT = 20
 
 /*
 * ProgramsFragment
 * */
-const val IMAGE_COUNT = 20
-
 class ProgramsFragment : Fragment(R.layout.programs_fragment) {
 
     private var binding: ProgramsFragmentBinding? = null
@@ -80,6 +79,5 @@ class ProgramsFragment : Fragment(R.layout.programs_fragment) {
     private fun createProgram() {
         val action = ProgramsFragmentDirections.actionProgramsFragmentToProgramsCreateFragment()
         findNavController().navigate(action)
-
     }
 }
