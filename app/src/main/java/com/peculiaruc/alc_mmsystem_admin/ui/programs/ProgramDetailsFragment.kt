@@ -15,6 +15,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentProgramDetailsBinding
+import com.peculiaruc.alc_mmsystem_admin.domain.models.ProgramAdmin
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
 
 
@@ -26,18 +27,23 @@ import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
 class ProgramDetailsFragment : BaseFragment<FragmentProgramDetailsBinding>() {
 
     override val layoutIdFragment: Int = R.layout.fragment_program_details
-    override val viewModel: ProgramDetailsViewModel by viewModels()
+    override val viewModel: ProgramsViewModel by viewModels()
 
     private val PROGRAM_ID_ARGUMENT = "programID"
-    private var programID = 0
+    private var programID: Int = -1
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setTitle(true, getString(R.string.program_details_title))
+
         arguments?.let {
             programID = it.getInt(PROGRAM_ID_ARGUMENT)
+
         }
-        setTextViewUnderline(
+        viewModel.getProgram(programID)?.observe(this.viewLifecycleOwner) {
+            updateView(it)
+        }
+        setTextUnderline(
             binding.deleteArchiveProgramButton,
             getString(R.string.delete_archive_program)
         )
@@ -56,13 +62,22 @@ class ProgramDetailsFragment : BaseFragment<FragmentProgramDetailsBinding>() {
                 ProgramDetailsFragmentDirections.actionProgramDetailsFragmentToReportsFragment()
             view.findNavController().navigate(action)
         }
+
+        binding.editProgramButton.setOnClickListener() {
+                val action =
+                    ProgramDetailsFragmentDirections.actionProgramDetailsFragmentToNewProgramFragment(
+                        programID
+                    )
+            view.findNavController().navigate(action)
+
+        }
     }
 
     /**
      * Show archived dialog
      *
      */
-    private fun showArchivedDialog() {
+    fun showArchivedDialog() {
         activity?.let {
             val dialog = Dialog(it)
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -85,13 +100,20 @@ class ProgramDetailsFragment : BaseFragment<FragmentProgramDetailsBinding>() {
     /**
      * Set text view underline
      *
-     * @param textview
+     * @param button
      * @param text
      */
-    private fun setTextViewUnderline(textview: Button, text: String) {
+    fun setTextUnderline(button: Button, text: String) {
         val mSpannableString = SpannableString(text)
         mSpannableString.setSpan(UnderlineSpan(), 0, mSpannableString.length, 0)
-        textview.text = mSpannableString
+        button.text = mSpannableString
     }
 
+    /**
+     * update view
+     *
+     */
+    fun updateView(program: ProgramAdmin) {
+
+    }
 }

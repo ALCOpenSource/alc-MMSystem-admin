@@ -32,18 +32,3 @@ class ReportsViewModel : ViewModel() {
     }
 
 }
-
-/**
- * Reports view model factory
- *
- * @constructor Create empty Reports view model factory
- */
-class reportsViewModelFactory() : ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(ReportsViewModel::class.java)) {
-            @Suppress("UNCHECKED_CAST")
-            return ReportsViewModel() as T
-        }
-        throw IllegalArgumentException("Unknown ViewModel class")
-    }
-}

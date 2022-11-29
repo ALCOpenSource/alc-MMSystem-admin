@@ -123,27 +123,47 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
         }
         btnSingleInput.setOnClickListener {
             Log.i(TAG, "btnSingleInput clicked")
-            openSingleInputFragment("")
+            val action =
+                SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaSingleInputFragment(
+                    ""
+                )
+            view?.findNavController()?.navigate(action)
             dialog.dismiss()
         }
         btnYesNoInput.setOnClickListener {
             Log.i(TAG, "btnYesNoInput clicked")
-            openYesNoFragment("")
+            val action =
+                SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaYesNoInputFragment(
+                    ""
+                )
+            view?.findNavController()?.navigate(action)
             dialog.dismiss()
         }
         btnFileInput.setOnClickListener {
             Log.i(TAG, "btnFileInput clicked")
-            openFileINputFragment(false)
+            val action =
+                SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaFileInputFragment(
+                    false
+                )
+            view?.findNavController()?.navigate(action)
             dialog.dismiss()
         }
         btnMultipleInput.setOnClickListener {
             Log.i(TAG, "btn multiple choices clicked")
-            openMultipleInputsFragment("")
+            val action =
+                SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaMultipleInputsFragment(
+                    ""
+                )
+            view?.findNavController()?.navigate(action)
             dialog.dismiss()
         }
         btnMultiChoiceInput.setOnClickListener {
             Log.i(TAG, "btnMultiChoiceInput clicked")
-            openMultiChoicesFragment("")
+            val action =
+                SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaMultiChoiceFragment(
+                    ""
+                )
+            view?.findNavController()?.navigate(action)
             dialog.dismiss()
         }
 
@@ -192,7 +212,11 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
                     val editButton = input.findViewById<ImageButton>(R.id.item_edit_input_button)
                     editButton.tag = item
                     editButton.setOnClickListener() {
-                        openSingleInputFragment(editButton.tag as String)
+                        val action =
+                            SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaSingleInputFragment(
+                                editButton.tag as String
+                            )
+                        view?.findNavController()?.navigate(action)
                     }
                     binding.criteriaSingleInputsContainer.addView(input)
                 }
@@ -231,7 +255,11 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
                         input.findViewById<ImageButton>(R.id.item_edit_yesno_input_button)
                     editButton.tag = item
                     editButton.setOnClickListener() {
-                        openYesNoFragment(editButton.tag as String)
+                        val action =
+                            SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaYesNoInputFragment(
+                                editButton.tag as String
+                            )
+                        view?.findNavController()?.navigate(action)
                     }
                     binding.criteriaYesNoContainer.addView(input)
                 }
@@ -273,7 +301,11 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
                         }
                         binding.choicesEditInputButton.tag = item.key
                         binding.choicesEditInputButton.setOnClickListener() {
-                            openMultiChoicesFragment(binding.choicesEditInputButton.tag as String)
+                            val action =
+                                SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaMultiChoiceFragment(
+                                    binding.choicesEditInputButton.tag as String
+                                )
+                            view?.findNavController()?.navigate(action)
                         }
 
                         binding.multiChoiceContainer.isVisible = true
@@ -320,7 +352,11 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
                     binding.fileInputContainer.isVisible = false
                 }
                 binding.fileEditButton.setOnClickListener() {
-                    openFileINputFragment(true)
+                    val action =
+                        SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaFileInputFragment(
+                            true
+                        )
+                    view?.findNavController()?.navigate(action)
                 }
                 binding.fileInputContainer.isVisible = true
             }
@@ -359,7 +395,11 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
                     val editButton = input.findViewById<ImageButton>(R.id.item_edit_input_button)
                     editButton.tag = item.key
                     editButton.setOnClickListener() {
-                        openMultipleInputsFragment(editButton.tag as String)
+                        val action =
+                            SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaMultipleInputsFragment(
+                                editButton.tag as String
+                            )
+                        view?.findNavController()?.navigate(action)
                     }
                     binding.criteriaMultipleInputsContainer.addView(input)
                 }
@@ -430,68 +470,5 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
         binding.criteriaMultipleInputsContainer.isVisible = false
     }
 
-    /**
-     * Open yes no fragment
-     *
-     * @param item
-     */
-    private fun openYesNoFragment(item: String) {
-        val action =
-            SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaYesNoInputFragment(
-                item
-            )
-        view?.findNavController()?.navigate(action)
-    }
 
-    /**
-     * Open single input fragment
-     *
-     * @param item
-     */
-    private fun openSingleInputFragment(item: String) {
-        val action =
-            SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaSingleInputFragment(
-                item
-            )
-        view?.findNavController()?.navigate(action)
-    }
-
-    /**
-     * Open multiple inputs fragment
-     *
-     * @param key
-     */
-    private fun openMultipleInputsFragment(key: String) {
-        val action =
-            SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaMultipleInputsFragment(
-                key
-            )
-        view?.findNavController()?.navigate(action)
-    }
-
-    /**
-     * Open multi choices fragment
-     *
-     * @param key
-     */
-    private fun openMultiChoicesFragment(key: String) {
-        val action =
-            SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaMultiChoiceFragment(
-                key
-            )
-        view?.findNavController()?.navigate(action)
-    }
-
-    /**
-     * Open file i nput fragment
-     *
-     * @param isEdit
-     */
-    private fun openFileINputFragment(isEdit: Boolean) {
-        val action =
-            SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaFileInputFragment(
-                isEdit
-            )
-        view?.findNavController()?.navigate(action)
-    }
 }

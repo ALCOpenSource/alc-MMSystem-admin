@@ -104,9 +104,9 @@ class CriteriaFileInputFragment : BaseFragment<FragmentCriteriaInputFileBinding>
      * Add field
      * create LinearLayout contains file name, type and qty fields
      *
-     * @return LinearLayout
+     * @return LinearLayout to be added to view
      */
-    private fun addField(): LinearLayout {
+    fun addField(): LinearLayout {
         val layout: LinearLayout =
             layoutInflater.inflate(
                 R.layout.item_criteria_input_file_field,
@@ -138,7 +138,7 @@ class CriteriaFileInputFragment : BaseFragment<FragmentCriteriaInputFileBinding>
      * @param filetype
      * @param fileqty
      */
-    private fun setupFileInputs(
+    fun setupFileInputs(
         index: Int,
         label: TextView,
         filename: EditText,
@@ -167,9 +167,9 @@ class CriteriaFileInputFragment : BaseFragment<FragmentCriteriaInputFileBinding>
      *create LinearLayout contains file name, type and qty fields
      * same feature as addField but from existing data stored in FileFiedl object
      * @param field
-     * @return
+     * @return LinearLayout to be added to view
      */
-    private fun addFieldWithData(field: FileField): LinearLayout {
+    fun addFieldWithData(field: FileField): LinearLayout {
         val layout: LinearLayout =
             layoutInflater.inflate(
                 R.layout.item_criteria_input_file_field,
@@ -201,7 +201,7 @@ class CriteriaFileInputFragment : BaseFragment<FragmentCriteriaInputFileBinding>
      * @param field
      */
 
-    private fun setDataToFileInputs(
+    fun setDataToFileInputs(
         index: Int,
         filename: EditText,
         filetype: TextInputLayout,
@@ -215,6 +215,7 @@ class CriteriaFileInputFragment : BaseFragment<FragmentCriteriaInputFileBinding>
         fileQty[index] = field.fileQty
         fileTypes[index] = field.fileType
     }
+
 
     private fun setUpCriteria() {
         binding.questionInputText.editText?.setText(editedQuestion)

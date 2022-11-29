@@ -7,6 +7,11 @@ import androidx.lifecycle.ViewModelProvider
 import com.peculiaruc.alc_mmsystem_admin.ui.programs.models.Criteria
 import com.peculiaruc.alc_mmsystem_admin.ui.programs.models.FileField
 
+/**
+ * Criteria view model
+ *
+ * @constructor Create empty Criteria view model
+ */
 class CriteriaViewModel : ViewModel() {
     lateinit var criteriaMultipleInputs : LiveData<HashMap<String, Int>>
     lateinit var multiChoicesInputs : LiveData<HashMap<String, ArrayList<String>>>
@@ -14,13 +19,4 @@ class CriteriaViewModel : ViewModel() {
     lateinit var criteriaYesNoInputs : LiveData<ArrayList<String>>
     lateinit var criteriaFileInputs : LiveData<HashMap<String, ArrayList<FileField>>>
 
-    class CriteriaViewModelFactory() : ViewModelProvider.Factory {
-        override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            if (modelClass.isAssignableFrom(CriteriaViewModel::class.java)) {
-                @Suppress("UNCHECKED_CAST")
-                return CriteriaViewModel() as T
-            }
-            throw IllegalArgumentException("Unknown ViewModel class")
-        }
-    }
 }

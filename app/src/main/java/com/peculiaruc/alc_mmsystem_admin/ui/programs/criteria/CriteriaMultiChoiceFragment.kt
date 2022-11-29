@@ -78,9 +78,9 @@ class CriteriaMultiChoiceFragment : BaseFragment<FragmentCriteriaMultiChoiceBind
     /**
      * Get choices from text inputs
      *
-     * @return
+     * @return arraylist of all editTexts text
      */
-    private fun getChoicesFromTextInputs(): ArrayList<String> {
+    fun getChoicesFromTextInputs(): ArrayList<String> {
         val choices = ArrayList<String>()
         for (id in choicesInputsIDs) {
             val textInput = binding.root.findViewById<TextInputLayout>(id)
@@ -95,7 +95,7 @@ class CriteriaMultiChoiceFragment : BaseFragment<FragmentCriteriaMultiChoiceBind
     /**
      * Add choice input
      *
-     * @return
+     * @return TextInputLayout to be added to view
      */
     fun addChoiceInput(): TextInputLayout {
         val textInput: TextInputLayout =
@@ -118,10 +118,6 @@ class CriteriaMultiChoiceFragment : BaseFragment<FragmentCriteriaMultiChoiceBind
         return textInput
     }
 
-    /**
-     * Set up criteria
-     *
-     */
     private fun setUpCriteria() {
         val item = choicesInputs.get(criteriaKey)
         binding.questionInputText.editText?.setText(criteriaKey)
@@ -134,10 +130,6 @@ class CriteriaMultiChoiceFragment : BaseFragment<FragmentCriteriaMultiChoiceBind
         }
     }
 
-    /**
-     * Change item in data
-     *
-     */
     private fun changeItemInData() {
         val editedString = binding.questionInputText.editText?.text.toString()
         Log.i(TAG, "1 input list :" + choicesInputs)

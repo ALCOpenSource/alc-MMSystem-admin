@@ -158,22 +158,15 @@ class CriteriaMultipleInputsFragment : BaseFragment<FragmentCriteriaMultipleInpu
         return inputLayout
     }
 
-    /**
-     * Set up criteria
-     *
-     */
     private fun setUpCriteria() {
         inputList.get(criteriaKey)?.let {
             binding.inputsContainer.addView(addInputWithData(criteriaKey, it))
         }
-        binding.addInputButton.isVisible=false
-        binding.addInputTextView.isVisible=false
+        binding.addInputButton.isVisible = false
+        binding.addInputTextView.isVisible = false
     }
 
-    /**
-     * Change item in data
-     *
-     */
+
     private fun changeItemInData() {
         val editedString = questions.get(editedInputID)
         if (!editedString.isNullOrEmpty()) {

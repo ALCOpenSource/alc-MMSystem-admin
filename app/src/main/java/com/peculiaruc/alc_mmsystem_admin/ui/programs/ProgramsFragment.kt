@@ -24,7 +24,7 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
     override val viewModel: ProgramsViewModel by viewModels()
     private lateinit var programsAdapter: ProgramsAdapter
     private val TAG = "ProgramsTag"
-
+    private var newProgramActionArg = -1
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -39,6 +39,7 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
         }
         return super.onCreateView(inflater, container, savedInstanceState)
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setTitle(true, getString(R.string.programs_title))
@@ -59,27 +60,29 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
             activateCompletedChip()
         }
 
-        binding.chipAll.setOnCheckedChangeListener() {compoundButton, b ->
-            if (compoundButton.isChecked==true) {
+        binding.chipAll.setOnCheckedChangeListener() { compoundButton, b ->
+            if (compoundButton.isChecked == true) {
                 activateAllChip()
             }
         }
 
-        binding.chipActive.setOnCheckedChangeListener() {compoundButton, b ->
-            if (compoundButton.isChecked==true) {
+        binding.chipActive.setOnCheckedChangeListener() { compoundButton, b ->
+            if (compoundButton.isChecked == true) {
                 activateActiveChip()
             }
         }
 
-        binding.chipCompleted.setOnCheckedChangeListener() {compoundButton, b ->
-            if (compoundButton.isChecked==true) {
+        binding.chipCompleted.setOnCheckedChangeListener() { compoundButton, b ->
+            if (compoundButton.isChecked == true) {
                 activateCompletedChip()
             }
         }
 
 
         binding.addProgramFab.setOnClickListener {
-            val action = ProgramsFragmentDirections.actionProgramsFragmentToNewProgramFragment()
+            val action = ProgramsFragmentDirections.actionProgramsFragmentToNewProgramFragment(
+                newProgramActionArg
+            )
             view.findNavController().navigate(action)
         }
     }
@@ -87,22 +90,31 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
     /**
      * activate chipAll
      */
-    private fun activateAllChip() {
+    fun activateAllChip() {
         viewModel.filteredPrograms.value = viewModel.programsAllList
         binding.chipAll.isSelected = true
         binding.chipActive.isSelected = false
         binding.chipCompleted.isSelected = false
         binding.chipActive.isChecked = false
         binding.chipCompleted.isChecked = false
-        Log.i(TAG,"chipAll.isSelected: "+binding.chipAll.isSelected+"chipAll.ischecked: "+binding.chipAll.isChecked)
-        Log.i(TAG,"chipActive.isSelected: "+binding.chipActive.isSelected+"chipActive.ischecked: "+binding.chipActive.isChecked)
-        Log.i(TAG,"chipCompleted.isSelected: "+binding.chipCompleted.isSelected+"chipCompleted.ischecked: "+binding.chipCompleted.isChecked)
+        Log.i(
+            TAG,
+            "chipAll.isSelected: " + binding.chipAll.isSelected + "chipAll.ischecked: " + binding.chipAll.isChecked
+        )
+        Log.i(
+            TAG,
+            "chipActive.isSelected: " + binding.chipActive.isSelected + "chipActive.ischecked: " + binding.chipActive.isChecked
+        )
+        Log.i(
+            TAG,
+            "chipCompleted.isSelected: " + binding.chipCompleted.isSelected + "chipCompleted.ischecked: " + binding.chipCompleted.isChecked
+        )
     }
 
     /**
      * activate chipActive
      */
-    private fun activateActiveChip() {
+    fun activateActiveChip() {
         viewModel.filteredPrograms.value = viewModel.programsActiveList
         binding.chipAll.isSelected = false
         binding.chipActive.isSelected = true
@@ -114,7 +126,7 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
     /**
      * activate chipComplete
      */
-    private fun activateCompletedChip() {
+    fun activateCompletedChip() {
         viewModel.filteredPrograms.value = viewModel.programsCompletedList
         binding.chipAll.isSelected = false
         binding.chipActive.isSelected = false
@@ -147,9 +159,7 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         Log.i(TAG, "onCreateOptionsMenu")
-        //menu.clear()
         inflater.inflate(R.menu.menu_programs_search, menu)
-        //topmenu = menu
         var reportBt = menu.findItem(R.id.programReportsBt)
         val search: MenuItem = menu.findItem(R.id.appSearchBar)
         val searchView = search.actionView as SearchView
@@ -162,8 +172,9 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                //reportBt.isVisible=false
-                filter(newText)
+                viewModel.programs.value?.let {
+                    filter(newText, it)
+                }
                 return true
             }
         })
@@ -189,16 +200,16 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
      *
      * @param text
      */
-    private fun filter(text: String?) {
+    fun filter(text: String?, list: List<ProgramAdmin>) {
         var filteredlist: ArrayList<ProgramAdmin> = ArrayList()
         val length = text?.length ?: 0
         if (length > 0) {
-            viewModel.programs.value?.let {
-                for (item in it) {
-                    if (item.title.lowercase().contains(text?.lowercase()!!)) {
-                        filteredlist.add(item)
-                    }
+
+            for (item in list) {
+                if (item.title.lowercase().contains(text?.lowercase()!!)) {
+                    filteredlist.add(item)
                 }
+
             }
 
         } else {

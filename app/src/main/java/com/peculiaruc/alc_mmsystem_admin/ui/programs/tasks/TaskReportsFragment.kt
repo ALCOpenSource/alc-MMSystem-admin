@@ -39,15 +39,8 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
         viewModel.initTaskReports()
         recyclerView = binding.taskReportsList
         spinner = binding.taskSpinner
-        setUpRecycleView()
-        setUpSpinner()
-    }
 
-    /**
-     * Set up recycle view
-     *
-     */
-    fun setUpRecycleView() {
+        //setup recyclerview
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         taskReportsAdapter = TaskReportsAdapter(this)
         recyclerView.adapter = taskReportsAdapter
@@ -57,13 +50,8 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
         viewModel.filteredTaskReports.observe(viewLifecycleOwner) {
             taskReportsAdapter.submitList(it)
         }
-    }
 
-    /**
-     * Set up spinner
-     *
-     */
-    fun setUpSpinner() {
+        //setup spinner
         context?.let {
             val spinnerAdapter = ArrayAdapter.createFromResource(
                 it,
@@ -74,7 +62,9 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
             spinner.adapter = spinnerAdapter
 
         }
+
     }
+
 
     /**
      * On report item click
@@ -118,7 +108,9 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                filter(newText)
+                viewModel.taskReports.value?.let {
+                    filter(newText, it)
+                }
                 return true
             }
         })
@@ -130,16 +122,16 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
      *
      * @param text
      */
-    private fun filter(text: String?) {
+    private fun filter(text: String?, list: List<Report>) {
         var filteredlist: ArrayList<Report> = ArrayList()
         val length = text?.length ?: 0
         if (length > 0) {
-            viewModel.taskReports.value?.let {
-                for (item in it) {
-                    if (item.title.lowercase().contains(text?.lowercase()!!)) {
-                        filteredlist.add(item)
-                    }
+
+            for (item in list) {
+                if (item.title.lowercase().contains(text?.lowercase()!!)) {
+                    filteredlist.add(item)
                 }
+
             }
 
         } else {

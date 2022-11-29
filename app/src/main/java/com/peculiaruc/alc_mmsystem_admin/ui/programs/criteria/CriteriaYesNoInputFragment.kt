@@ -71,7 +71,7 @@ class CriteriaYesNoInputFragment : BaseFragment<FragmentCriteriaInputYesNoBindin
     /**
      * Add input
      *
-     * @return
+     * @return TextInputLayout to be added to view
      */
     fun addInput(): TextInputLayout {
         val textInput: TextInputLayout =
@@ -85,10 +85,6 @@ class CriteriaYesNoInputFragment : BaseFragment<FragmentCriteriaInputYesNoBindin
         return textInput
     }
 
-    /**
-     * Set up criteria
-     * when fragment starts if it is editing already existing criteria
-     */
     private fun setUpCriteria() {
         val input = addInput()
         input.editText?.setText(criteriaString)
@@ -98,10 +94,6 @@ class CriteriaYesNoInputFragment : BaseFragment<FragmentCriteriaInputYesNoBindin
         binding.addInputTextView.isVisible=false
     }
 
-    /**
-     * Change item in data
-     *
-     */
     private fun changeItemInData() {
         val editedString = criteriaInput.editText?.text.toString()
         Log.i(TAG, "1 input list :" + inputs)

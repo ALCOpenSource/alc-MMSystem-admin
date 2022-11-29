@@ -21,6 +21,8 @@ class ProgramsViewModel : ViewModel() {
     private var _programs = MutableLiveData<List<ProgramAdmin>>()
     var programs: LiveData<List<ProgramAdmin>> = _programs
 
+    private var _program = MutableLiveData<ProgramAdmin>()
+var program:LiveData<ProgramAdmin> = _program
     /**
      * Initprograms
      *
@@ -44,19 +46,18 @@ class ProgramsViewModel : ViewModel() {
         _programs.value = programsList
     }
 
-}
-
-/**
- * Programs view model factory
- *
- * @constructor Create empty Programs view model factory
- */
-class ProgramsViewModelFactory() : ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(ProgramsViewModel::class.java)) {
-            @Suppress("UNCHECKED_CAST")
-            return ProgramsViewModel() as T
+    /**
+     * Get program
+     *
+     * @param programID
+     * @return ProgramAdmin object or null
+     */
+    fun getProgram(programID:Int):LiveData<ProgramAdmin>?{
+        programs.value?.let {
+        if(programID>=0 && programID<it.size)
+        _program.value= it.get(programID)
+        return _program
         }
-        throw IllegalArgumentException("Unknown ViewModel class")
+        return null
     }
 }

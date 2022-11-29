@@ -73,7 +73,7 @@ class CriteriaSingleInputFragment : BaseFragment<FragmentCriteriaInputSingleBind
     /**
      * Add input
      *
-     * @return
+     * @return TextInputLayout to be added to view
      */
     fun addInput(): TextInputLayout {
         val textInput: TextInputLayout =
