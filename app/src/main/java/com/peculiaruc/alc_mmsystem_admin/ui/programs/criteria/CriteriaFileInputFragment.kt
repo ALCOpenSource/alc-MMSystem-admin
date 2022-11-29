@@ -10,7 +10,6 @@ import com.google.android.material.textfield.TextInputLayout
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentCriteriaInputFileBinding
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
-import com.peculiaruc.alc_mmsystem_admin.ui.programs.models.Criteria
 import com.peculiaruc.alc_mmsystem_admin.ui.programs.models.FileField
 
 /**
@@ -64,8 +63,8 @@ class CriteriaFileInputFragment : BaseFragment<FragmentCriteriaInputFileBinding>
             binding.inputsContainer.addView(addField())
         } else {
             //editing existing criteria
-            fileInputs = Criteria.criteriaFileInputs.value!!
-            editedQuestion = Criteria.criteriaFileQuestionInput.value!!
+            fileInputs = viewModel.criteriaFileInputs.value!!
+            editedQuestion = viewModel.criteriaFileQuestionInput.value!!
             setUpCriteria()
         }
 
@@ -88,9 +87,10 @@ class CriteriaFileInputFragment : BaseFragment<FragmentCriteriaInputFileBinding>
                 val name = fileNames[key] ?: ""
                 fileInputs.add(FileField(name, type, qty))
             }
-            Criteria.criteriaFileQuestionInput.value =
+            viewModel.setCriteriaFileQuestionInput(
                 binding.questionInputText.editText?.text.toString()
-            Criteria.criteriaFileInputs.value = fileInputs
+            )
+            viewModel.setCriteriaFileInputs(fileInputs)
             Log.i(TAG, "fileInputs:$fileInputs")
 
             view.findNavController().popBackStack()

@@ -13,7 +13,6 @@ import com.google.android.material.textfield.TextInputLayout
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentCriteriaMultipleInputsBinding
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
-import com.peculiaruc.alc_mmsystem_admin.ui.programs.models.Criteria
 
 /**
  * Criteria multiple inputs fragment
@@ -48,7 +47,7 @@ class CriteriaMultipleInputsFragment : BaseFragment<FragmentCriteriaMultipleInpu
         if (criteriaKey.isEmpty()) {
             binding.inputsContainer.addView(addInput())
         } else {
-            inputList = Criteria.criteriaMultipleInputs.value!!
+            inputList = viewModel.criteriaMultipleInputs.value!!
             setUpCriteria()
         }
 
@@ -76,7 +75,7 @@ class CriteriaMultipleInputsFragment : BaseFragment<FragmentCriteriaMultipleInpu
                     }
                 }
                 Log.i(TAG, "input list :$inputList")
-                Criteria.criteriaMultipleInputs.value = inputList
+                viewModel.setCriteriaMultipleInputs(inputList)
             } else {
                 changeItemInData()
             }
@@ -174,7 +173,7 @@ class CriteriaMultipleInputsFragment : BaseFragment<FragmentCriteriaMultipleInpu
             editedInputsNB?.let {
                 inputList.remove(criteriaKey)
                 inputList.put(editedString, it)
-                Criteria.criteriaMultipleInputs.value = inputList
+                viewModel.setCriteriaMultipleInputs(inputList)
 
             }
         }

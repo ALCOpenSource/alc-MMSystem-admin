@@ -8,7 +8,6 @@ import com.google.android.material.textfield.TextInputLayout
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentCriteriaMultiChoiceBinding
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
-import com.peculiaruc.alc_mmsystem_admin.ui.programs.models.Criteria
 
 /**
  * Criteria multi choice fragment
@@ -38,7 +37,7 @@ class CriteriaMultiChoiceFragment : BaseFragment<FragmentCriteriaMultiChoiceBind
             binding.inputsContainer.addView(addChoiceInput())
             binding.inputsContainer.addView(addChoiceInput())
         } else {
-            choicesInputs = Criteria.criteriaMultiChoicesInputs.value!!
+            choicesInputs = viewModel.criteriaMultiChoicesInputs.value!!
             setUpCriteria()
         }
 
@@ -62,10 +61,10 @@ class CriteriaMultiChoiceFragment : BaseFragment<FragmentCriteriaMultiChoiceBind
                 }
                 Log.i(TAG, "choicesInputs:$choicesInputs")
 
-                Criteria.criteriaMultiChoicesInputs.value = choicesInputs
+                viewModel.setCriteriaMultiChoicesInputs(choicesInputs)
                 Log.i(
                     TAG,
-                    "criteriaMultiChoicesInputs:" + Criteria.criteriaMultiChoicesInputs.value
+                    "criteriaMultiChoicesInputs:" + viewModel.criteriaMultiChoicesInputs.value
                 )
             } else {
                 changeItemInData()
@@ -138,11 +137,8 @@ class CriteriaMultiChoiceFragment : BaseFragment<FragmentCriteriaMultiChoiceBind
             choicesInputs.put(editedString, choices)
             Log.i(TAG, "2 input list :$choicesInputs")
 
-            Criteria.criteriaMultiChoicesInputs.value = choicesInputs
-            Log.i(
-                TAG,
-                "Criteria.criteriaMultiChoicesInputs :" + Criteria.criteriaMultiChoicesInputs.value
-            )
+            viewModel.setCriteriaMultiChoicesInputs(choicesInputs)
+
 
         }
     }

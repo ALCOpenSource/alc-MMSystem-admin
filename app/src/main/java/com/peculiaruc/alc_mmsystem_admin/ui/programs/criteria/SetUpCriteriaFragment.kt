@@ -15,7 +15,6 @@ import com.google.android.material.textfield.TextInputLayout
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentCriteriaSetupBinding
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
-import com.peculiaruc.alc_mmsystem_admin.ui.programs.models.Criteria
 import com.peculiaruc.alc_mmsystem_admin.ui.programs.models.FileField
 
 /**
@@ -43,23 +42,23 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
         binding.fileInputContainer.isVisible = false
         binding.multiChoiceContainer.isVisible = false
 
-        Criteria.criteriaFileInputs.observe(this.viewLifecycleOwner) {
+        viewModel.criteriaFileInputs.observe(this.viewLifecycleOwner) {
             clearFileInputsLayout()
             setUpFileInputsLayout()
         }
-        Criteria.criteriaMultipleInputs.observe(this.viewLifecycleOwner) {
+        viewModel.criteriaMultipleInputs.observe(this.viewLifecycleOwner) {
             clearMultipleInputsLayout()
             setUpMultipleInputsLayout()
         }
-        Criteria.criteriaSingleInputs.observe(this.viewLifecycleOwner) {
+        viewModel.criteriaSingleInputs.observe(this.viewLifecycleOwner) {
             clearSingleInputsLayout()
             setUpSingleInputsLayout()
         }
-        Criteria.criteriaMultiChoicesInputs.observe(this.viewLifecycleOwner) {
+        viewModel.criteriaMultiChoicesInputs.observe(this.viewLifecycleOwner) {
             clearMultiChoiceInputsLayout()
             setUpMultiChoiceInputsLayout()
         }
-        Criteria.criteriaYesNoInputs.observe(this.viewLifecycleOwner) {
+        viewModel.criteriaYesNoInputs.observe(this.viewLifecycleOwner) {
             clearYesNoInputsLayout()
             setUpYesNoInputsLayout()
         }
@@ -170,7 +169,7 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
      * show already created single inputs criteria
      */
     fun setUpSingleInputsLayout() {
-        Criteria.criteriaSingleInputs.value?.let {
+        viewModel.criteriaSingleInputs.value?.let {
             if (it.size > 0) {
                 criteriaSingleInputs = it
                 for (i in 0 until criteriaSingleInputs.size) {
@@ -191,7 +190,7 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
 
                         criteriaSingleInputs.remove(criteriaSingleInputs[it.tag as Int])
 
-                        Criteria.criteriaSingleInputs.value = criteriaSingleInputs
+                        viewModel.setCriteriaSingleInputs(criteriaSingleInputs)
 
 
                     }
@@ -216,7 +215,7 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
      * show already created yes/no inputs criteria
      */
     fun setUpYesNoInputsLayout() {
-        Criteria.criteriaYesNoInputs.value?.let {
+        viewModel.criteriaYesNoInputs.value?.let {
             if (it.size > 0) {
                 criteriaYesNoInputs = it
                 for (i in 0 until criteriaYesNoInputs.size) {
@@ -234,7 +233,7 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
                     deleteButton.tag = i
                     deleteButton.setOnClickListener {
                         criteriaYesNoInputs.remove(criteriaYesNoInputs[it.tag as Int])
-                        Criteria.criteriaYesNoInputs.value = criteriaYesNoInputs
+                        viewModel.setCriteriaYesNoInputs(criteriaYesNoInputs)
                     }
                     val editButton =
                         input.findViewById<ImageButton>(R.id.item_edit_yesno_input_button)
@@ -258,7 +257,7 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
      *show already created multichoices inputs criteria
      */
     fun setUpMultiChoiceInputsLayout() {
-        Criteria.criteriaMultiChoicesInputs.value?.let {
+        viewModel.criteriaMultiChoicesInputs.value?.let {
             if (it.size > 0) {
                 multiChoicesInputs = it
                 for (item in multiChoicesInputs) {
@@ -276,7 +275,7 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
                         binding.choicesDeleteInputButton.tag = item.key
                         binding.choicesDeleteInputButton.setOnClickListener {
                             multiChoicesInputs.remove(it.tag as String)
-                            Criteria.criteriaMultiChoicesInputs.value = multiChoicesInputs
+                            viewModel.setCriteriaMultiChoicesInputs(multiChoicesInputs)
                         }
                         binding.choicesEditInputButton.tag = item.key
                         binding.choicesEditInputButton.setOnClickListener {
@@ -299,10 +298,10 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
      * show already created file inputs criteria
      */
     fun setUpFileInputsLayout() {
-        Criteria.criteriaFileInputs.value?.let {
+        viewModel.criteriaFileInputs.value?.let {
             if (it.size > 0) {
                 criteriaFileInputs = it
-                binding.fileQuestionTextview.text = Criteria.criteriaFileQuestionInput.value
+                binding.fileQuestionTextview.text = viewModel.criteriaFileQuestionInput.value
                 for (i in 0 until criteriaFileInputs.size) {
                     val field = criteriaFileInputs[i]
                     val input: ConstraintLayout =
@@ -318,14 +317,14 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
                     fileButton.text = field.fileName + "." + field.fileType
                     deleteButton.setOnClickListener {
                         criteriaFileInputs.remove(criteriaFileInputs[it.tag as Int])
-                        Criteria.criteriaFileInputs.value = criteriaFileInputs
+                        viewModel.setCriteriaFileInputs(criteriaFileInputs)
                     }
                     binding.criteriaFileInputsContainer.addView(input)
 
                 }
                 binding.fileDeleteButton.setOnClickListener {
                     criteriaFileInputs.clear()
-                    Criteria.criteriaFileInputs.value = criteriaFileInputs
+                    viewModel.setCriteriaFileInputs(criteriaFileInputs)
                     binding.fileInputContainer.isVisible = false
                 }
                 binding.fileEditButton.setOnClickListener {
@@ -346,7 +345,7 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
      * show already created multiple inputs criteria
      */
     fun setUpMultipleInputsLayout() {
-        Criteria.criteriaMultipleInputs.value?.let {
+        viewModel.criteriaMultipleInputs.value?.let {
             if (it.size > 0) {
                 criteriaMultipleInputs = it
                 for (item in criteriaMultipleInputs) {
@@ -366,7 +365,7 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
                     deleteButton.tag = item.key
                     deleteButton.setOnClickListener {
                         criteriaMultipleInputs.remove(it.tag)
-                        Criteria.criteriaMultipleInputs.value = criteriaMultipleInputs
+                        viewModel.setCriteriaMultipleInputs(criteriaMultipleInputs)
                     }
                     val editButton = input.findViewById<ImageButton>(R.id.item_edit_input_button)
                     editButton.tag = item.key

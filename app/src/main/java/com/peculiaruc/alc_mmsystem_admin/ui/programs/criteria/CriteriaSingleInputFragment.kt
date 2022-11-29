@@ -9,7 +9,6 @@ import com.google.android.material.textfield.TextInputLayout
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentCriteriaInputSingleBinding
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
-import com.peculiaruc.alc_mmsystem_admin.ui.programs.models.Criteria
 
 /**
  * Criteria single input fragment
@@ -37,7 +36,7 @@ class CriteriaSingleInputFragment : BaseFragment<FragmentCriteriaInputSingleBind
         if (criteriaString.isEmpty()) {
             binding.inputsContainer.addView(addInput())
         } else {
-            inputs = Criteria.criteriaSingleInputs.value!!
+            inputs = viewModel.criteriaSingleInputs.value!!
             setUpCriteria()
         }
         binding.addInputButton.setOnClickListener {
@@ -61,7 +60,7 @@ class CriteriaSingleInputFragment : BaseFragment<FragmentCriteriaInputSingleBind
                     }
                 }
                 Log.i(TAG, "input list :$inputs")
-                Criteria.criteriaSingleInputs.value = inputs
+                viewModel.setCriteriaSingleInputs(inputs)
             } else {
                 changeItemInData()
             }
@@ -108,7 +107,7 @@ class CriteriaSingleInputFragment : BaseFragment<FragmentCriteriaInputSingleBind
         ) {
             val index = inputs.indexOf(criteriaString)
             inputs[index] = editedString
-            Criteria.criteriaSingleInputs.value = inputs
+            viewModel.setCriteriaSingleInputs(inputs)
 
         }
     }

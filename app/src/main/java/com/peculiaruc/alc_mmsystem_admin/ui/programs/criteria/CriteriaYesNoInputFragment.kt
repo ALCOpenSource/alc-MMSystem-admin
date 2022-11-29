@@ -9,7 +9,6 @@ import com.google.android.material.textfield.TextInputLayout
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentCriteriaInputYesNoBinding
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
-import com.peculiaruc.alc_mmsystem_admin.ui.programs.models.Criteria
 
 /**
  * Criteria yes no input fragment
@@ -37,7 +36,7 @@ class CriteriaYesNoInputFragment : BaseFragment<FragmentCriteriaInputYesNoBindin
         if (criteriaString.isEmpty()) {
             binding.inputsContainer.addView(addInput())
         } else {
-            inputs = Criteria.criteriaYesNoInputs.value!!
+            inputs = viewModel.criteriaYesNoInputs.value!!
             setUpCriteria()
         }
         binding.addInputButton.setOnClickListener {
@@ -59,7 +58,7 @@ class CriteriaYesNoInputFragment : BaseFragment<FragmentCriteriaInputYesNoBindin
                     }
                 }
                 Log.i(TAG, "input list :$inputs")
-                Criteria.criteriaYesNoInputs.value = inputs
+                viewModel.setCriteriaYesNoInputs(inputs)
             } else {
                 changeItemInData()
             }
@@ -104,10 +103,10 @@ class CriteriaYesNoInputFragment : BaseFragment<FragmentCriteriaInputYesNoBindin
         ) {
             val index = inputs.indexOf(criteriaString)
             inputs[index] = editedString
-            Criteria.criteriaYesNoInputs.value = inputs
+            viewModel.setCriteriaYesNoInputs(inputs)
             Log.i(
                 TAG,
-                "Criteria.criteriaYesNoInputs :" + Criteria.criteriaYesNoInputs.value
+                "viewModel.criteriaYesNoInputs :" + viewModel.criteriaYesNoInputs.value
             )
 
         }
