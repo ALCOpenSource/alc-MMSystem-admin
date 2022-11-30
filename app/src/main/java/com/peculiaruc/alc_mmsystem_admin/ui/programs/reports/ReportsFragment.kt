@@ -172,6 +172,7 @@ class ReportsFragment : BaseFragment<FragmentReportsBinding>(),
         try {
             startActivity(Intent.createChooser(intent, null))
         } catch (e: ActivityNotFoundException) {
+            Toast.makeText(requireContext(),getString(R.string.no_email_app_available),Toast.LENGTH_SHORT).show()
         }
     }
 

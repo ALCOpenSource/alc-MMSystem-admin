@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.navigation.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.peculiaruc.alc_mmsystem_admin.R
@@ -81,6 +82,7 @@ class ReportDetailsFragment : BaseFragment<FragmentReportDetailsBinding>() {
         try {
             startActivity(Intent.createChooser(intent, null))
         } catch (e: ActivityNotFoundException) {
+            Toast.makeText(requireContext(),getString(R.string.no_email_app_available),Toast.LENGTH_SHORT).show()
         }
     }
 }

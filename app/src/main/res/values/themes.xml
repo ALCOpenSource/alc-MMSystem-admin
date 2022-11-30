@@ -122,25 +122,38 @@
         <item name="layout_constraintDimensionRatio">1:1</item>
     </style>
 
-    <style name="buttonLargeBoldText" parent="Widget.Material3.Button">
+    <style name="buttonLargeSemiBoldText" parent="Widget.Material3.Button">
         <item name="cornerRadius">@dimen/buttonCornerRadius</item>
         <item name="android:textSize">@dimen/font_large</item>
         <item name="textFillColor">@color/white</item>
-        <item name="fontFamily">@font/mukta_bold</item>
+        <item name="fontFamily">@font/mukta_semibold</item>
     </style>
-
-    <style name="buttonRegularBoldText" parent="Widget.Material3.Button">
+    <style name="buttonOutlineLargeSemiBoldText" parent="Widget.Material3.Button.OutlinedButton">
         <item name="cornerRadius">@dimen/buttonCornerRadius</item>
-        <item name="android:textSize">@dimen/font_small</item>
-        <item name="textFillColor">@color/white</item>
-        <item name="fontFamily">@font/mukta_regular</item>
+        <item name="android:textSize">@dimen/font_large</item>
+        <item name="strokeColor">@color/mms_pry_2</item>
+        <item name="textOutlineColor">@color/mms_pry_2</item>
+        <item name="fontFamily">@font/mukta_semibold</item>
     </style>
-
-    <style name="buttonOutlineRegularBoldText" parent="Widget.Material3.Button.OutlinedButton">
+    <style name="buttonMediumSemiBoldText" parent="Widget.Material3.Button">
+        <item name="cornerRadius">@dimen/buttonCornerRadius</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+        <item name="textFillColor">@color/white</item>
+        <item name="fontFamily">@font/mukta_semibold</item>
+    </style>
+    <style name="buttonOutlineMediumSemiBoldText" parent="Widget.Material3.Button.OutlinedButton">
         <item name="cornerRadius">@dimen/buttonCornerRadius</item>
         <item name="android:textSize">@dimen/font_medium</item>
         <item name="strokeColor">@color/mms_pry_2</item>
         <item name="textOutlineColor">@color/mms_pry_2</item>
+        <item name="fontFamily">@font/mukta_semibold</item>
+    </style>
+
+
+    <style name="buttonSmallRegularText" parent="Widget.Material3.Button">
+        <item name="cornerRadius">@dimen/buttonCornerRadius</item>
+        <item name="android:textSize">@dimen/font_small</item>
+        <item name="textFillColor">@color/white</item>
         <item name="fontFamily">@font/mukta_regular</item>
     </style>
 

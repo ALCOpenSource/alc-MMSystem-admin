@@ -278,7 +278,7 @@
 
         <Button
             android:id="@+id/createProgramButton"
-            style="@style/buttonLargeBoldText"
+            style="@style/buttonLargeSemiBoldText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/button_create_program"

@@ -108,7 +108,7 @@
 
         <Button
             android:id="@+id/taskReportShareButton"
-            style="@style/buttonOutlineRegularBoldText"
+            style="@style/buttonOutlineMediumSemiBoldText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/button_share"
@@ -118,7 +118,7 @@
 
         <Button
             android:id="@+id/taskReportDownloadButton"
-            style="@style/buttonRegularBoldText"
+            style="@style/buttonMediumSemiBoldText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/button_download"

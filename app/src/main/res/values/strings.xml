@@ -176,4 +176,6 @@
     <string name="edit_button">edit button</string>
     <string name="close_button">close page</string>
     <string name="report_spinner_description">Filter reports spinner</string>
+
+    <string name="no_email_app_available">No email app available on this device</string>
 </resources>

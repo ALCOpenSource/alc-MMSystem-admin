@@ -27,7 +27,7 @@
 
     <Button
         android:id="@+id/shareEmailButton"
-        style="@style/buttonRegularBoldText"
+        style="@style/buttonLargeSemiBoldText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_default"
@@ -39,7 +39,7 @@
 
     <Button
         android:id="@+id/cancelButton"
-        style="@style/buttonOutlineRegularBoldText"
+        style="@style/buttonOutlineLargeSemiBoldText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/button_cancel"

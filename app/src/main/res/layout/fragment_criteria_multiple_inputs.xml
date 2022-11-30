@@ -61,7 +61,7 @@
 
         <Button
             android:id="@+id/multipleCriteriaCancelBT"
-            style="@style/buttonOutlineRegularBoldText"
+            style="@style/buttonOutlineLargeSemiBoldText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/button_cancel"
@@ -71,7 +71,7 @@
 
         <Button
             android:id="@+id/multipleCriteriaDoneBT"
-            style="@style/buttonRegularBoldText"
+            style="@style/buttonLargeSemiBoldText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/button_done"
