@@ -4,7 +4,6 @@ import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
@@ -25,7 +24,6 @@ import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
  */
 class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
     TaskReportsAdapter.ItemClickListener {
-    val TAG = "TaskReportsFragmentTag"
     override val layoutIdFragment: Int = R.layout.fragment_task_reports
     override val viewModel = TaskReportsViewModel.getInstance()
     private lateinit var recyclerView: RecyclerView
@@ -168,6 +166,7 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
         dialog.setCancelable(true)
         dialog.show()
     }
+
     /**
      * Send email
      *
@@ -180,7 +179,6 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
         try {
             startActivity(Intent.createChooser(intent, null))
         } catch (e: ActivityNotFoundException) {
-            Log.e(TAG, e.toString())
         }
     }
 }

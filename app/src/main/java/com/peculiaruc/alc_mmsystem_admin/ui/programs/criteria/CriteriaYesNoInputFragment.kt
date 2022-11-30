@@ -1,7 +1,6 @@
 package com.peculiaruc.alc_mmsystem_admin.ui.programs.criteria
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.navigation.findNavController
@@ -18,7 +17,6 @@ import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
 class CriteriaYesNoInputFragment : BaseFragment<FragmentCriteriaInputYesNoBinding>() {
     override val layoutIdFragment: Int = R.layout.fragment_criteria_input_yes_no
     override val viewModel = CriteriaViewModel.getInstance()
-    private val TAG = "CriteriaTagYesNo"
     private val CRITERIA_ITEM = "item"
     private var criteriaString = ""
     private lateinit var criteriaInput: TextInputLayout
@@ -44,12 +42,10 @@ class CriteriaYesNoInputFragment : BaseFragment<FragmentCriteriaInputYesNoBindin
         }
 
         binding.inputCriteriaCancelBT.setOnClickListener {
-            Log.i(TAG, "inputs:$inputs")
             view.findNavController().popBackStack()
         }
 
         binding.inputCriteriaDoneBT.setOnClickListener {
-            Log.i(TAG, "inputs:$inputs")
             if (criteriaString.isEmpty()) {
                 for (key in inputsIDs) {
                     val textInput = binding.root.findViewById<TextInputLayout>(key)
@@ -57,7 +53,6 @@ class CriteriaYesNoInputFragment : BaseFragment<FragmentCriteriaInputYesNoBindin
                         inputs.add(textInput.editText?.text.toString())
                     }
                 }
-                Log.i(TAG, "input list :$inputs")
                 viewModel.setCriteriaYesNoInputs(inputs)
             } else {
                 changeItemInData()
@@ -94,8 +89,6 @@ class CriteriaYesNoInputFragment : BaseFragment<FragmentCriteriaInputYesNoBindin
 
     private fun changeItemInData() {
         val editedString = criteriaInput.editText?.text.toString()
-        Log.i(TAG, "1 input list :$inputs")
-        Log.i(TAG, "criteriaString :$criteriaString    editedString:$editedString")
         if (editedString.isNotEmpty() && (!editedString.equals(
                 criteriaString,
                 true
@@ -104,11 +97,6 @@ class CriteriaYesNoInputFragment : BaseFragment<FragmentCriteriaInputYesNoBindin
             val index = inputs.indexOf(criteriaString)
             inputs[index] = editedString
             viewModel.setCriteriaYesNoInputs(inputs)
-            Log.i(
-                TAG,
-                "viewModel.criteriaYesNoInputs :" + viewModel.criteriaYesNoInputs.value
-            )
-
         }
     }
 }

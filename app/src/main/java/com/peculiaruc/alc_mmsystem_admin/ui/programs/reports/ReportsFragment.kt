@@ -4,7 +4,6 @@ import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
@@ -26,12 +25,11 @@ import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
  */
 class ReportsFragment : BaseFragment<FragmentReportsBinding>(),
     ReportsAdapter.ItemClickListener {
-    val TAG = "ReportsFragmentTag"
     override val layoutIdFragment: Int = R.layout.fragment_reports
     override val viewModel = ReportsViewModel.getInstance()
     private lateinit var recyclerView: RecyclerView
     private lateinit var spinner: Spinner
-    private lateinit var ReportsAdapter: ReportsAdapter
+    private lateinit var reportsAdapter: ReportsAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -43,13 +41,13 @@ class ReportsFragment : BaseFragment<FragmentReportsBinding>(),
         spinner = binding.reportSpinner
         //setup recycler view
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        ReportsAdapter = ReportsAdapter(this)
-        recyclerView.adapter = ReportsAdapter
+        reportsAdapter = ReportsAdapter(this)
+        recyclerView.adapter = reportsAdapter
         viewModel.reports.observe(viewLifecycleOwner) {
-            ReportsAdapter.submitList(it)
+            reportsAdapter.submitList(it)
         }
         viewModel.filteredReports.observe(viewLifecycleOwner) {
-            ReportsAdapter.submitList(it)
+            reportsAdapter.submitList(it)
         }
         //setup spinner
         context?.let {
@@ -174,7 +172,6 @@ class ReportsFragment : BaseFragment<FragmentReportsBinding>(),
         try {
             startActivity(Intent.createChooser(intent, null))
         } catch (e: ActivityNotFoundException) {
-            Log.e(TAG, e.toString())
         }
     }
 

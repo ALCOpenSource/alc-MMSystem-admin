@@ -1,7 +1,6 @@
 package com.peculiaruc.alc_mmsystem_admin.ui.programs.criteria
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.core.widget.addTextChangedListener
@@ -20,7 +19,6 @@ import com.peculiaruc.alc_mmsystem_admin.ui.programs.models.FileField
 class CriteriaFileInputFragment : BaseFragment<FragmentCriteriaInputFileBinding>() {
     override val layoutIdFragment: Int = R.layout.fragment_criteria_input_file
     override val viewModel = CriteriaViewModel.getInstance()
-    private val TAG = "CriteriaTagFile"
     private lateinit var fileTypeAdapter: ArrayAdapter<CharSequence>
     private lateinit var fileQtyAdapter: ArrayAdapter<CharSequence>
 
@@ -91,7 +89,6 @@ class CriteriaFileInputFragment : BaseFragment<FragmentCriteriaInputFileBinding>
                 binding.questionInputText.editText?.text.toString()
             )
             viewModel.setCriteriaFileInputs(fileInputs)
-            Log.i(TAG, "fileInputs:$fileInputs")
 
             view.findNavController().popBackStack()
         }

@@ -24,11 +24,11 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
     override val layoutIdFragment: Int = R.layout.fragment_criteria_setup
     override val viewModel = CriteriaViewModel.getInstance()
 
-    var criteriaMultipleInputs = HashMap<String, Int>()
-    var multiChoicesInputs = HashMap<String, ArrayList<String>>()
-    var criteriaSingleInputs = ArrayList<String>()
-    var criteriaYesNoInputs = ArrayList<String>()
-    var criteriaFileInputs = ArrayList<FileField>()
+    private var criteriaMultipleInputs = HashMap<String, Int>()
+    private var multiChoicesInputs = HashMap<String, ArrayList<String>>()
+    private var criteriaSingleInputs = ArrayList<String>()
+    private var criteriaYesNoInputs = ArrayList<String>()
+    private var criteriaFileInputs = ArrayList<FileField>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -156,7 +156,7 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
      * show already created single inputs criteria
      */
     fun setUpSingleInputsLayout() {
-        viewModel.criteriaSingleInputs.value?.let {
+        viewModel.criteriaSingleInputs.value?.let { it ->
             if (it.size > 0) {
                 criteriaSingleInputs = it
                 for (i in 0 until criteriaSingleInputs.size) {
@@ -202,7 +202,7 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
      * show already created yes/no inputs criteria
      */
     fun setUpYesNoInputsLayout() {
-        viewModel.criteriaYesNoInputs.value?.let {
+        viewModel.criteriaYesNoInputs.value?.let { it ->
             if (it.size > 0) {
                 criteriaYesNoInputs = it
                 for (i in 0 until criteriaYesNoInputs.size) {
@@ -244,7 +244,7 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
      *show already created multichoices inputs criteria
      */
     fun setUpMultiChoiceInputsLayout() {
-        viewModel.criteriaMultiChoicesInputs.value?.let {
+        viewModel.criteriaMultiChoicesInputs.value?.let { it ->
             multiChoicesInputs = it
             for (item in multiChoicesInputs) {
                 if (item.key.isNotEmpty() && item.value.size > 0) {
@@ -289,7 +289,7 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
      * show already created file inputs criteria
      */
     fun setUpFileInputsLayout() {
-        viewModel.criteriaFileInputs.value?.let {
+        viewModel.criteriaFileInputs.value?.let { it ->
             if (it.size > 0) {
                 criteriaFileInputs = it
                 binding.fileQuestionTextview.text = viewModel.criteriaFileQuestionInput.value
@@ -336,7 +336,7 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
      * show already created multiple inputs criteria
      */
     fun setUpMultipleInputsLayout() {
-        viewModel.criteriaMultipleInputs.value?.let {
+        viewModel.criteriaMultipleInputs.value?.let { it ->
             criteriaMultipleInputs = it
             for (item in criteriaMultipleInputs) {
                 val input: ConstraintLayout =

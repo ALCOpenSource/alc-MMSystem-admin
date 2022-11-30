@@ -4,7 +4,6 @@ import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
@@ -23,7 +22,6 @@ import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
 class TaskReportDetailsFragment : BaseFragment<FragmentTaskReportDetailsBinding>() {
     override val layoutIdFragment: Int = R.layout.fragment_task_report_details
     override val viewModel = TaskReportsViewModel.getInstance()
-    val TAG = "TaskReportDTag"
 
     private val TASK_REPORT_ID_ARGUMENT = "taskReportID"
     private var reportID = 0
@@ -84,7 +82,6 @@ class TaskReportDetailsFragment : BaseFragment<FragmentTaskReportDetailsBinding>
         try {
             startActivity(Intent.createChooser(intent, null))
         } catch (e: ActivityNotFoundException) {
-            Log.e(TAG, e.toString())
         }
     }
 }

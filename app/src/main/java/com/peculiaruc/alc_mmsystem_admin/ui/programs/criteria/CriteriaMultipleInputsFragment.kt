@@ -1,7 +1,6 @@
 package com.peculiaruc.alc_mmsystem_admin.ui.programs.criteria
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
@@ -23,7 +22,6 @@ class CriteriaMultipleInputsFragment : BaseFragment<FragmentCriteriaMultipleInpu
 
     override val layoutIdFragment: Int = R.layout.fragment_criteria_multiple_inputs
     override val viewModel = CriteriaViewModel.getInstance()
-    private val TAG = "CriteriaTagMultiINput"
     private var questionsNumber = 1
     private lateinit var adapter: ArrayAdapter<CharSequence>
     private val CRITERIA_KEY = "key"
@@ -53,20 +51,18 @@ class CriteriaMultipleInputsFragment : BaseFragment<FragmentCriteriaMultipleInpu
 
 
 
-        binding.addInputButton.setOnClickListener() {
+        binding.addInputButton.setOnClickListener {
             val inputLayout = addInput()
             binding.inputsContainer.addView(inputLayout)
         }
 
-        binding.multipleCriteriaCancelBT.setOnClickListener() {
-            Log.i(TAG, "inputs:$inputs")
-            Log.i(TAG, "questions:$questions")
+        binding.multipleCriteriaCancelBT.setOnClickListener {
+
             view.findNavController().popBackStack()
         }
 
-        binding.multipleCriteriaDoneBT.setOnClickListener() {
-            Log.i(TAG, "inputs:$inputs")
-            Log.i(TAG, "questions:$questions")
+        binding.multipleCriteriaDoneBT.setOnClickListener {
+
             if (criteriaKey.isEmpty()) {
                 for (key in questions.keys) {
                     questions[key]?.let { it1 ->
@@ -74,7 +70,6 @@ class CriteriaMultipleInputsFragment : BaseFragment<FragmentCriteriaMultipleInpu
                             ?.let { it2 -> inputList.put(it1, it2) }
                     }
                 }
-                Log.i(TAG, "input list :$inputList")
                 viewModel.setCriteriaMultipleInputs(inputList)
             } else {
                 changeItemInData()
@@ -104,16 +99,16 @@ class CriteriaMultipleInputsFragment : BaseFragment<FragmentCriteriaMultipleInpu
         textInputQuestion.id = View.generateViewId()
         var text = ""
         var inputsNb = 0
-        questions.put(textInputQuestion.id, text)
-        inputs.put(textInputQuestion.id, inputsNb)
+        questions[textInputQuestion.id] = text
+        inputs[textInputQuestion.id] = inputsNb
         textInputQuestion.editText?.addTextChangedListener {
             text = it.toString()
-            questions.put(textInputQuestion.id, text)
+            questions[textInputQuestion.id] = text
         }
         (textInputDropDown.editText as? AutoCompleteTextView)?.setAdapter(adapter)
         (textInputDropDown.editText as? AutoCompleteTextView)?.setOnItemClickListener { parent, view, position, id ->
             inputsNb = position + 2
-            inputs.put(textInputQuestion.id, inputsNb)
+            inputs[textInputQuestion.id] = inputsNb
         }
 
         return inputLayout
@@ -143,14 +138,14 @@ class CriteriaMultipleInputsFragment : BaseFragment<FragmentCriteriaMultipleInpu
         )
         textInputDropDown.id = View.generateViewId()
         textInputQuestion.id = View.generateViewId()
-        questions.put(textInputQuestion.id, question)
-        inputs.put(textInputQuestion.id, inputsNb)
+        questions[textInputQuestion.id] = question
+        inputs[textInputQuestion.id] = inputsNb
         textInputQuestion.editText?.addTextChangedListener {
-            questions.put(textInputQuestion.id, it.toString())
+            questions[textInputQuestion.id] = it.toString()
         }
         (textInputDropDown.editText as? AutoCompleteTextView)?.setAdapter(adapter)
         (textInputDropDown.editText as? AutoCompleteTextView)?.setOnItemClickListener { parent, view, position, id ->
-            inputs.put(textInputQuestion.id, position + 2)
+            inputs[textInputQuestion.id] = position + 2
         }
         editedInputID = textInputQuestion.id
         return inputLayout
@@ -172,7 +167,7 @@ class CriteriaMultipleInputsFragment : BaseFragment<FragmentCriteriaMultipleInpu
 
             editedInputsNB?.let {
                 inputList.remove(criteriaKey)
-                inputList.put(editedString, it)
+                inputList[editedString] = it
                 viewModel.setCriteriaMultipleInputs(inputList)
 
             }

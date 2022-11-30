@@ -1,7 +1,6 @@
 package com.peculiaruc.alc_mmsystem_admin.ui.programs.criteria
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.navigation.findNavController
@@ -18,7 +17,6 @@ import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
 class CriteriaSingleInputFragment : BaseFragment<FragmentCriteriaInputSingleBinding>() {
     override val layoutIdFragment: Int = R.layout.fragment_criteria_input_single
     override val viewModel = CriteriaViewModel.getInstance()
-    private val TAG = "CriteriaTagSingle"
     private var inputsNumber = 1
     private var inputsIDs = ArrayList<Int>()
     private var inputs = ArrayList<String>()
@@ -44,22 +42,17 @@ class CriteriaSingleInputFragment : BaseFragment<FragmentCriteriaInputSingleBind
         }
 
         binding.inputCriteriaCancelBT.setOnClickListener {
-            Log.i(TAG, "inputs:$inputs")
             view.findNavController().popBackStack()
         }
 
         binding.inputCriteriaDoneBT.setOnClickListener {
             if (criteriaString.isEmpty()) {
-                Log.i(TAG, "inputsIDs:$inputsIDs")
                 for (i in 0 until inputsIDs.size) {
-                    Log.i(TAG, "i:$i")
-
                     val textInput = binding.root.findViewById<TextInputLayout>(inputsIDs[i])
                     if (!textInput.editText?.text.isNullOrEmpty()) {
                         inputs.add(textInput.editText?.text.toString())
                     }
                 }
-                Log.i(TAG, "input list :$inputs")
                 viewModel.setCriteriaSingleInputs(inputs)
             } else {
                 changeItemInData()
@@ -98,8 +91,6 @@ class CriteriaSingleInputFragment : BaseFragment<FragmentCriteriaInputSingleBind
 
     private fun changeItemInData() {
         val editedString = criteriaInput.editText?.text.toString()
-        Log.i(TAG, "1 input list :$inputs")
-        Log.i(TAG, "criteriaString :$criteriaString    editedString:$editedString")
         if (editedString.isNotEmpty() && (!editedString.equals(
                 criteriaString,
                 true

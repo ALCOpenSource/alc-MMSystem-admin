@@ -3,7 +3,6 @@ package com.peculiaruc.alc_mmsystem_admin.ui.programs
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.UnderlineSpan
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
@@ -23,26 +22,25 @@ import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
  */
 class ProgramDetailsFragment : BaseFragment<FragmentProgramDetailsBinding>() {
 
-    override val layoutIdFragment: Int = R.layout.fragment_program_details
+    override val layoutIdFragment: Int =
+        R.layout.fragment_program_details
     override val viewModel = ProgramsViewModel.getInstance()
 
     private val PROGRAM_ID_ARGUMENT = "programID"
     private var programID: Int = -1
-    private val TAG = "ProgramsTag"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         setTitle(true, getString(R.string.program_details_title))
 
         arguments?.let {
             programID = it.getInt(PROGRAM_ID_ARGUMENT)
 
         }
-        Log.i(TAG, "programID:$programID")
         viewModel.getProgram(programID)?.observe(this.viewLifecycleOwner) {
             updateView(it)
         }
-        Log.i(TAG, "viewmodel program:" + viewModel.getProgram(programID)?.value)
         viewModel.getProgram(programID)?.value?.let {
             updateView(it)
         }
@@ -105,7 +103,6 @@ class ProgramDetailsFragment : BaseFragment<FragmentProgramDetailsBinding>() {
      *
      */
     fun updateView(program: ProgramAdmin) {
-        Log.i(TAG, "program:" + program)
         binding.programTitle.text = program.title
         binding.programDescriptionTextView.text = program.description
     }

@@ -1,7 +1,6 @@
 package com.peculiaruc.alc_mmsystem_admin.ui.programs.criteria
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.navigation.findNavController
 import com.google.android.material.textfield.TextInputLayout
@@ -17,7 +16,6 @@ import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
 class CriteriaMultiChoiceFragment : BaseFragment<FragmentCriteriaMultiChoiceBinding>() {
     override val layoutIdFragment: Int = R.layout.fragment_criteria_multi_choice
     override val viewModel = CriteriaViewModel.getInstance()
-    private val TAG = "CriteriaTagChoices"
     private var choicesInputsIDs = ArrayList<Int>()
     private var choicesNumber = 3
     private var choicesInputs = HashMap<String, ArrayList<String>>()
@@ -52,20 +50,13 @@ class CriteriaMultiChoiceFragment : BaseFragment<FragmentCriteriaMultiChoiceBind
         binding.multichoiceCriteriaDoneBT.setOnClickListener {
             if (criteriaKey.isEmpty()) {
                 val choices = getChoicesFromTextInputs()
-                Log.i(TAG, "choices ids:$choicesInputsIDs")
-                Log.i(TAG, "choices:$choices")
-
                 if (!binding.questionInputText.editText?.text.isNullOrEmpty()) {
 
-                    choicesInputs.put(binding.questionInputText.editText?.text.toString(), choices)
+                    choicesInputs[binding.questionInputText.editText?.text.toString()] = choices
                 }
-                Log.i(TAG, "choicesInputs:$choicesInputs")
 
                 viewModel.setCriteriaMultiChoicesInputs(choicesInputs)
-                Log.i(
-                    TAG,
-                    "criteriaMultiChoicesInputs:" + viewModel.criteriaMultiChoicesInputs.value
-                )
+
             } else {
                 changeItemInData()
             }
@@ -106,8 +97,6 @@ class CriteriaMultiChoiceFragment : BaseFragment<FragmentCriteriaMultiChoiceBind
             if (choicesNumber > 1) {
                 textInput.visibility = View.GONE
                 choicesInputsIDs.remove(textInput.id)
-                Log.i(TAG, "remove:" + textInput.editText?.text + "    id:" + textInput.id)
-                Log.i(TAG, "choicesInputsIDs: $choicesInputsIDs")
                 choicesNumber--
             }
         }
@@ -117,7 +106,7 @@ class CriteriaMultiChoiceFragment : BaseFragment<FragmentCriteriaMultiChoiceBind
     }
 
     private fun setUpCriteria() {
-        val item = choicesInputs.get(criteriaKey)
+        val item = choicesInputs[criteriaKey]
         binding.questionInputText.editText?.setText(criteriaKey)
         if (!item.isNullOrEmpty()) {
             for (choice in item) {
@@ -130,12 +119,10 @@ class CriteriaMultiChoiceFragment : BaseFragment<FragmentCriteriaMultiChoiceBind
 
     private fun changeItemInData() {
         val editedString = binding.questionInputText.editText?.text.toString()
-        Log.i(TAG, "1 input list :$choicesInputs")
         if (editedString.isNotEmpty()) {
             val choices = getChoicesFromTextInputs()
             choicesInputs.remove(criteriaKey)
-            choicesInputs.put(editedString, choices)
-            Log.i(TAG, "2 input list :$choicesInputs")
+            choicesInputs[editedString] = choices
 
             viewModel.setCriteriaMultiChoicesInputs(choicesInputs)
 

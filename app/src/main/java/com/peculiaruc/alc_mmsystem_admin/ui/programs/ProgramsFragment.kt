@@ -1,11 +1,14 @@
 package com.peculiaruc.alc_mmsystem_admin.ui.programs
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.widget.SearchView
+import androidx.core.view.isVisible
+import androidx.navigation.NavController
+import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentProgramsBinding
 import com.peculiaruc.alc_mmsystem_admin.domain.models.ProgramAdmin
@@ -22,13 +25,13 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
     override val layoutIdFragment: Int = R.layout.fragment_programs
     override val viewModel = ProgramsViewModel.getInstance()
     private lateinit var programsAdapter: ProgramsAdapter
-    private val TAG = "ProgramsTag"
     private var newProgramActionArg = -1
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         viewModel.initPrograms()
         viewModel.programs.observe(viewLifecycleOwner) {
             programsAdapter.submitList(it)
@@ -36,14 +39,16 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
         viewModel.filteredPrograms.observe(viewLifecycleOwner) {
             programsAdapter.submitList(it)
         }
+
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         setTitle(true, getString(R.string.programs_title))
         setHasOptionsMenu(true)
-
+        hideBottomBarWhenNavigating()
 
         setUpRecycleView()
         activateAllChip()
@@ -96,18 +101,7 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
         binding.chipCompleted.isSelected = false
         binding.chipActive.isChecked = false
         binding.chipCompleted.isChecked = false
-        Log.i(
-            TAG,
-            "chipAll.isSelected: " + binding.chipAll.isSelected + "chipAll.ischecked: " + binding.chipAll.isChecked
-        )
-        Log.i(
-            TAG,
-            "chipActive.isSelected: " + binding.chipActive.isSelected + "chipActive.ischecked: " + binding.chipActive.isChecked
-        )
-        Log.i(
-            TAG,
-            "chipCompleted.isSelected: " + binding.chipCompleted.isSelected + "chipCompleted.ischecked: " + binding.chipCompleted.isChecked
-        )
+
     }
 
     /**
@@ -144,7 +138,7 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
         binding.programsListView.adapter = programsAdapter
 
     }
-    
+
 
     /**
      * On program item click
@@ -159,7 +153,6 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        Log.i(TAG, "onCreateOptionsMenu")
         inflater.inflate(R.menu.menu_programs_search, menu)
         val reportBt = menu.findItem(R.id.programReportsBt)
         val search: MenuItem = menu.findItem(R.id.appSearchBar)
@@ -181,16 +174,13 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
         })
         searchView.setOnCloseListener {
             reportBt.isVisible = true
-            Log.i(TAG, "searchview onclose")
             false
         }
         searchView.setOnSearchClickListener {
-            Log.i(TAG, "search clicked")
             reportBt.isVisible = false
         }
 
         reportBt.actionView.setOnClickListener {
-            Log.i(TAG, "report bt clicked")
 
         }
         super.onCreateOptionsMenu(menu, inflater)
@@ -220,4 +210,25 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
         viewModel.filteredPrograms.value = filteredlist
     }
 
+    private fun hideBottomBarWhenNavigating() {
+        val fragmentsArray = arrayOf(
+            R.id.NewProgramFragment,
+            R.id.programDetailsFragment,
+            R.id.taskReportsFragment,
+            R.id.TaskReportDetailFragment,
+            R.id.reportsFragment,
+            R.id.ReportDetailFragment,
+            R.id.CriteriaMultiChoiceFragment,
+            R.id.CriteriaMultipleInputsFragment,
+            R.id.criteriaSingleInputFragment,
+            R.id.setUpCriteriaFragment,
+            R.id.criteriaYesNoInputFragment,
+            R.id.criteriaFileInputFragment
+        )
+        view?.findNavController()
+            ?.addOnDestinationChangedListener { nc: NavController, nd: NavDestination, _: Bundle? ->
+                val navBar = activity?.findViewById<BottomNavigationView>(R.id.bottom_navigation)
+                navBar?.isVisible = nd.id !in fragmentsArray
+            }
+    }
 }
