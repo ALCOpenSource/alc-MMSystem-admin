@@ -84,6 +84,11 @@ class CriteriaViewModel : ViewModel() {
     companion object {
         private lateinit var instance: CriteriaViewModel
 
+        /**
+         * Get instance
+         *
+         * @return instance CriteriaViewModel
+         */
         fun getInstance(): CriteriaViewModel {
             instance = if (::instance.isInitialized) instance else CriteriaViewModel()
             return instance

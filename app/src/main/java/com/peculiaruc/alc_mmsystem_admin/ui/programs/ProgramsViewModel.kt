@@ -70,6 +70,11 @@ class ProgramsViewModel : ViewModel() {
     companion object {
         private lateinit var instance: ProgramsViewModel
 
+        /**
+         * Get instance
+         *
+         * @return instance ProgramsViewModel
+         */
         fun getInstance(): ProgramsViewModel {
             instance = if (::instance.isInitialized) instance else ProgramsViewModel()
             return instance

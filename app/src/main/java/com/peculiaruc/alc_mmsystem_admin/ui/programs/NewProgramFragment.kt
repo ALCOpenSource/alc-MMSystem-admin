@@ -61,7 +61,7 @@ class NewProgramFragment : BaseFragment<FragmentProgramNewBinding>() {
             view.findNavController().navigate(action)
         }
         binding.createProgramButton.setOnClickListener {
-            showCreateSuccessfulDialog()
+            showSuccessfulCreateDialog()
         }
     }
 
@@ -81,12 +81,13 @@ class NewProgramFragment : BaseFragment<FragmentProgramNewBinding>() {
      * Show create successful dialog
      *
      */
-    fun showCreateSuccessfulDialog() {
+    fun showSuccessfulCreateDialog() {
         activity?.let {
             val dialog = Dialog(it)
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
             dialog.setCancelable(false)
             dialog.setContentView(R.layout.dialog_success)
+
             dialog.window?.setLayout(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT

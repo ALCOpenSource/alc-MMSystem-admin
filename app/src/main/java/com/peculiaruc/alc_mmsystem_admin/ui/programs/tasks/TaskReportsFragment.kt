@@ -121,7 +121,7 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
      *
      * @param text
      */
-    private fun filter(text: String?, list: List<Report>) {
+    fun filter(text: String?, list: List<Report>) {
         var filteredlist: ArrayList<Report> = ArrayList()
         val length = text?.length ?: 0
         if (length > 0) {
@@ -140,10 +140,7 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
         viewModel.filteredTaskReports.value = filteredlist
     }
 
-    /**
-     * Show download dialog
-     *
-     */
+
     private fun showDownloadDialog() {
         activity?.let {
             val dialog = Dialog(it)
@@ -164,10 +161,6 @@ class TaskReportsFragment : BaseFragment<FragmentTaskReportsBinding>(),
         }
     }
 
-    /**
-     * Show share dialog
-     *
-     */
     private fun showShareDialog() {
         activity?.let {
 

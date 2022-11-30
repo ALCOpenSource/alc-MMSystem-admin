@@ -47,10 +47,7 @@ class TaskReportDetailsFragment : BaseFragment<FragmentTaskReportDetailsBinding>
         }
     }
 
-    /**
-     * Show download dialog
-     *
-     */
+
     private fun showDownloadDialog() {
         activity?.let {
             val dialog = Dialog(it)
@@ -71,10 +68,7 @@ class TaskReportDetailsFragment : BaseFragment<FragmentTaskReportDetailsBinding>
         }
     }
 
-    /**
-     * Show share dialog
-     *
-     */
+
     private fun showShareDialog() {
         activity?.let {
 

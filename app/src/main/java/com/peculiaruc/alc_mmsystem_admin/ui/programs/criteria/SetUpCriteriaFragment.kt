@@ -43,23 +43,28 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
         binding.multiChoiceContainer.isVisible = false
 
         viewModel.criteriaFileInputs.observe(this.viewLifecycleOwner) {
-            clearFileInputsLayout()
+            binding.criteriaFileInputsContainer.removeAllViews()
+            binding.fileInputContainer.isVisible = false
             setUpFileInputsLayout()
         }
         viewModel.criteriaMultipleInputs.observe(this.viewLifecycleOwner) {
-            clearMultipleInputsLayout()
+            binding.criteriaMultipleInputsContainer.removeAllViews()
+            binding.criteriaMultipleInputsContainer.isVisible = false
             setUpMultipleInputsLayout()
         }
         viewModel.criteriaSingleInputs.observe(this.viewLifecycleOwner) {
-            clearSingleInputsLayout()
+            binding.criteriaSingleInputsContainer.removeAllViews()
+            binding.criteriaSingleInputsContainer.isVisible = false
             setUpSingleInputsLayout()
         }
         viewModel.criteriaMultiChoicesInputs.observe(this.viewLifecycleOwner) {
-            clearMultiChoiceInputsLayout()
+            binding.multiChoiceChipGroup.removeAllViews()
+            binding.multiChoiceContainer.isVisible = false
             setUpMultiChoiceInputsLayout()
         }
         viewModel.criteriaYesNoInputs.observe(this.viewLifecycleOwner) {
-            clearYesNoInputsLayout()
+            binding.criteriaYesNoContainer.removeAllViews()
+            binding.criteriaYesNoContainer.isVisible = false
             setUpYesNoInputsLayout()
         }
 
@@ -68,15 +73,11 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
             openSetCriteriaBottomSheet()
         }
         binding.createCriteriaButton.setOnClickListener {
-            showCreateSuccessfulDialog()
+            showSuccessfulCreateDialog()
         }
     }
 
-    /**
-     * Show create successful dialog
-     *
-     */
-    private fun showCreateSuccessfulDialog() {
+    private fun showSuccessfulCreateDialog() {
         activity?.let {
             val dialog = Dialog(it)
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -96,27 +97,24 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
         }
     }
 
-    /**
-     * Open set criteria bottom sheet
-     * to navigate to different types criteria fragments
-     */
+
     private fun openSetCriteriaBottomSheet() {
         val dialog = BottomSheetDialog(requireContext())
-        val dialogView =
-            layoutInflater.inflate(R.layout.fragment_criteria_input_selection_dialog, null)
-
-        val btnCancel = dialogView.findViewById<Button>(R.id.criteriaSelectionCancelButton)
-        val btnSingleInput = dialogView.findViewById<Button>(R.id.singleInputButton)
-        val btnYesNoInput = dialogView.findViewById<Button>(R.id.inputButtonYesNo)
-        val btnFileInput = dialogView.findViewById<Button>(R.id.inputButtonFile)
-        val btnMultipleInput = dialogView.findViewById<Button>(R.id.inputButtonMultiple)
+        //val dialogView =
+        //  layoutInflater.inflate(R.layout.fragment_criteria_input_selection_dialog, null)
+        dialog.setContentView(R.layout.fragment_criteria_input_selection_dialog)
+        val btnCancel = dialog.findViewById<Button>(R.id.criteriaSelectionCancelButton)
+        val btnSingleInput = dialog.findViewById<Button>(R.id.singleInputButton)
+        val btnYesNoInput = dialog.findViewById<Button>(R.id.inputButtonYesNo)
+        val btnFileInput = dialog.findViewById<Button>(R.id.inputButtonFile)
+        val btnMultipleInput = dialog.findViewById<Button>(R.id.inputButtonMultiple)
         val btnMultiChoiceInput =
-            dialogView.findViewById<Button>(R.id.inputButtonMultiChoice)
+            dialog.findViewById<Button>(R.id.inputButtonMultiChoice)
 
-        btnCancel.setOnClickListener {
+        btnCancel?.setOnClickListener {
             dialog.dismiss()
         }
-        btnSingleInput.setOnClickListener {
+        btnSingleInput?.setOnClickListener {
             val action =
                 SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaSingleInputFragment(
                     ""
@@ -124,7 +122,7 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
             view?.findNavController()?.navigate(action)
             dialog.dismiss()
         }
-        btnYesNoInput.setOnClickListener {
+        btnYesNoInput?.setOnClickListener {
             val action =
                 SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaYesNoInputFragment(
                     ""
@@ -132,7 +130,7 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
             view?.findNavController()?.navigate(action)
             dialog.dismiss()
         }
-        btnFileInput.setOnClickListener {
+        btnFileInput?.setOnClickListener {
             val action =
                 SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaFileInputFragment(
                     false
@@ -140,7 +138,7 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
             view?.findNavController()?.navigate(action)
             dialog.dismiss()
         }
-        btnMultipleInput.setOnClickListener {
+        btnMultipleInput?.setOnClickListener {
             val action =
                 SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaMultipleInputsFragment(
                     ""
@@ -148,7 +146,7 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
             view?.findNavController()?.navigate(action)
             dialog.dismiss()
         }
-        btnMultiChoiceInput.setOnClickListener {
+        btnMultiChoiceInput?.setOnClickListener {
             val action =
                 SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaMultiChoiceFragment(
                     ""
@@ -159,7 +157,7 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
 
         dialog.setCancelable(false)
 
-        dialog.setContentView(dialogView)
+        //dialog.setContentView(dialogView)
 
         dialog.show()
     }
@@ -258,38 +256,42 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
      */
     fun setUpMultiChoiceInputsLayout() {
         viewModel.criteriaMultiChoicesInputs.value?.let {
-            if (it.size > 0) {
-                multiChoicesInputs = it
-                for (item in multiChoicesInputs) {
-                    if (item.key.isNotEmpty() && item.value.size > 0) {
-                        binding.multiChoiceQuestionTextview.text = item.key
-                        for (choice in item.value) {
-                            val chip: Chip =
-                                layoutInflater.inflate(
-                                    R.layout.item_criteria_chip,
-                                    binding.multiChoiceChipGroup, false
-                                ) as Chip
-                            chip.text = choice
-                            binding.multiChoiceChipGroup.addView(chip)
-                        }
-                        binding.choicesDeleteInputButton.tag = item.key
-                        binding.choicesDeleteInputButton.setOnClickListener {
-                            multiChoicesInputs.remove(it.tag as String)
-                            viewModel.setCriteriaMultiChoicesInputs(multiChoicesInputs)
-                        }
-                        binding.choicesEditInputButton.tag = item.key
-                        binding.choicesEditInputButton.setOnClickListener {
-                            val action =
-                                SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaMultiChoiceFragment(
-                                    binding.choicesEditInputButton.tag as String
-                                )
-                            view?.findNavController()?.navigate(action)
-                        }
-
-                        binding.multiChoiceContainer.isVisible = true
-                    }
+            multiChoicesInputs = it
+            for (item in multiChoicesInputs) {
+                if (item.key.isNotEmpty() && item.value.size > 0) {
+                    binding.multiChoiceQuestionTextview.text = item.key
+                    addChipsToChipGroupe(item.value)
                 }
+                binding.choicesDeleteInputButton.tag = item.key
+                binding.choicesDeleteInputButton.setOnClickListener {
+                    multiChoicesInputs.remove(it.tag as String)
+                    viewModel.setCriteriaMultiChoicesInputs(multiChoicesInputs)
+                }
+                binding.choicesEditInputButton.tag = item.key
+                binding.choicesEditInputButton.setOnClickListener {
+                    val action =
+                        SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaMultiChoiceFragment(
+                            binding.choicesEditInputButton.tag as String
+                        )
+                    view?.findNavController()?.navigate(action)
+                }
+
+                binding.multiChoiceContainer.isVisible = true
             }
+
+
+        }
+    }
+
+    private fun addChipsToChipGroupe(stringArray: ArrayList<String>) {
+        for (choice in stringArray) {
+            val chip: Chip =
+                layoutInflater.inflate(
+                    R.layout.item_criteria_chip,
+                    binding.multiChoiceChipGroup, false
+                ) as Chip
+            chip.text = choice
+            binding.multiChoiceChipGroup.addView(chip)
         }
     }
 
@@ -346,40 +348,39 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
      */
     fun setUpMultipleInputsLayout() {
         viewModel.criteriaMultipleInputs.value?.let {
-            if (it.size > 0) {
-                criteriaMultipleInputs = it
-                for (item in criteriaMultipleInputs) {
-                    val input: ConstraintLayout =
-                        layoutInflater.inflate(
-                            R.layout.item_criteria_setup_input,
-                            binding.criteriaMultipleInputsContainer, false
-                        ) as ConstraintLayout
-                    input.id = View.generateViewId()
-                    val questionTextView = input.findViewById<TextView>(R.id.question_textview)
-                    questionTextView.text = item.key
-                    for (i in 1..item.value) {
-                        addTextInput(input.findViewById<LinearLayout>(R.id.item_input_container))
-                    }
-                    val deleteButton =
-                        input.findViewById<ImageButton>(R.id.item_delete_input_button)
-                    deleteButton.tag = item.key
-                    deleteButton.setOnClickListener {
-                        criteriaMultipleInputs.remove(it.tag)
-                        viewModel.setCriteriaMultipleInputs(criteriaMultipleInputs)
-                    }
-                    val editButton = input.findViewById<ImageButton>(R.id.item_edit_input_button)
-                    editButton.tag = item.key
-                    editButton.setOnClickListener {
-                        val action =
-                            SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaMultipleInputsFragment(
-                                editButton.tag as String
-                            )
-                        view?.findNavController()?.navigate(action)
-                    }
-                    binding.criteriaMultipleInputsContainer.addView(input)
+            criteriaMultipleInputs = it
+            for (item in criteriaMultipleInputs) {
+                val input: ConstraintLayout =
+                    layoutInflater.inflate(
+                        R.layout.item_criteria_setup_input,
+                        binding.criteriaMultipleInputsContainer, false
+                    ) as ConstraintLayout
+                input.id = View.generateViewId()
+                val questionTextView = input.findViewById<TextView>(R.id.question_textview)
+                questionTextView.text = item.key
+                for (i in 1..item.value) {
+                    addTextInput(input.findViewById<LinearLayout>(R.id.item_input_container))
                 }
-                binding.criteriaMultipleInputsContainer.isVisible = true
+                val deleteButton =
+                    input.findViewById<ImageButton>(R.id.item_delete_input_button)
+                deleteButton.tag = item.key
+                deleteButton.setOnClickListener {
+                    criteriaMultipleInputs.remove(it.tag)
+                    viewModel.setCriteriaMultipleInputs(criteriaMultipleInputs)
+                }
+                val editButton = input.findViewById<ImageButton>(R.id.item_edit_input_button)
+                editButton.tag = item.key
+                editButton.setOnClickListener {
+                    val action =
+                        SetUpCriteriaFragmentDirections.actionSetUpCriteriaFragmentToCriteriaMultipleInputsFragment(
+                            editButton.tag as String
+                        )
+                    view?.findNavController()?.navigate(action)
+                }
+                binding.criteriaMultipleInputsContainer.addView(input)
             }
+            binding.criteriaMultipleInputsContainer.isVisible = true
+
         }
     }
 
@@ -398,51 +399,6 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
         textInput.id = View.generateViewId()
 
         mView.addView(textInput)
-    }
-
-    /**
-     * Clear single inputs layout
-     *
-     */
-    fun clearSingleInputsLayout() {
-        binding.criteriaSingleInputsContainer.removeAllViews()
-        binding.criteriaSingleInputsContainer.isVisible = false
-    }
-
-    /**
-     * Clear yes no inputs layout
-     *
-     */
-    fun clearYesNoInputsLayout() {
-        binding.criteriaYesNoContainer.removeAllViews()
-        binding.criteriaYesNoContainer.isVisible = false
-    }
-
-    /**
-     * Clear multi choice inputs layout
-     *
-     */
-    fun clearMultiChoiceInputsLayout() {
-        binding.multiChoiceChipGroup.removeAllViews()
-        binding.multiChoiceContainer.isVisible = false
-    }
-
-    /**
-     * Clear file inputs layout
-     *
-     */
-    fun clearFileInputsLayout() {
-        binding.criteriaFileInputsContainer.removeAllViews()
-        binding.fileInputContainer.isVisible = false
-    }
-
-    /**
-     * Clear multiple inputs layout
-     *
-     */
-    fun clearMultipleInputsLayout() {
-        binding.criteriaMultipleInputsContainer.removeAllViews()
-        binding.criteriaMultipleInputsContainer.isVisible = false
     }
 
 

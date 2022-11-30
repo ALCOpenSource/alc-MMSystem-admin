@@ -33,6 +33,11 @@ class ReportsViewModel : ViewModel() {
     companion object {
         private lateinit var instance: ReportsViewModel
 
+        /**
+         * Get instance
+         *
+         * @return instance ReportsViewModel
+         */
         fun getInstance(): ReportsViewModel {
             instance = if (::instance.isInitialized) instance else ReportsViewModel()
             return instance
