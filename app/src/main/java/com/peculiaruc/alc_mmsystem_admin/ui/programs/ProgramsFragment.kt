@@ -144,6 +144,7 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
         binding.programsListView.adapter = programsAdapter
 
     }
+    
 
     /**
      * On program item click
@@ -151,6 +152,7 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
      * @param item
      */
     override fun onItemClick(item: ProgramAdmin) {
+
         val action =
             ProgramsFragmentDirections.actionProgramsFragmentToProgramDetailsFragment(item.id)
         view?.findNavController()?.navigate(action)

@@ -1,12 +1,13 @@
 package com.peculiaruc.alc_mmsystem_admin.ui.programs.reports
 
-import android.app.Dialog
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import android.view.*
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.View
 import android.widget.*
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -82,7 +83,7 @@ class ReportsFragment : BaseFragment<FragmentReportsBinding>(),
      * @param item
      */
     override fun onDownloadClick(item: Report) {
-        showDownloadDialog()
+        openDownloadDialog()
     }
 
     /**
@@ -91,8 +92,7 @@ class ReportsFragment : BaseFragment<FragmentReportsBinding>(),
      * @param item
      */
     override fun onShareClick(item: Report) {
-        //showShareDialog()
-        openShareBottomSheet()
+        openShareDialog()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -140,56 +140,31 @@ class ReportsFragment : BaseFragment<FragmentReportsBinding>(),
         viewModel.filteredReports.value = filteredlist
     }
 
-
-    private fun showDownloadDialog() {
-        activity?.let {
-            val dialog = Dialog(it)
-            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-            dialog.setCancelable(false)
-            dialog.setContentView(R.layout.dialog_success)
-            /*dialog.window?.setLayout(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-            )*/
-            val window = dialog.window
-            val layoutParams = window?.attributes
-            layoutParams?.width = ViewGroup.LayoutParams.MATCH_PARENT
-            layoutParams?.height = ViewGroup.LayoutParams.WRAP_CONTENT
-            layoutParams?.gravity = Gravity.BOTTOM
-            window?.attributes = layoutParams
-            val doneButton = dialog.findViewById(R.id.downloadDoneButton) as Button
-            val successTitle = dialog.findViewById<TextView>(R.id.success_dialog_title)
-            successTitle.text = getString(R.string.report_download_dialog_success_message)
-            val downloadImage = dialog.findViewById(R.id.success_image) as ImageView
-            downloadImage.setImageResource(R.drawable.download_dialog_backgroun_2)
-            doneButton.setOnClickListener { dialog.dismiss() }
-            dialog.show()
-        }
+    private fun openDownloadDialog() {
+        val dialog = BottomSheetDialog(requireContext())
+        dialog.setContentView(R.layout.dialog_success)
+        val doneButton = dialog.findViewById<Button>(R.id.downloadDoneButton)
+        val successTitle = dialog.findViewById<TextView>(R.id.success_dialog_title)
+        successTitle?.text = getString(R.string.report_download_dialog_success_message)
+        val downloadImage = dialog.findViewById<ImageView>(R.id.success_image)
+        downloadImage?.setImageResource(R.drawable.download_dialog_backgroun_2)
+        doneButton?.setOnClickListener { dialog.dismiss() }
+        dialog.show()
     }
 
-
-    private fun showShareDialog() {
-        activity?.let {
-
-            val dialog = Dialog(it)
-            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-            dialog.setCancelable(false)
-            dialog.setContentView(R.layout.dialog_share)
-            dialog.window?.setLayout(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-            )
-            val cancelButton = dialog.findViewById(R.id.cancelButton) as Button
-            val emailButton = dialog.findViewById(R.id.shareEmailButton) as Button
-            emailButton.setOnClickListener {
-                sendEmail()
-                dialog.dismiss()
-            }
-            cancelButton.setOnClickListener { dialog.dismiss() }
-            dialog.show()
+    private fun openShareDialog() {
+        val dialog = BottomSheetDialog(requireContext())
+        dialog.setContentView(R.layout.dialog_share)
+        val cancelButton = dialog.findViewById<Button>(R.id.cancelButton)
+        val emailButton = dialog.findViewById<Button>(R.id.shareEmailButton)
+        emailButton?.setOnClickListener {
+            sendEmail()
+            dialog.dismiss()
         }
+        cancelButton?.setOnClickListener { dialog.dismiss() }
+        dialog.setCancelable(true)
+        dialog.show()
     }
-
 
     private fun sendEmail() {
         val intent = Intent(Intent.ACTION_SENDTO).apply {
@@ -201,27 +176,6 @@ class ReportsFragment : BaseFragment<FragmentReportsBinding>(),
         } catch (e: ActivityNotFoundException) {
             Log.e(TAG, e.toString())
         }
-    }
-
-
-    private fun openShareBottomSheet() {
-        val dialog = BottomSheetDialog(requireContext())
-        dialog.setContentView(R.layout.dialog_share)
-        //val dialogView =
-        //  layoutInflater.inflate(R.layout.dialog_share, null)
-        val cancelButton = dialog.findViewById<Button>(R.id.cancelButton)
-        val emailButton = dialog.findViewById<Button>(R.id.shareEmailButton)
-        emailButton?.setOnClickListener {
-            sendEmail()
-            dialog.dismiss()
-        }
-        cancelButton?.setOnClickListener { dialog.dismiss() }
-
-        dialog.setCancelable(true)
-
-        //dialog.setContentView(dialogView)
-
-        dialog.show()
     }
 
 }

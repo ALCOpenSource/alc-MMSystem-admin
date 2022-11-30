@@ -1,17 +1,16 @@
 package com.peculiaruc.alc_mmsystem_admin.ui.programs
 
-import android.app.Dialog
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.UnderlineSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.findNavController
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentProgramNewBinding
 import com.peculiaruc.alc_mmsystem_admin.domain.models.ProgramAdmin
@@ -61,7 +60,7 @@ class NewProgramFragment : BaseFragment<FragmentProgramNewBinding>() {
             view.findNavController().navigate(action)
         }
         binding.createProgramButton.setOnClickListener {
-            showSuccessfulCreateDialog()
+            openCreateProgramSuccessfullDialog()
         }
     }
 
@@ -77,29 +76,16 @@ class NewProgramFragment : BaseFragment<FragmentProgramNewBinding>() {
         textview.text = mSpannableString
     }
 
-    /**
-     * Show create successful dialog
-     *
-     */
-    fun showSuccessfulCreateDialog() {
-        activity?.let {
-            val dialog = Dialog(it)
-            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-            dialog.setCancelable(false)
-            dialog.setContentView(R.layout.dialog_success)
-
-            dialog.window?.setLayout(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-            )
-            val successTitle = dialog.findViewById<TextView>(R.id.success_dialog_title)
-            successTitle.text = getString(R.string.create_program_dialog_success_message)
-            val downloadImage = dialog.findViewById(R.id.success_image) as ImageView
-            downloadImage.setImageResource(R.drawable.download_dialog_backgroun_2)
-            val doneButton = dialog.findViewById(R.id.downloadDoneButton) as Button
-            doneButton.setOnClickListener { dialog.dismiss() }
-            dialog.show()
-        }
+    private fun openCreateProgramSuccessfullDialog() {
+        val dialog = BottomSheetDialog(requireContext())
+        dialog.setContentView(R.layout.dialog_success)
+        val successTitle = dialog.findViewById<TextView>(R.id.success_dialog_title)
+        successTitle?.text = getString(R.string.create_program_dialog_success_message)
+        val downloadImage = dialog.findViewById<ImageView>(R.id.success_image)
+        downloadImage?.setImageResource(R.drawable.download_dialog_backgroun_2)
+        val doneButton = dialog.findViewById<Button>(R.id.downloadDoneButton)
+        doneButton?.setOnClickListener { dialog.dismiss() }
+        dialog.show()
     }
 
     /**

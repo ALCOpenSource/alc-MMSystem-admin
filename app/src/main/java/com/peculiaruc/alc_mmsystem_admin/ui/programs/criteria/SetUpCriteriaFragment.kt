@@ -1,10 +1,8 @@
 package com.peculiaruc.alc_mmsystem_admin.ui.programs.criteria
 
-import android.app.Dialog
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
 import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
@@ -73,36 +71,27 @@ class SetUpCriteriaFragment : BaseFragment<FragmentCriteriaSetupBinding>() {
             openSetCriteriaBottomSheet()
         }
         binding.createCriteriaButton.setOnClickListener {
-            showSuccessfulCreateDialog()
+            openCreateCriteriaSuccessfullDialog()
         }
     }
 
-    private fun showSuccessfulCreateDialog() {
-        activity?.let {
-            val dialog = Dialog(it)
-            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-            dialog.setCancelable(false)
-            dialog.setContentView(R.layout.dialog_success)
-            dialog.window?.setLayout(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-            )
-            val successTitle = dialog.findViewById<TextView>(R.id.success_dialog_title)
-            successTitle.text = getString(R.string.criteria_setup_create_successful)
-            val downloadImage = dialog.findViewById(R.id.success_image) as ImageView
-            downloadImage.setImageResource(R.drawable.download_dialog_backgroun_2)
-            val doneButton = dialog.findViewById(R.id.downloadDoneButton) as Button
-            doneButton.setOnClickListener { dialog.dismiss() }
-            dialog.show()
-        }
+    private fun openCreateCriteriaSuccessfullDialog() {
+        val dialog = BottomSheetDialog(requireContext())
+        dialog.setContentView(R.layout.dialog_success)
+        val successTitle = dialog.findViewById<TextView>(R.id.success_dialog_title)
+        successTitle?.text = getString(R.string.criteria_setup_create_successful)
+        val downloadImage = dialog.findViewById<ImageView>(R.id.success_image)
+        downloadImage?.setImageResource(R.drawable.download_dialog_backgroun_2)
+        val doneButton = dialog.findViewById<Button>(R.id.downloadDoneButton)
+        doneButton?.setOnClickListener { dialog.dismiss() }
+        dialog.show()
     }
-
 
     private fun openSetCriteriaBottomSheet() {
         val dialog = BottomSheetDialog(requireContext())
         //val dialogView =
         //  layoutInflater.inflate(R.layout.fragment_criteria_input_selection_dialog, null)
-        dialog.setContentView(R.layout.fragment_criteria_input_selection_dialog)
+        dialog.setContentView(R.layout.dialog_criteria_input_selection)
         val btnCancel = dialog.findViewById<Button>(R.id.criteriaSelectionCancelButton)
         val btnSingleInput = dialog.findViewById<Button>(R.id.singleInputButton)
         val btnYesNoInput = dialog.findViewById<Button>(R.id.inputButtonYesNo)
