@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentChatBinding
@@ -31,17 +32,10 @@ class ChatFragment : Fragment() {
 
         val layoutManager = LinearLayoutManager(requireContext())
         layoutManager.orientation = LinearLayoutManager.VERTICAL
-
+        val toolbar = binding.toolbarChat
         val navHostFragment = parentFragment as NavHostFragment
-        navHostFragment?.let {
-            navHostFragment ->
-            navHostFragment.parentFragment?.let {
-                parentFragment ->
-                var toolbar = parentFragment.view?.findViewById<Toolbar>(R.id.toolbar_main)
-                toolbar?.title = "Kenny Dabiri"
-            }
-        }
-
+        toolbar.setupWithNavController(navHostFragment.navController)
+        toolbar.title =""
         binding.apply {
             recyclerViewChat.layoutManager = layoutManager
 

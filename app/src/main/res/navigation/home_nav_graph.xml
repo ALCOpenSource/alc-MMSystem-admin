@@ -5,6 +5,7 @@
     android:id="@+id/home_nav_graph"
     app:startDestination="@id/helloFragment">
 
+
     <fragment
         android:id="@+id/messageFragment"
         android:name="com.peculiaruc.alc_mmsystem_admin.ui.fragments.MessageFragment"
@@ -37,6 +38,6 @@
     <fragment
         android:id="@+id/chatFragment"
         android:name="com.peculiaruc.alc_mmsystem_admin.ui.fragments.ChatFragment"
-        android:label="Kenny Dabiri"
+        android:label="fragment_chat"
         tools:layout="@layout/fragment_chat" />
 </navigation>

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
@@ -42,8 +43,13 @@ class HomeFragment : Fragment() {
                     _, destination, _ ->
                 toolbarMain.title = destination.label
 
-                if (destination.label == "Messages"){
+                if (destination.id == R.id.chatFragment){
+                    bottomNavigation.visibility = View.GONE
+                    toolbarMain.visibility = View.GONE
 
+                }else{
+                    bottomNavigation.visibility = View.VISIBLE
+                    toolbarMain.visibility = View.VISIBLE
                 }
             }
         }

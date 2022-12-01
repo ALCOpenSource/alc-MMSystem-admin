@@ -6,19 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.ChatFragment">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_chat"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
 
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/user_profile_image"
+            android:layout_gravity="start"
+            android:contentDescription="profile image" />
+        <TextView
+            android:id="@+id/chat_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kenny Dabiri"
+            android:textSize="18sp"
+            android:fontFamily="@font/mukta_semi_bold"
+            android:textColor="@color/black2"
+            android:layout_marginStart="32dp"
+            android:layout_gravity="center_vertical"/>
+    </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_chat"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/editText_Chat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/editText_Chat"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_chat"
         tools:listitem="@layout/item_chat_me" />
 
 
@@ -53,7 +77,7 @@
             android:layout_height="wrap_content"
             android:inputType="text"
             app:hintAnimationEnabled="false"
-            android:hint="Type message..."
+
             android:textColor="@color/black2" />
     </com.google.android.material.textfield.TextInputLayout>
 
