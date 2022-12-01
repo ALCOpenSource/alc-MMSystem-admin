@@ -1,3 +1,43 @@
 <resources>
     <string name="app_name">alc-MMSystem-admin</string>
+    <string name="mentor_mana">Mentor Management System</string>
+    <string name="welcome">Welcome</string>
+    <string name="sign_in_to_continue">Sign in to continue</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="forgot_password_title">Forgot Password</string>
+    <string name="forgot_password_message">An email has been sent to your registered email. Follow the link to reset your password</string>
+    <string name="done">Done</string>
+    <string name="login">Login</string>
+    <string name="set_new_password">Set New Password</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="your_new_password_must_differ_from_previously_used_password">*Your new password must differ from previously used password.</string>
+    <string name="password_reset_successful">Password Reset Successful</string>
+    <string name="program_asst">PROGRAM ASST.</string>
+    <string name="mentor_gad">MENTOR-GAD</string>
+    <string name="share_title">share</string>
+    <string name="search_title">search</string>
+    <string name="add_mentor">Add Mentor</string>
+    <string name="add_mentors">Add Mentors</string>
+    <string name="send">Send</string>
+    <string name="all_mentors">All Mentors</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="this_is_a_tab_layout">This is a tab layout</string>
+    <string name="chat_with_mentor">Chat With Mentor</string>
+    <string name="technical_proficiency">Technical Proficiency</string>
+    <string name="bio">Bio</string>
+    <string name="been_a_mentor_before">Been a Mentor Before?</string>
+    <string name="yes">Yes</string>
+    <string name="delete_mentor">Delete Mentor</string>
+    <string name="peculiar_umeh">\@peculiar.umeh</string>
+
+    <string-array name="mentor_dropdown_text">
+        <item>All Mentors</item>
+        <item>Assigned</item>
+        <item>Unassigned</item>
+    </string-array>
 </resources>

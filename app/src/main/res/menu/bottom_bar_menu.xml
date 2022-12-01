@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/helloFragment"
+        android:icon="@drawable/home_house"
+        android:title="@string/home"/>
+    <item
+        android:id="@+id/searchFragment"
+        android:icon="@drawable/search"
+        android:title="@string/search"/>
+    <item
+        android:id="@+id/programFragment"
+        android:icon="@drawable/programs"
+        android:title="Programs"/>
+    <item
+        android:id="@+id/messageFragment"
+        android:icon="@drawable/messages"
+        android:title="Messages"/>
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/account_user_person"
+        android:title="Profile"/>
+</menu>
