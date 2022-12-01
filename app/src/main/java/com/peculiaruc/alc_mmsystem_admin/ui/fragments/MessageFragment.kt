@@ -12,7 +12,10 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentMessageBinding
 import com.peculiaruc.alc_mmsystem_admin.ui.adapters.MessageViewPagerAdapter
-
+/**
+ * fragment for message screen tab
+ * hosted in the hello fragment
+ */
 
 class MessageFragment : Fragment() {
 

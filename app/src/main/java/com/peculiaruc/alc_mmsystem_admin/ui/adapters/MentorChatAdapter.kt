@@ -26,7 +26,7 @@ class MentorChatAdapter(private val context: Context, private val chatList: List
     class FromViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         /**
-         * set the data from the server in the appropriate view
+         * set the data from the server in the from another user view
          */
         fun setData(chat: Chat?){
             TODO("Bind views here")
@@ -40,6 +40,9 @@ class MentorChatAdapter(private val context: Context, private val chatList: List
 
     class ToViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
+        /**
+         * set the data from the server in the to user view
+         */
         fun setData(chat: Chat?){
             TODO("Bind views here")
         }
