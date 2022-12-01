@@ -13,15 +13,22 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.peculiaruc.alc_mmsystem_admin.R
+import com.peculiaruc.alc_mmsystem_admin.database.Chat
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentChatListBinding
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentMentorBinding
+import com.peculiaruc.alc_mmsystem_admin.ui.adapters.MentorChatAdapter
 import com.peculiaruc.alc_mmsystem_admin.ui.adapters.MentorListAdapter
+
+/**
+ * Fragment for mentor chat list
+ */
 
 class ChatListFragment : Fragment() {
 
 
     private lateinit var binding: FragmentChatListBinding
     lateinit var recyclerView: RecyclerView
+    private var chatList: List<Chat>? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,7 +47,6 @@ class ChatListFragment : Fragment() {
 
 
             fabAddChat.setOnClickListener {
-
                 findNavController().navigate(MessageFragmentDirections.actionMessageFragmentToChatFragment())
             }
         }
@@ -50,7 +56,7 @@ class ChatListFragment : Fragment() {
         recyclerView = binding.recyclerViewMentorChat
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        val mentorListAdapter = MentorListAdapter()
+        val mentorListAdapter = MentorChatAdapter(requireContext(), null)
 
         recyclerView.adapter = mentorListAdapter
     }

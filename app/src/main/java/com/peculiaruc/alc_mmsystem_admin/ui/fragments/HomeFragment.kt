@@ -13,6 +13,9 @@ import androidx.navigation.ui.setupWithNavController
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentHomeBinding
 
+/**
+ * Fragment for home page
+ */
 
 class HomeFragment : Fragment() {
 

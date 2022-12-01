@@ -2,6 +2,11 @@ package com.peculiaruc.alc_mmsystem_admin.database
 
 import java.util.Date
 
+/**
+defines the data class of Chat input from
+user input
+ */
+
 data class Chat(
     var id: String,
     var toId: String,

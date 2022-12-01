@@ -7,10 +7,14 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 
 import com.peculiaruc.alc_mmsystem_admin.databinding.ItemMentorBinding
-import com.peculiaruc.alc_mmsystem_admin.ui.database.Mentor
+import com.peculiaruc.alc_mmsystem_admin.database.Mentor
 
+/**
+ * This is the adapter for the mentors
+ * in the mentor list screen
+ */
 
-class MentorListAdapter(): ListAdapter<Mentor, MentorListAdapter.MentorListViewHolder>(DiffCallback) {
+class MentorListAdapter(private val mentorClickListener: (Mentor)-> Unit): ListAdapter<Mentor, MentorListAdapter.MentorListViewHolder>(DiffCallback) {
     companion object  {
         private val DiffCallback = object : DiffUtil.ItemCallback<Mentor>(){
             override fun areContentsTheSame(oldItem: Mentor, newItem: Mentor): Boolean {
@@ -23,8 +27,14 @@ class MentorListAdapter(): ListAdapter<Mentor, MentorListAdapter.MentorListViewH
         }
     }
 
+    /**
+     * For handling the view of mentor cards
+     */
     class MentorListViewHolder(private var binding: ItemMentorBinding): RecyclerView.ViewHolder(binding.root) {
 
+        /**
+         * Bind the mentor object to single view items
+         */
         fun bind(mentor: Mentor){
             binding.apply {
                 textViewMentorName.text = mentor.name

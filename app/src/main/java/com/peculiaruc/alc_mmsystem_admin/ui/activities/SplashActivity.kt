@@ -7,6 +7,10 @@ import android.os.Handler
 import android.os.Looper
 import com.peculiaruc.alc_mmsystem_admin.R
 
+/**
+ * this is the screen that hosts the splash screen interaction
+ */
+
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -12,6 +12,10 @@ import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentMentorBinding
 import com.peculiaruc.alc_mmsystem_admin.ui.adapters.MentorListAdapter
 
+/**
+ * Fragment for mentor chat list
+ */
+
 
 class MentorFragment : Fragment() {
 
@@ -56,7 +60,9 @@ class MentorFragment : Fragment() {
         recyclerView = binding.recyclerViewMentor
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        val mentorListAdapter = MentorListAdapter()
+        val mentorListAdapter = MentorListAdapter{
+            TODO("Implement click listener")
+        }
 
         recyclerView.adapter = mentorListAdapter
     }

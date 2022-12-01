@@ -13,15 +13,17 @@ import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentChatBinding
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentLoginBinding
 
+/**
+ * fragment for the chatting with unique mentor
+ */
+
 class ChatFragment : Fragment() {
     private lateinit var binding: FragmentChatBinding
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentChatBinding.inflate(layoutInflater)
         return binding.root
     }

@@ -1,22 +1,18 @@
 package com.peculiaruc.alc_mmsystem_admin.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.GONE
 import android.view.ViewGroup
-import androidx.appcompat.widget.Toolbar
-import androidx.navigation.fragment.NavHostFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.peculiaruc.alc_mmsystem_admin.R
+import androidx.fragment.app.Fragment
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentBroadcastBinding
 
-
+/**
+ * fragment for the broadcast page in viewpager on the message fragment
+ */
 class BroadcastFragment : Fragment() {
 
 private lateinit var binding: FragmentBroadcastBinding
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

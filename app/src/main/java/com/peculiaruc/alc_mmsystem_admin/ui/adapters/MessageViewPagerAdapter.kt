@@ -5,12 +5,14 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.peculiaruc.alc_mmsystem_admin.ui.fragments.BroadcastFragment
-import com.peculiaruc.alc_mmsystem_admin.ui.fragments.ChatFragment
 import com.peculiaruc.alc_mmsystem_admin.ui.fragments.ChatListFragment
 
-class ViewPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle): FragmentStateAdapter(fragmentManager, lifecycle) {
+/**
+ * Viewpager adapter for the tab layout on the messsage fragment
+ * hosted in the home screen
+ */
 
-
+class MessageViewPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle): FragmentStateAdapter(fragmentManager, lifecycle) {
 
     override fun getItemCount(): Int {
      return 2

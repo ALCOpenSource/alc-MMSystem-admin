@@ -9,6 +9,9 @@ import androidx.navigation.fragment.findNavController
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentNewPasswordBinding
 
+/**
+ * Fragment for new password input screen
+ */
 
 class NewPasswordFragment : Fragment() {
 
@@ -17,7 +20,7 @@ class NewPasswordFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         super.onCreateView(inflater, container, savedInstanceState)
 
         binding = FragmentNewPasswordBinding.inflate(layoutInflater)

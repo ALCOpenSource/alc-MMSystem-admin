@@ -6,12 +6,16 @@ import android.text.style.UnderlineSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 
 
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentLoginBinding
+
+/**
+ * Fragment for login page
+ */
+
 
 class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding

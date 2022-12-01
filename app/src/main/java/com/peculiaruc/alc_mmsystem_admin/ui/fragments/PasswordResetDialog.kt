@@ -7,6 +7,11 @@ import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.peculiaruc.alc_mmsystem_admin.databinding.DialogPasswordResetBinding
 
+/**
+ * Fragment for password reset dialog
+ */
+
+
 class PasswordResetDialog: BottomSheetDialogFragment() {
 
     private lateinit var binding: DialogPasswordResetBinding

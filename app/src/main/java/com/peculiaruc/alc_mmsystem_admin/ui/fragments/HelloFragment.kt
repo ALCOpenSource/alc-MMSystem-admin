@@ -7,6 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.peculiaruc.alc_mmsystem_admin.R
 
+/**
+ * Parent navigation Fragment for home screens
+ */
+
 
 class HelloFragment : Fragment() {
 

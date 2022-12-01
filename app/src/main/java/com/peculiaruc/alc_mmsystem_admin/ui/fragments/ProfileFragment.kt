@@ -7,6 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.peculiaruc.alc_mmsystem_admin.R
 
+/**
+ * Fragment for user profile fragment
+ */
 
 
 class ProfileFragment : Fragment() {

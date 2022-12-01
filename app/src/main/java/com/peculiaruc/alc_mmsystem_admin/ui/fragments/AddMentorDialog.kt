@@ -9,6 +9,10 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.peculiaruc.alc_mmsystem_admin.databinding.DialogAddMentorsBinding
 import com.peculiaruc.alc_mmsystem_admin.databinding.DialogPasswordResetBinding
 
+/**
+ * fragment for the add mentor dialog
+ */
+
 class AddMentorDialog:BottomSheetDialogFragment() {
     private lateinit var binding: DialogAddMentorsBinding
 

@@ -28,6 +28,12 @@
     <string name="search">Search</string>
     <string name="this_is_a_tab_layout">This is a tab layout</string>
     <string name="chat_with_mentor">Chat With Mentor</string>
+    <string name="technical_proficiency">Technical Proficiency</string>
+    <string name="bio">Bio</string>
+    <string name="been_a_mentor_before">Been a Mentor Before?</string>
+    <string name="yes">Yes</string>
+    <string name="delete_mentor">Delete Mentor</string>
+    <string name="peculiar_umeh">\@peculiar.umeh</string>
 
     <string-array name="mentor_dropdown_text">
         <item>All Mentors</item>

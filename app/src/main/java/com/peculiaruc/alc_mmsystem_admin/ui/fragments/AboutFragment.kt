@@ -8,25 +8,19 @@ import android.view.ViewGroup
 import com.peculiaruc.alc_mmsystem_admin.R
 
 /**
- * Fragment for program screen to
- * be implemented by other team
+ * fragment for the bio of mentor page in mentor profile
  */
 
+class AboutFragment : Fragment() {
 
-class ProgramFragment : Fragment() {
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_program, container, false)
+        return inflater.inflate(R.layout.fragment_about, container, false)
     }
 
 
