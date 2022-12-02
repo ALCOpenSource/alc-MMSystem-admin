@@ -15,6 +15,14 @@
         android:name="com.peculiaruc.alc_mmsystem_admin.ui.search.SearchFragment"
         tools:layout="@layout/fragment_search" />
 
+<!--    <fragment-->
+<!--        android:id="@+id/programsFragment"-->
+<!--        android:name="com.peculiaruc.alc_mmsystem_admin.ui.programs.ProgramsFragment"-->
+<!--        tools:layout="@layout/fragment_programs" />-->
+<!--    &lt;!&ndash;    <fragment&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:id="@+id/messagesFragment"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:name="com.peculiaruc.alc_mmsystem_admin.ui.messages.MessagesFragment"&ndash;&gt;-->
+<!--    &lt;!&ndash;        tools:layout="@layout/fragment_messages" />&ndash;&gt;-->
 
     <fragment
         android:id="@+id/messagesFragment"
@@ -52,6 +60,25 @@
             android:name="certificateTitle"
             app:argType="string" />
     </fragment>
+
+    <fragment
+        android:id="@+id/chatListFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.chat.ChatListFragment"
+        tools:layout="@layout/fragment_chat_list" />
+    <fragment
+        android:id="@+id/messageFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.chat.MessageFragment"
+        tools:layout="@layout/fragment_message">
+        <action
+            android:id="@+id/action_messageFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.chat.ChatFragment"
+        tools:layout="@layout/fragment_chat" />
+
 
     <fragment
         android:id="@+id/programsFragment"

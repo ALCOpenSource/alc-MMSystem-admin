@@ -19,7 +19,7 @@
         android:title="@string/programs_title" />
 
     <item
-        android:id="@+id/messagesFragment"
+        android:id="@+id/messageFragment"
         android:enabled="true"
         android:icon="@drawable/messages_icon"
         android:title="@string/messages_title" />

@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Certificate
-import com.peculiaruc.alc_mmsystem_admin.domain.models.Mentor
+import com.peculiaruc.alc_mmsystem_admin.domain.models.MentorModel
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Program
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Task
 import com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.adapters.CertificateInteractionListener
@@ -29,7 +29,7 @@ class MentorManagerViewModel : ViewModel(), CertificateInteractionListener,
 
     }
 
-    override fun onItemMentorSelected(item: Mentor) {
+    override fun onItemMentorSelected(item: MentorModel) {
 
     }
 

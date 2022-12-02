@@ -18,6 +18,20 @@
 
     </style>
 
+    <style name="ThemeAuthentication" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/mms_pry_2</item>
+        <item name="colorPrimaryVariant">@color/mms_pry_1</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/mms_black_2</item>
+        <item name="colorSecondaryVariant">@color/mms_black_5</item>
+        <item name="colorOnSecondary">@color/mms_black_1</item>
+        <!-- Status bar color. -->
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:statusBarColor">@color/white</item>
+    </style>
+
     <style name="AppActionBar" parent="@style/ThemeOverlay.MaterialComponents.ActionBar">
         <item name="android:background">@color/white</item>
         <item name="android:textColorPrimary">@color/mms_black_2</item>
@@ -88,6 +102,15 @@
         <item name="android:textColor">@color/chip_text_selector</item>
         <item name="chipCornerRadius">5dp</item>
     </style>
+
+    <style name="Theme.AlcMMSystemadmin.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.AlcMMSystemadmin.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.AlcMMSystemadmin.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <!-- ************** admin programs *********** -->
     <style name="largeMuktaExtraBold">
