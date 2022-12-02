@@ -8,7 +8,14 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.peculiaruc.alc_mmsystem_admin.ui.home.HomeFragment"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_mentorMangerFragment"
+            app:destination="@id/mentorMangerFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/searchFragment"
@@ -41,15 +48,34 @@
     <fragment
         android:id="@+id/editAdminProfileFragment"
         android:name="com.peculiaruc.alc_mmsystem_admin.ui.adminProfile.editAdminProfile.EditAdminProfileFragment"
-        tools:layout="@layout/fragment_edit_admin_profile" />
+        tools:layout="@layout/fragment_edit_admin_profile">
+        <action
+            android:id="@+id/action_editAdminProfileFragment_to_basicDialog"
+            app:destination="@id/basicDialog" />
+    </fragment>
 
     <fragment
-        android:id="@+id/mentorManagerFragment"
-        android:name="com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.MentorManagerFragment"
-        tools:layout="@layout/fragment_mentor_manager">
+        android:id="@+id/mentorManagerProfileFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.MentorManagerProfileFragment"
+        tools:layout="@layout/fragment_mentor_manager_profile">
         <action
-            android:id="@+id/action_mentorManagerFragment_to_certificateFragment"
+            android:id="@+id/action_mentorManagerProfileFragment_to_certificateFragment"
             app:destination="@id/certificateFragment" />
+        <action
+            android:id="@+id/action_mentorManagerProfileFragment_to_taskDetailsFragment"
+            app:destination="@id/taskDetailsFragment" />
+        <action
+            android:id="@+id/action_mentorManagerProfileFragment_to_reportDetailsFragment"
+            app:destination="@id/reportDetailsFragment" />
+        <action
+            android:id="@+id/action_mentorManagerProfileFragment_to_twoActionDialogFragment"
+            app:destination="@id/twoActionDialogFragment" />
+        <action
+            android:id="@+id/action_mentorManagerProfileFragment_to_basicDialog"
+            app:destination="@id/basicDialog" />
+        <action
+            android:id="@+id/action_mentorManagerProfileFragment_to_programDetailsFragment"
+            app:destination="@id/programDetailsFragment" />
     </fragment>
 
     <fragment
@@ -59,6 +85,42 @@
         <argument
             android:name="certificateTitle"
             app:argType="string" />
+        <action
+            android:id="@+id/action_certificateFragment_to_basicDialog"
+            app:destination="@id/basicDialog" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/taskDetailsFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.task.TaskDetailsFragment"
+        tools:layout="@layout/fragment_task_details">
+        <action
+            android:id="@+id/action_taskDetailsFragment_to_basicDialog"
+            app:destination="@id/basicDialog" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mentorMangerFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.mentorManger.MentorMangerFragment"
+        tools:layout="@layout/fragment_mentor_manger">
+        <action
+            android:id="@+id/action_mentorMangerFragment_to_mentorManagerProfileFragment"
+            app:destination="@id/mentorManagerProfileFragment" />
+        <action
+            android:id="@+id/action_mentorMangerFragment_to_mentorManagerDialog"
+            app:destination="@id/mentorManagerDialog" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/reportDetailsFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.report.ReportDetailsFragment"
+        tools:layout="@layout/fragment_report_details">
+        <action
+            android:id="@+id/action_reportDetailsFragment_to_basicDialog"
+            app:destination="@id/basicDialog" />
+        <action
+            android:id="@+id/action_reportDetailsFragment_to_twoActionDialogFragment"
+            app:destination="@id/twoActionDialogFragment" />
     </fragment>
 
     <fragment
@@ -107,6 +169,9 @@
         <action
             android:id="@+id/action_programDetailsFragment_to_NewProgramFragment"
             app:destination="@id/NewProgramFragment" />
+        <action
+            android:id="@+id/action_programDetailsFragment_to_basicDialog"
+            app:destination="@id/basicDialog" />
     </fragment>
 
     <fragment
@@ -218,4 +283,45 @@
             android:name="isEdit"
             app:argType="boolean" />
     </fragment>
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.notification.NotificationFragment"
+        tools:layout="@layout/fragment_notification" />
+
+    <dialog
+        android:id="@+id/basicDialog"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.dialogs.basicDialog.BasicDialog"
+        tools:layout="@layout/dialog_basic">
+        <argument
+            android:name="dialogType"
+            app:argType="com.peculiaruc.alc_mmsystem_admin.ui.dialogs.DialogTypes" />
+        <action
+            android:id="@+id/action_basicDialog_to_adminProfileFragment"
+            app:destination="@id/adminProfileFragment"
+            app:popUpTo="@id/adminProfileFragment"
+            app:popUpToInclusive="true" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/mentorManagerDialog"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.dialogs.mentorManager.MentorManagerDialog"
+        tools:layout="@layout/dialog_mentor_manager" />
+
+    <dialog
+        android:id="@+id/twoActionDialogFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.dialogs.twoActionDialog.TwoActionDialogFragment"
+        tools:layout="@layout/dialog_two_action">
+        <argument
+            android:name="dialogType"
+            app:argType="com.peculiaruc.alc_mmsystem_admin.ui.dialogs.DialogTypes" />
+
+    </dialog>
+
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.settings.SettingsFragment"
+        android:label="Settings" />
+
+
 </navigation>

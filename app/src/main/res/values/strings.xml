@@ -21,6 +21,9 @@
     <string name="hint_linkdein">LinkedIn</string>
     <string name="hint_twitter">Twitter</string>
     <string name="button_save">Save</string>
+    <string name="button_undo">Undo</string>
+    <string name="button_send">Send</string>
+    <string name="button_delete">Delete</string>
 
     <array name="countries">
         <item>Egypt</item>
@@ -35,6 +38,11 @@
     <string name="profile_title">Profile</string>
     <string name="edit_profile_title">Edit Profile</string>
 
+    <!--  ************ Mentor Manger  ****************** -->
+    <string name="mentor_manger_title">Mentor Managers</string>
+    <string name="messages">Messages</string>
+    <string name="all_mentor_manger">All mentor managers</string>
+    <string name="fab_add_mentor_manger">Add mentor manger</string>
     <!--  ************ Mentor Manger Profile ****************** -->
     <string name="menu_chat">Chat</string>
     <string name="about">About</string>
@@ -49,6 +57,7 @@
     <string name="task_assigned">Assigned</string>
     <string name="task_completed">Completed</string>
     <string name="all_programs">All Programs</string>
+    <string name="all_reports">All Reports</string>
 
     <!-- *************** Certificate ************    -->
     <string name="download_certificate">Download as</string>
@@ -228,4 +237,78 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
+
+    <!-- *************** Task ************    -->
+    <string name="task_title">Task</string>
+    <string name="assign_task_button">Assign to task</string>
+    <string name="unassigned_task_button">Unassigned to task</string>
+
+    <!-- *************** Report ************    -->
+    <string name="report_achievements_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. </string>
+    <string name="report_major_blocker_description">In iaculis arcu eros, eget tempus orci facilisis id.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. </string>
+    <string name="major_recommendation">Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.</string>
+
+    <string name="massage_mentor">Massage Mentor</string>
+
+    <!-- *************** Program ************    -->
+    <string name="button_assign_program">Assign to Program</string>
+    <string name="button_unAssign_program">Unassigned from program</string>
+
+    <!-- *************** Notification ************    -->
+    <string name="notification_title">Notifications</string>
+    <string name="all_notifications">All</string>
+    <string name="read_notification">Mark all as read</string>
+    <string name="notification_details">&lt;b> %1$s &lt;/b>  %2$s &lt;b> %3$s &lt;/b></string>
+
+    <!-- *************** Dialogs ************  -->
+    <string name="dialog_profile_title">Profile saved successfully</string>
+    <string name="dialog_assigned_program">Assigned to program!</string>
+    <string name="dialog_unassigned_program">Unassigned from program!</string>
+    <string name="dialog_assigned_mentor">Assigned to Mentor Manager!</string>
+    <string name="dialog_unassigned_mentor">Unassigned from Mentor Manager!</string>
+    <string name="dialog_assigned_task">Assigned to Task</string>
+    <string name="dialog_unassigned_task">Unassigned from Task</string>
+    <string name="dialog_download">Report Downloaded Successfully!</string>
+    <string name="dialog_mentor_manger_title">Add Mentor Manager</string>
+    <string name="dialog_hint_email">Email</string>
+    <string name="dialog_invitation">An invitation has been sent to \n $s \nsuccessfully</string>
+    <string name="dialog_certificate_downloaded">Certificate Downloaded \n Successfully!</string>
+    <string name="dialog_delete">Mentor Manager Deleted \nsuccessfully</string>
+    <string name="dialog_share_report">Share report via email</string>
+    <string name="previous_roles_held">Previous Roles Held:</string>
+    <string name="previous_programs">Previous Programs</string>
+    <string name="program_of_interest">Program of interest:</string>
+    <string name="years_of_technical_experience">Years of Technical Experience:</string>
+    <string name="documents">Documents</string>
+    <string name="delete_mentor_manager">Delete Mentor Manager</string>
+
+    <!--  ********** Setting *************  -->
+    <string name="setting_title">Settings</string>
+    <string name="profile_settings">Profile Settings</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="change_password">Change Password</string>
+    <string name="setting_notifications">Notifications</string>
+    <string name="settings_show_contact">Show contact info</string>
+    <string name="settings_preferences">Preferences</string>
+    <string name="settings_archive">Archive</string>
+    <string name="settings_clear">Clear App Data</string>
+    <string name="setting_about">About App</string>
+    <string name="settings_support">Support</string>
+    <string name="settings_faq">FAQ</string>
+    <string name="settings_exit">Logout</string>
+
+    <string name="filter">Filter</string>
+    <string name="admin">Admin</string>
+    <string name="notifications_button">Notifications Button</string>
+    <string name="mentor_managers">Mentor\nManagers</string>
+    <string name="view">View</string>
+    <string name="programs">Programs</string>
+    <string name="quick_actions">Quick Actions</string>
+    <string name="create_task">Create\nTask</string>
+    <string name="send_broadcast_message">Send Broadcast\nMessage</string>
+    <string name="add_new_mentor_manager">Add New Mentor\nManager</string>
+    <string name="add_new_mentor">Add New\nMentor</string>
+    <string name="requests">Requests</string>
+    <string name="mentor_application">Mentor Application</string>
+    <string name="mentor_manager_application">Mentor Manager Application</string>
 </resources>

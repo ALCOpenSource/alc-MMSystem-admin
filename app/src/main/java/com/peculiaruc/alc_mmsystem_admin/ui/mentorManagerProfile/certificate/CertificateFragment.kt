@@ -2,14 +2,18 @@ package com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.certificate
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentCertificateBinding
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
+import com.peculiaruc.alc_mmsystem_admin.ui.dialogs.DialogTypes
+import com.peculiaruc.alc_mmsystem_admin.utilities.event.EventObserve
 
-
+/**
+ * represent Certificate screen.
+ * */
 class CertificateFragment : BaseFragment<FragmentCertificateBinding>() {
 
     override val layoutIdFragment: Int = R.layout.fragment_certificate
@@ -19,15 +23,18 @@ class CertificateFragment : BaseFragment<FragmentCertificateBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setTitle(true, args.certificateTitle)
+        setBottomNavigationVisibility(false)
         onEvents()
     }
 
-    private fun onEvents(){
-        viewModel.downloadEvent.observe(viewLifecycleOwner){ downloadType ->
-            downloadType?.let {
-                Toast.makeText(requireContext(),"Should display dialog",Toast.LENGTH_LONG).show()
-            }
-        }
+    private fun onEvents() {
+        viewModel.downloadEvent.observe(viewLifecycleOwner, EventObserve {
+            findNavController().navigate(
+                CertificateFragmentDirections.actionCertificateFragmentToBasicDialog(
+                    DialogTypes.CERTIFICATE_DOWNLOAD
+                )
+            )
+        })
     }
 
 }

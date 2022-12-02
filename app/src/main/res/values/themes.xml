@@ -15,7 +15,18 @@
         <item name="android:statusBarColor">@color/white</item>
         <!-- Customize your theme here. -->
         <item name="actionBarTheme">@style/AppActionBar</item>
+        <item name="materialSwitchStyle">@style/settingSwitch</item>
 
+    </style>
+
+   <style name="settingSwitch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Switch</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Switch" parent="">
+        <item name="colorPrimary">@color/mms_pry_2</item>
+        <item name="colorOutline">@color/mms_black_7</item>
+        <item name="colorSurfaceVariant">@color/mms_black_10</item>
     </style>
 
     <style name="ThemeAuthentication" parent="Theme.MaterialComponents.DayNight.NoActionBar">
@@ -41,10 +52,14 @@
         <item name="windowActionBarOverlay">@null</item>
         <item name="android:actionButtonStyle">@style/menuIconStyle</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="android:paddingStart">0dip</item>
+        <item name="android:paddingEnd">0dip</item>
     </style>
 
     <style name="menuIconStyle" parent="@android:style/Widget.ActionButton">
-        <item name="android:drawablePadding">@dimen/spacing_large</item>
+        <item name="contentInsetLeft">0dp</item>
+        <item name="contentInsetEnd">0dp</item>
+        <item name="titleMarginStart">0dp</item>
     </style>
 
     <style name="regularB">
