@@ -24,5 +24,15 @@
 
     <!-- ************** radius *********** -->
     <dimen name="cardCornerRadius">5dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- ************** admin programs *********** -->
+    <dimen name="card_height">160dp</dimen>
+    <dimen name="card_width">130dp</dimen>
+    <dimen name="button_padding">10dp</dimen>
+    <dimen name="buttonCornerRadius">10dp</dimen>
+    <dimen name="smallButtonCornerRadius">5dp</dimen>
+    <dimen name="small_circle_image_width">60dp</dimen>
+    <dimen name="criteria_file_input_item_height">45dp</dimen>
+    <dimen name="chip_icon_size">10dp</dimen>
+    <dimen name="font_extra_small">10sp</dimen>
 </resources>

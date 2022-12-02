@@ -68,7 +68,117 @@
         <item>Admin</item>
     </string-array>
 
+    <!--  ************ Admin Programs ****************** -->
+    <string name="programs_chip_all">All</string>
+    <string name="programs_chip_active">Active</string>
+    <string name="programs_chip_completed">Completed</string>
+    <!--  ************ Admin new Program ****************** -->
+    <string name="program_new_title">Create New Program</string>
+    <string name="set_program_avatar">Set a program avatar</string>
+    <string name="select_file">Select file</string>
+    <string name="program_name">Program Name</string>
+    <string name="program_description">Program Description</string>
+    <string name="program_add_mentor_manager">Add Mentor Manager</string>
+    <string name="program_add_mentor">Add Mentor</string>
+    <string name="program_set_criteria">Set Criteria</string>
+    <string name="program_selected">Selected</string>
+    <string name="button_select">Select</string>
+    <string name="button_create_program">Create Program</string>
+    <!--  ************ Admin Program details ****************** -->
+    <string name="program_details_title">Google Africa Scholarship Program</string>
+    <string name="programs_menu_button_text">Program Reports</string>
+    <string name="edit_program_button">Edit Program</string>
+    <string name="delete_archive_program">Delete/Archive Program</string>
+    <string name="mentor_manager_program_card">Mentor Managers assigned to this program</string>
+    <string name="mentor_program_card">Mentors assigned to this program</string>
+    <string name="report_program_card">Program Reports</string>
+    <string name="task_program_card">Program Tasks</string>
+    <string name="view_button">View</string>
+    <!--  ************ Admin Programs tasks & reports ****************** -->
+    <string name="task_report_max_button">Maximum</string>
+    <string name="task_report_sort_button">Sort</string>
+    <string name="task_reports_title">Task Reports</string>
+    <string name="reports_title">Program Reports</string>
+    <string-array name="reports_string_array">
+        <item>All Reports</item>
+        <item>Program Reports</item>
+        <item>Task Reports</item>
+    </string-array>
+    <!--  ************ Admin Programs tasks & reports details ****************** -->
+    <string name="program_report_title">Google Africa Scholarship Program Report</string>
+    <string name="achievements_title">Major Achievements</string>
+    <string name="blocker_title">Major Blocker</string>
+    <string name="recommendations_title">Major Recommendations</string>
+    <string name="button_share">Share</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="share_report">Share report</string>
+    <string name="download_report">Download report</string>
+    <!--  ************ Admin Programs dialogs ****************** -->
+    <string name="report_share_dialog_message">Share report via email</string>
+    <string name="report_download_dialog_success_message">Report Downloaded Successfully!</string>
+    <string name="create_program_dialog_success_message">Program Created Successfully!</string>
+    <string name="archive_program_dialog_message">Program Archived!</string>
+    <string name="button_open_email">Open Email App</string>
+    <string name="button_done">Done</string>
+    <!--  ************ Admin Programs criteria setup ****************** -->
+    <string name="criteria_setup_title">Criteria Setup</string>
+    <string name="criteria_setup_create">Create Criteria</string>
+    <string name="criteria_setup_create_successful">Criteria Created Successfully!</string>
+    <string name="criteria_setup_add">Add Criteria</string>
+    <string name="choose">Choose</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <!--  ************ Admin Programs criteria selection ****************** -->
+    <string name="criteria_input_selection_title">Select Input Type</string>
+    <string name="criteria_input_single">Single Input</string>
+    <string name="criteria_input_yes_no">Yes/No</string>
+    <string name="criteria_input_file">File Input</string>
+    <string name="criteria_input_multiple">Multiple Input</string>
+    <string name="criteria_input_multi_choice">Multi choice</string>
+    <!--  ************ Admin Programs criteria multi choice ****************** -->
+    <string name="criteria_multi_choice_title">Input Multiple Select Options</string>
+    <string name="criteria_multiple_inputs_title">Input Question</string>
+    <string name="criteria_add_choice">Add another choice</string>
+    <string name="criteria_delete_choice">delete multi-choice input</string>
+    <string name="criteria_edit_choice">edit multi-choice input</string>
+    <!--  ************ Admin Programs criteria multiple inputs ****************** -->
+    <string-array name="inputs_string_array">
+        <item>2 Inputs</item>
+        <item>3 Inputs</item>
+        <item>4 Inputs</item>
+    </string-array>
+    <string name="criteria_add_question">Add another question</string>
+    <!--  ************ Admin Programs criteria single inputs ****************** -->
+    <string name="criteria_single_input_title">Input Single Question</string>
+    <!--  ************ Admin Programs criteria yes or no inputs ****************** -->
+    <string name="criteria_yesno_input_title">Input Yes or No Question</string>
+    <!--  ************ Admin Programs criteria file inputs ****************** -->
+    <string name="criteria_file_input_title">Input File Request</string>
+    <string name="criteria_delete_files">Delete file inputs</string>
+    <string name="file_Qty">Qty</string>
+    <string name="file_type">Type</string>
+    <string name="add_field">Add field</string>
+    <string name="file_name">File name</string>
+    <string name="cricteria_delete_files">delete files input</string>
+    <string name="criteria_edit_files">edit files input</string>
+    <string-array name="file_type_array">
+        <item>pdf</item>
+        <item>doc</item>
+        <item>xls</item>
+    </string-array>
+    <string-array name="file_qty_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 
+    <string name="delete_button">delete button</string>
+    <string name="edit_button">edit button</string>
+    <string name="close_button">close page</string>
+    <string name="report_spinner_description">Filter reports spinner</string>
+
+    <string name="no_email_app_available">No email app available on this device</string>
+    <!-- ********  Team 1 ***************-->
     <string name="mentor_mana">Mentor Management System</string>
     <string name="welcome">Welcome</string>
     <string name="sign_in_to_continue">Sign in to continue</string>
@@ -100,7 +210,6 @@
     <string name="technical_proficiency">Technical Proficiency</string>
     <string name="bio">Bio</string>
     <string name="been_a_mentor_before">Been a Mentor Before?</string>
-    <string name="yes">Yes</string>
     <string name="delete_mentor">Delete Mentor</string>
     <string name="peculiar_umeh">\@peculiar.umeh</string>
 

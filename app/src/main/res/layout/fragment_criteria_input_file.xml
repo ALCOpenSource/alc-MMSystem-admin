@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/spacing_default">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/questionInputText"
+            style="@style/outlineTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <ScrollView
+            android:id="@+id/inputsContainerScroll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/spacing_default"
+            android:layout_marginBottom="@dimen/spacing_default"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toTopOf="@+id/inputCriteriaCancelBT"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/questionInputText">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/inputsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/addInputButton"
+                    style="@style/addCirclePlusButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_default"
+                    android:contentDescription="@string/add_field"
+                    android:minWidth="48dp"
+                    android:minHeight="48dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/inputsContainer"
+                    app:tint="@color/mms_black_2" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    style="@style/regularMuktaBlack5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_field"
+                    app:layout_constraintBottom_toBottomOf="@+id/addInputButton"
+                    app:layout_constraintStart_toEndOf="@+id/addInputButton"
+                    app:layout_constraintTop_toTopOf="@+id/addInputButton" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/inputCriteriaCancelBT"
+            style="@style/buttonOutlineLargeSemiBoldText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/button_cancel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.45" />
+
+        <Button
+            android:id="@+id/inputCriteriaDoneBT"
+            style="@style/buttonLargeSemiBoldText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/button_done"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.45" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
