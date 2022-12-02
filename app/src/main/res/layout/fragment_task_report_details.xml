@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/spacing_default">
+
+
+        <TextView
+            android:id="@+id/taskReportTitle"
+            style="@style/largeMuktaExtraBold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/program_report_title"
+            app:layout_constraintEnd_toStartOf="@+id/task_report_close_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/taskReportDescription"
+            style="@style/regularMuktaBlack5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="By Ibrahim Kabir  -  19th - 25th Oct 22"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/taskReportTitle" />
+
+        <ImageButton
+            android:id="@+id/task_report_close_button"
+            style="@style/closeImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/close_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/taskReportTitle" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/taskReportShareButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/taskReportDescription">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+                <TextView
+                    android:id="@+id/achievementTitle"
+                    style="@style/mediumMukta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/achievements_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/achievementText"
+                    style="@style/regularMuktaBlack5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_description"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/achievementTitle" />
+
+                <TextView
+                    android:id="@+id/blockerTitle"
+                    style="@style/mediumMukta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_default"
+                    android:text="@string/blocker_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/achievementText" />
+
+                <TextView
+                    android:id="@+id/blockerText"
+                    style="@style/regularMuktaBlack5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_description"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/blockerTitle" />
+
+                <TextView
+                    android:id="@+id/recommendationTitle"
+                    style="@style/mediumMukta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_default"
+                    android:text="@string/recommendations_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/blockerText" />
+
+                <TextView
+                    android:id="@+id/recommendationText"
+                    style="@style/regularMuktaBlack5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_description"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recommendationTitle" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/taskReportShareButton"
+            style="@style/buttonOutlineMediumSemiBoldText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/button_share"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.45" />
+
+        <Button
+            android:id="@+id/taskReportDownloadButton"
+            style="@style/buttonMediumSemiBoldText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/button_download"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.45" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
