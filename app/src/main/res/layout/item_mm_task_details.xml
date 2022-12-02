@@ -11,7 +11,7 @@
 
         <variable
             name="listener"
-            type="com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.task.TaskDetailInteractionListener" />
+            type="com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.task.MentorMangerTaskDetailInteractionListener" />
 
     </data>
 

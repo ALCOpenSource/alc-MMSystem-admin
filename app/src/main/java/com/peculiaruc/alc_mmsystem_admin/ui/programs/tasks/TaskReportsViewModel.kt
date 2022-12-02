@@ -24,7 +24,7 @@ class TaskReportsViewModel : ViewModel() {
     fun initTaskReports() {
         for (i in 1..10) {
             val report =
-                Report(i, "Google Africa Scholarship Report", "19th - 25th Oct 22", "Ibrahim Kabir")
+                Report("Google Africa Scholarship Report", "19th - 25th Oct 22", "Ibrahim Kabir")
             taskReportsList.add(report)
         }
         _taskReports.value = taskReportsList

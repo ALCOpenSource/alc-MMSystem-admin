@@ -74,7 +74,7 @@ class MentorManagerProfileFragment : BaseFragment<FragmentMentorManagerProfileBi
         viewModel.selectTaskEvent.observe(viewLifecycleOwner, EventObserve { task ->
             findNavController().navigate(
                 MentorManagerProfileFragmentDirections
-                    .actionMentorManagerProfileFragmentToTaskDetailsFragment()
+                    .actionMentorManagerProfileFragmentToMentorMangerTaskDetailsFragment()
             )
         })
 
@@ -98,7 +98,7 @@ class MentorManagerProfileFragment : BaseFragment<FragmentMentorManagerProfileBi
         viewModel.openReportDetailsEvent.observe(viewLifecycleOwner, EventObserve {
             findNavController().navigate(
                 MentorManagerProfileFragmentDirections
-                    .actionMentorManagerProfileFragmentToReportDetailsFragment()
+                    .actionMentorManagerProfileFragmentToMentorMangerReportDetailsFragment()
             )
         })
 
@@ -117,7 +117,7 @@ class MentorManagerProfileFragment : BaseFragment<FragmentMentorManagerProfileBi
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.chat) {
-            Toast.makeText(requireContext(),"Chat icon",Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), "Chat icon", Toast.LENGTH_LONG).show()
         }
         return super.onOptionsItemSelected(item)
     }
@@ -153,26 +153,10 @@ class MentorManagerProfileFragment : BaseFragment<FragmentMentorManagerProfileBi
     )
 
     val listMentor = listOf(
-        Mentor(
-            "Peculiar C. Umeh", "", "P Assistant, Andela, She/her",
-            listOf("PROGRAM ASS", "MENTOR-WEB")
-        ),
-        Mentor(
-            "Nada C. Umeh", "", "Program Assistant, Andela, She/her",
-            listOf("PROGRAM ASSISTANT.", "MENTOR-GAD")
-        ),
-        Mentor(
-            "Marawan C. Umeh", "", "Program Assistant, Andela, he/his",
-            listOf("PROGRAM ASST GCP.")
-        ),
-        Mentor(
-            "Peculiar C. ", "", "Program Assistant, Andela, She/her",
-            listOf("PROGRAM ASST.", "MENTOR-GCP")
-        ),
-        Mentor(
-            "Marawan C. Umeh", "", "Program Assistant, Andela, he/his",
-            listOf("PROGRAM ASST.")
-        ),
+        MentorModel("", "", "", listOf()),
+        MentorModel("", "", "", listOf()),
+        MentorModel("", "", "", listOf()),
+        MentorModel("", "", "", listOf()),
     )
 
     val listProgram = listOf(

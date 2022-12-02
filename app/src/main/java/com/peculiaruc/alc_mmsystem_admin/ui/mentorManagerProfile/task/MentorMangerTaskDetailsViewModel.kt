@@ -6,10 +6,11 @@ import androidx.lifecycle.ViewModel
 import com.peculiaruc.alc_mmsystem_admin.domain.models.TaskDetails
 import com.peculiaruc.alc_mmsystem_admin.utilities.event.Event
 
+
 /**
  * task view model class to handle the logic for the task details fragment
  */
-class TaskViewModel : ViewModel(), TaskDetailInteractionListener {
+class MentorMangerTaskDetailsViewModel : ViewModel(), MentorMangerTaskDetailInteractionListener {
 
     private val _isAssigned = MutableLiveData(false)
     val isAssigned: LiveData<Boolean> = _isAssigned

@@ -8,7 +8,7 @@ import com.peculiaruc.alc_mmsystem_admin.utilities.event.Event
 /**
  * represent viewModel for Report Details screen.
  * */
-class ReportDetailsViewModel : ViewModel() {
+class MentorMangerReportDetailsViewModel : ViewModel() {
 
     private val _closeReportEvent = MutableLiveData<Event<Boolean>>()
     val closeReportEvent: LiveData<Event<Boolean>> = _closeReportEvent

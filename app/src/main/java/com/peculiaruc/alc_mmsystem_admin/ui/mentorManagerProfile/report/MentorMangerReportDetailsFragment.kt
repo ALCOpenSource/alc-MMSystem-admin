@@ -5,18 +5,15 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.peculiaruc.alc_mmsystem_admin.R
-import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentTaskDetailsBinding
+import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentMentorMangerReportDetailsBinding
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
 import com.peculiaruc.alc_mmsystem_admin.ui.dialogs.DialogTypes
 import com.peculiaruc.alc_mmsystem_admin.utilities.event.EventObserve
 
-/**
- * represent Report Details screen.
- * */
-class ReportDetailsFragment : BaseFragment<FragmentTaskDetailsBinding>() {
+class MentorMangerReportDetailsFragment : BaseFragment<FragmentMentorMangerReportDetailsBinding>() {
 
-    override val layoutIdFragment: Int = R.layout.fragment_report_details
-    override val viewModel: ReportDetailsViewModel by viewModels()
+    override val layoutIdFragment: Int = R.layout.fragment_mentor_manger_report_details
+    override val viewModel: MentorMangerReportDetailsViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -32,7 +29,7 @@ class ReportDetailsFragment : BaseFragment<FragmentTaskDetailsBinding>() {
 
         viewModel.shareReportEvent.observe(viewLifecycleOwner, EventObserve {
             findNavController().navigate(
-                ReportDetailsFragmentDirections.actionReportDetailsFragmentToTwoActionDialogFragment(
+                MentorMangerReportDetailsFragmentDirections.actionMentorMangerReportDetailsFragmentToBasicDialog(
                     DialogTypes.SHARE_REPORT
                 )
             )
@@ -40,7 +37,9 @@ class ReportDetailsFragment : BaseFragment<FragmentTaskDetailsBinding>() {
 
         viewModel.downloadReportEvent.observe(viewLifecycleOwner, EventObserve {
             findNavController().navigate(
-                ReportDetailsFragmentDirections.actionReportDetailsFragmentToBasicDialog(DialogTypes.REPORT_DOWNLOAD)
+                MentorMangerReportDetailsFragmentDirections.actionMentorMangerReportDetailsFragmentToBasicDialog(
+                    DialogTypes.REPORT_DOWNLOAD
+                )
             )
         })
     }

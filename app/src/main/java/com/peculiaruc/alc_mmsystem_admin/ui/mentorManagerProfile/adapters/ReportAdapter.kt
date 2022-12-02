@@ -12,7 +12,7 @@ class ReportAdapter(
     items: List<Report>,
     listener: ReportInteractionListener
 ) : BaseAdapter<Report>(items, listener) {
-    override val layoutID: Int = R.layout.item_report
+    override val layoutID: Int = R.layout.item_mm_report
 }
 
 /**

@@ -10,7 +10,9 @@ import androidx.navigation.fragment.findNavController
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentMentorMangerBinding
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Mentor
+import com.peculiaruc.alc_mmsystem_admin.domain.models.MentorModel
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
+import com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.adapters.MentorAdapter
 import com.peculiaruc.alc_mmsystem_admin.utilities.event.EventObserve
 
 
@@ -24,15 +26,10 @@ class MentorMangerFragment : BaseFragment<FragmentMentorMangerBinding>() {
 
     //*******For Text*******
     val list = listOf(
-        Mentor("asd1", "", "", listOf()),
-        Mentor("asd2", "", "", listOf()),
-        Mentor("asd3", "", "", listOf()),
-        Mentor("asd4", "", "", listOf()),
-        Mentor("asd5", "", "", listOf()),
-        Mentor("asd6", "", "", listOf()),
-        Mentor("asd7", "", "", listOf()),
-        Mentor("asd8", "", "", listOf()),
-        Mentor("asd9", "", "", listOf()),
+        MentorModel("","","", listOf()),
+        MentorModel("","","", listOf()),
+        MentorModel("","","", listOf()),
+
     )
     //////////////////
 
@@ -41,7 +38,7 @@ class MentorMangerFragment : BaseFragment<FragmentMentorMangerBinding>() {
         setTitle(true, getString(R.string.mentor_manger_title))
         setBottomNavigationVisibility(false)
         setHasOptionsMenu(true)
-        binding.recyclerMentorMangers.adapter = MentorMangerAdapter(list, viewModel)
+        binding.recyclerMentorMangers.adapter = MentorAdapter(list, viewModel)
         observeEvents()
     }
 

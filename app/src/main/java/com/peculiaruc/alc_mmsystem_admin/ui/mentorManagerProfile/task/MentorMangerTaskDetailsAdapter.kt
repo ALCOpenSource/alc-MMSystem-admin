@@ -5,20 +5,21 @@ import com.peculiaruc.alc_mmsystem_admin.domain.models.TaskDetails
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseAdapter
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseInteractionListener
 
+
 /**
  * task details adapter class for the task details fragment
  */
-class TaskDetailsAdapter(
+class MentorMangerTaskDetailsAdapter(
     items: List<TaskDetails>,
-    listener: TaskDetailInteractionListener
+    listener: MentorMangerTaskDetailInteractionListener
 ) : BaseAdapter<TaskDetails>(items, listener) {
-    override val layoutID: Int = R.layout.item_task_details
+    override val layoutID: Int = R.layout.item_mm_task_details
 }
 
 /**
  * task details interaction listener for the task details fragment
  */
-interface TaskDetailInteractionListener : BaseInteractionListener {
+interface MentorMangerTaskDetailInteractionListener : BaseInteractionListener {
 
     /**
      * done when the task details item is viewed

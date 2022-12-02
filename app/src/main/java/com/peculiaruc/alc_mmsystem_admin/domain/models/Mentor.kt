@@ -22,14 +22,3 @@ data class Mentor(
     var instagramUrl: String?,
     var twitterUrl: String?,
 )
-
-
-/**
- *  represent the Mentor object that will come from api .
- */
-data class Mentor2(
-    val name: String,
-    val image: String,
-    val role: String,
-    val tags: List<String>
-)

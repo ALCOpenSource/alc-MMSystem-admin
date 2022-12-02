@@ -50,7 +50,7 @@ class TaskReportsAdapter(
     companion object {
         private val DiffCallback = object : DiffUtil.ItemCallback<Report>() {
             override fun areItemsTheSame(oldItem: Report, newItem: Report): Boolean {
-                return oldItem.id == newItem.id
+                return oldItem.title == newItem.title
             }
 
             override fun areContentsTheSame(oldItem: Report, newItem: Report): Boolean {
@@ -95,7 +95,7 @@ class TaskReportsAdapter(
          */
         fun bind(report: Report) {
             binding.itemTitle.text = report.title
-            binding.itemDescription.text = "By " + report.user + " - " + report.time
+            binding.itemDescription.text = "By " + report.author + " - " + report.date
 
             binding.downloadButton.setOnClickListener {
                 itemClickListener.onDownloadClick(report)

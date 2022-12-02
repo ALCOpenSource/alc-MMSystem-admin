@@ -68,7 +68,8 @@
             android:id="@+id/empty_notification"
             layout="@layout/fragment_notifications_empty"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:showWhenEmptyList="@{viewModel.notifications}" />
+            android:layout_height="match_parent" />
+
+<!--        app:showWhenEmptyList="@{viewModel.notifications}"-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

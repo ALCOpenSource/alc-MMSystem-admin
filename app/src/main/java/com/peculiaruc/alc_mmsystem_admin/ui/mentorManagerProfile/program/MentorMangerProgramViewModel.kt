@@ -9,7 +9,7 @@ import com.peculiaruc.alc_mmsystem_admin.utilities.event.Event
 /**
  * represent viewModel for Program Details screen.
  * */
-class ProgramDetailsViewModel : ViewModel(), ProgramDetailInteractionListener {
+class MentorMangerProgramViewModel : ViewModel(), MMProgramDetailInteractionListener {
 
     private val _isAssigned = MutableLiveData(false)
     val isAssigned: LiveData<Boolean> = _isAssigned

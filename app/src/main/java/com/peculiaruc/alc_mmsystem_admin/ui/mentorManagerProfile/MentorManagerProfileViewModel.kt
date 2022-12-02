@@ -33,8 +33,8 @@ class MentorManagerProfileViewModel : ViewModel(), CertificateInteractionListene
     private val _selectProgramEvent = MutableLiveData<Event<Program>>()
     val selectProgramEvent: LiveData<Event<Program>> = _selectProgramEvent
 
-    private val _selectMentorEvent = MutableLiveData<Event<Mentor>>()
-    val selectMentorEvent: LiveData<Event<Mentor>> = _selectMentorEvent
+    private val _selectMentorEvent = MutableLiveData<Event<MentorModel>>()
+    val selectMentorEvent: LiveData<Event<MentorModel>> = _selectMentorEvent
 
     val checkChip = MutableLiveData(R.id.chip_about)
 
@@ -49,7 +49,7 @@ class MentorManagerProfileViewModel : ViewModel(), CertificateInteractionListene
     /**
      * set event to open selected mentor manger.
      * */
-    override fun onItemMentorSelected(item: Mentor) {
+    override fun onItemMentorSelected(item: MentorModel) {
         _selectMentorEvent.postValue(Event(item))
     }
 
@@ -69,6 +69,7 @@ class MentorManagerProfileViewModel : ViewModel(), CertificateInteractionListene
     override fun onItemClick(item: Report) {
         _openReportDetailsEvent.postValue(Event(item))
     }
+
 
 
 }
