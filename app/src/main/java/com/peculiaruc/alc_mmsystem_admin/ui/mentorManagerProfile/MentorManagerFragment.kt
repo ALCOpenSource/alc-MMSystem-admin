@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentMentorManagerBinding
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Certificate
-import com.peculiaruc.alc_mmsystem_admin.domain.models.Mentor
+import com.peculiaruc.alc_mmsystem_admin.domain.models.MentorModel
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Program
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Task
 import com.peculiaruc.alc_mmsystem_admin.type.ProgramProgress
@@ -76,23 +76,23 @@ class MentorManagerFragment : BaseFragment<FragmentMentorManagerBinding>() {
                 } else if (it == R.id.chip_mentors) {
                     //******** For Test Only ***********\\
                     val list = listOf(
-                        Mentor(
+                        MentorModel(
                             "Peculiar C. Umeh", "", "Program Assistant, Andela, She/her",
                             listOf("PROGRAM ASST.", "MENTOR-GAD")
                         ),
-                        Mentor(
+                        MentorModel(
                             "Peculiar C. Umeh", "", "Program Assistant, Andela, She/her",
                             listOf("PROGRAM ASST.", "MENTOR-GAD")
                         ),
-                        Mentor(
+                        MentorModel(
                             "Peculiar C. Umeh", "", "Program Assistant, Andela, She/her",
                             listOf("PROGRAM ASST.")
                         ),
-                        Mentor(
+                        MentorModel(
                             "Peculiar C. Umeh", "", "Program Assistant, Andela, She/her",
                             listOf("PROGRAM ASST.", "MENTOR-GAD")
                         ),
-                        Mentor(
+                        MentorModel(
                             "Peculiar C. Umeh", "", "Program Assistant, Andela, She/her",
                             listOf("PROGRAM ASST.")
                         ),

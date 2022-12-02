@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        tools:context=".ui.fragments.AboutFragment">
+
+
+        <TextView
+            android:id="@+id/textView_bio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mukta_semibold"
+            android:text="@string/bio"
+            android:textColor="@color/mms_black_2"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView_bio_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_bio"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/mukta_regular"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut cursus purus efficitur et. Duis ac enim tellus. Phasellus pharetra metus, ut cursus purus efficitur et. Duis ac enim tellus. Phasellus eget tortor dapibus, laoreet mauris sed, dignissim lectus.
+"
+            android:textColor="@color/mms_black_5"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView_title_proficiency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_bio_details"
+            android:fontFamily="@font/mukta_semibold"
+            android:text="@string/technical_proficiency"
+            android:textColor="@color/mms_black_2"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView_title_proficiency_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_title_proficiency"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/mukta_regular"
+            android:text="Java Script, Django, Mysql, Android"
+            android:textColor="@color/mms_black_5"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView_title_previous_programs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_title_proficiency_details"
+            android:fontFamily="@font/mukta_semibold"
+            android:text="Previous Programs"
+            android:textColor="@color/mms_black_2"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView_title_programs_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_title_previous_programs"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/mukta_regular"
+            android:text="GADS 2022, Google I/O Extended 2021"
+            android:textColor="@color/mms_black_5"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView_title_previous_roles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_title_programs_details"
+            android:fontFamily="@font/mukta_semibold"
+            android:text="Previous Roles Held"
+            android:textColor="@color/mms_black_2"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView_title_roles_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_title_previous_roles"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/mukta_regular"
+            android:text="Learner, Mentor, Program Assistant,  Program Assistant Lead"
+            android:textColor="@color/mms_black_5"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView_title_interest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_title_roles_details"
+            android:fontFamily="@font/mukta_semibold"
+            android:text="Program of interest:"
+            android:textColor="@color/mms_black_2"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView_title_interest_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_title_roles_details"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="24dp"
+            android:layout_toEndOf="@id/textView_title_interest"
+            android:fontFamily="@font/mukta_regular"
+            android:text="Google Africa Scholarship Program"
+            android:textColor="@color/mms_black_5"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView_title_mentor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_title_interest_details"
+            android:fontFamily="@font/mukta_semibold"
+            android:text="@string/been_a_mentor_before"
+            android:textColor="@color/mms_black_2"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView_title_mentor_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_title_interest_details"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="24dp"
+            android:layout_toEndOf="@id/textView_title_mentor"
+            android:fontFamily="@font/mukta_regular"
+            android:text="@string/yes"
+            android:textColor="@color/mms_black_5"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView_title_experience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_title_mentor_details"
+            android:fontFamily="@font/mukta_semibold"
+            android:text="Years of Technical Experience"
+            android:textColor="@color/mms_black_2"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView_title_experience_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_title_mentor_details"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="24dp"
+            android:layout_toEndOf="@id/textView_title_experience"
+            android:fontFamily="@font/mukta_regular"
+            android:text="3 years"
+            android:textColor="@color/mms_black_5"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView_title_documents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_title_experience_details"
+            android:fontFamily="@font/mukta_semibold"
+            android:text="Documents"
+            android:textColor="@color/mms_black_2"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/layout_documents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_title_documents"
+            android:layout_marginBottom="32dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="12dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/paper_file_text" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mukta_regular"
+                    android:text="My resume.doc"
+                    android:textColor="@color/mms_black_5"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="12dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/paper_file_text" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mukta_regular"
+                    android:text="Birth Cert.doc"
+                    android:textColor="@color/mms_black_5"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="12dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/paper_file_text" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mukta_regular"
+                    android:text="Java Lead.doc"
+                    android:textColor="@color/mms_black_5"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_social_links_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_documents"
+            android:layout_marginEnd="48dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/globe" />
+
+                <TextView
+                    android:id="@+id/textView_website"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mukta_semibold"
+                    android:text="www.andela.com"
+                    android:textColor="@color/mms_pry_2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/github" />
+
+                <TextView
+                    android:id="@+id/textView_github"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mukta_semibold"
+                    android:text="@string/peculiar_umeh"
+                    android:textColor="@color/mms_pry_2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/linkedin" />
+
+                <TextView
+                    android:id="@+id/textView_linkedin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mukta_semibold"
+                    android:text="@string/peculiar_umeh"
+                    android:textColor="@color/mms_pry_2" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_social_links_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_documents"
+            android:layout_alignBottom="@id/layout_social_links_1"
+            android:layout_toEndOf="@id/layout_social_links_1"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/instagram" />
+
+                <TextView
+                    android:id="@+id/textView_instagram"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mukta_semibold"
+                    android:text="@string/peculiar_umeh"
+                    android:textColor="@color/mms_pry_2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/twitter" />
+
+                <TextView
+                    android:id="@+id/textView_twitter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mukta_semibold"
+                    android:text="@string/peculiar_umeh"
+                    android:textColor="@color/mms_pry_2" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_deleteMentor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_social_links_1"
+            android:layout_marginTop="96dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/mukta_semibold"
+            android:gravity="center"
+            android:outlineProvider="none"
+            android:paddingVertical="15dp"
+            android:text="@string/delete_mentor"
+            android:textAlignment="inherit"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/mms_pry_2"
+            android:textSize="18sp"
+            app:cornerRadius="10sp"
+            app:strokeColor="@color/mms_pry_2"
+            app:strokeWidth="1dp" />
+
+
+    </RelativeLayout>
+</layout>

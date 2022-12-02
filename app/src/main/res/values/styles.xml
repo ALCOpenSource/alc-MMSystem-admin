@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="RoundedTabLayoutStyle" parent="Widget.Design.TabLayout">
+
+        <item name="tabIndicator">@null</item>
+        <item name="android:background">@drawable/tab_layout_bg</item>
+        <item name="fontFamily">@font/mukta_semibold</item>
+        <item name="textAllCaps">false</item>
+        <item name="tabTextColor">@color/white</item>
+        <item name="tabSelectedTextColor">@color/mms_pry_2</item>
+    </style>
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+</resources>

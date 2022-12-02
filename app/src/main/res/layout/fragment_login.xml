@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editTextPassword"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/mukta_regular"
+            android:hint="@string/password"
+            android:textColor="@color/mms_black_2"
+            android:textColorHint="@color/mms_black_5"
+            app:boxStrokeColor="@color/mms_black_3"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/mms_black_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView_sign_in_to_continue"
+            app:layout_constraintTop_toBottomOf="@+id/editText_Chat">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColor="@color/mms_black_2" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/textView_welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="72dp"
+            android:fontFamily="@font/mukta_extrabold"
+            android:includeFontPadding="true"
+            android:text="@string/welcome"
+            android:textColor="@color/mms_pry_2"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_sign_in_to_continue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mukta_regular"
+            android:text="@string/sign_in_to_continue"
+            android:textColor="@color/mms_black_2"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/textView_welcome"
+            app:layout_constraintTop_toBottomOf="@+id/textView_welcome" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editText_Chat"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:ems="10"
+            android:fontFamily="@font/mukta_regular"
+            android:hint="@string/email"
+            android:textColorHint="@color/mms_black_5"
+            app:boxStrokeColor="@color/mms_black_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView_sign_in_to_continue"
+            app:layout_constraintTop_toBottomOf="@+id/textView_sign_in_to_continue">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/mms_black_2" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonLogin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/mukta_semibold"
+            android:paddingVertical="15dp"
+            android:text="@string/login"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
+        <TextView
+            android:id="@+id/forgot_password_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/forgot_password"
+            android:textColor="@color/mms_black_2"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/buttonLogin"
+            app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+
+        <TextView
+            android:id="@+id/forgot_password_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/forgot_password"
+            android:textColor="@color/mms_black_2"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/buttonLogin"
+            app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_signin_google"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="96dp"
+            android:backgroundTint="@color/white"
+            android:drawableLeft="@drawable/google_logo"
+            android:fontFamily="@font/mukta_semibold"
+            android:gravity="center"
+            android:outlineProvider="none"
+            android:paddingVertical="15dp"
+            android:text="Sign in with Google"
+            android:textAlignment="inherit"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/mms_pry_2"
+            android:textSize="18sp"
+            app:cornerRadius="10sp"
+            app:iconGravity="textStart"
+            app:layout_constraintEnd_toEndOf="@+id/forgot_password_text"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/buttonLogin"
+            app:layout_constraintTop_toBottomOf="@+id/forgot_password_text"
+            app:strokeColor="@color/mms_pry_2"
+            app:strokeWidth="1dp" />
+
+        <TextView
+            android:id="@+id/textView_new_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="New User?"
+            android:textColor="@color/mms_black_2"
+            app:layout_constraintStart_toStartOf="@+id/button_signin_google"
+            app:layout_constraintTop_toBottomOf="@+id/button_signin_google" />
+
+        <TextView
+            android:id="@+id/sign_up_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Sign up"
+            android:textColor="@color/mms_pry_2"
+            app:layout_constraintStart_toEndOf="@+id/textView_new_user"
+            app:layout_constraintTop_toTopOf="@+id/textView_new_user" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

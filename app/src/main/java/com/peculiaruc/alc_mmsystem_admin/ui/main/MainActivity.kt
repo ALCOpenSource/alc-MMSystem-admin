@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -65,5 +66,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         return findNavController(R.id.nav_host_fragment).navigateUp() || super.onSupportNavigateUp()
+    }
+
+    /**
+     *  this method is for the bottom navigation bar
+     */
+    fun setBottomNavigationVisibility(isVisible: Boolean) {
+        binding.bottomNavigation.isVisible = isVisible
     }
 }

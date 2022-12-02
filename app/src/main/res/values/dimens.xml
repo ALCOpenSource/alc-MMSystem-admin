@@ -24,4 +24,5 @@
 
     <!-- ************** radius *********** -->
     <dimen name="cardCornerRadius">5dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>
