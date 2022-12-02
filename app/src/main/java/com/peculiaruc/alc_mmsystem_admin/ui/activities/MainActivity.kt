@@ -5,6 +5,10 @@ import android.os.Bundle
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.ActivityMainBinding
 
+/**
+ * Main activity
+ */
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityMainBinding
