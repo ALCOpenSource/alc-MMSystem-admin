@@ -373,4 +373,18 @@
             app:popUpToInclusive="true" />
     </dialog>
 
+    <fragment
+        android:id="@+id/approvalRequestsFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.approvalRequests.ApprovalRequestsFragment"
+        tools:layout="@layout/fragment_approval_requests">
+        <action
+            android:id="@+id/action_approvalRequestsFragment_to_approvalProgramRequestsFragment"
+            app:destination="@id/approvalProgramRequestsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/approvalProgramRequestsFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.approvalRequests.approvalProgramRequest.ApprovalProgramRequestsFragment"
+        tools:layout="@layout/fragment_approval_requests" />
+
+
 </navigation>

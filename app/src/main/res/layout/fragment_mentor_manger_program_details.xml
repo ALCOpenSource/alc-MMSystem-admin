@@ -80,7 +80,7 @@
             app:items="@{viewModel.mentorMangers}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@+id/text_description"
-            tools:listitem="@layout/item_task_details" />
+            tools:listitem="@layout/item_mm_task_details" />
 
 
         <com.google.android.material.button.MaterialButton
