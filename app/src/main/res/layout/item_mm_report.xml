@@ -11,7 +11,7 @@
 
         <variable
             name="listener"
-            type="com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.adapters.ReportInteractionListener" />
+            type="com.peculiaruc.alc_mmsystem_admin.ui.mentorTypeProfile.adapters.ReportInteractionListener" />
 
     </data>
 

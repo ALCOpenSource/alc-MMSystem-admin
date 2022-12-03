@@ -10,8 +10,10 @@ import androidx.databinding.BindingAdapter
 import androidx.databinding.InverseBindingAdapter
 import androidx.databinding.InverseBindingListener
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import com.peculiaruc.alc_mmsystem_admin.R
+import com.peculiaruc.alc_mmsystem_admin.type.MentorType
 import com.peculiaruc.alc_mmsystem_admin.type.ProgramProgress
 import com.peculiaruc.alc_mmsystem_admin.type.TaskStatus
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseAdapter
@@ -351,5 +353,24 @@ fun setButtonTaskProgram(button: Button, isAssigned: Boolean?) {
             button.setBackgroundColor(context.resources.getColor(R.color.mms_pry_2))
             button.text = context.getText(R.string.assign_task_button)
         }
+    }
+}
+
+@BindingAdapter("app:typeMentor")
+fun setTextButtonMentor(button: Button, mentorType: MentorType?) {
+    mentorType?.let {
+        val id = if (mentorType == MentorType.MENTOR_MANGER) {
+            R.string.delete_mentor_manager
+        } else {
+            R.string.delete_mentor
+        }
+        button.text = button.context.getString(id)
+    }
+}
+
+@BindingAdapter("app:showWhenMentorManger")
+fun showChipWhenMentorManger(chip: Chip, mentorType: MentorType?) {
+    mentorType?.let {
+        chip.isVisible = mentorType == MentorType.MENTOR_MANGER
     }
 }

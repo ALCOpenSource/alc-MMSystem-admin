@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.peculiaruc.alc_mmsystem_admin.ui.mentor.AboutFragment
+import com.peculiaruc.alc_mmsystem_admin.ui.mentor.notUsed.AboutFragment
 import com.peculiaruc.alc_mmsystem_admin.ui.chat.BroadcastFragment
 
 /**

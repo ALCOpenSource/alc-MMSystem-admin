@@ -1,4 +1,4 @@
-package com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.report
+package com.peculiaruc.alc_mmsystem_admin.ui.mentorTypeProfile.report
 
 import android.os.Bundle
 import android.view.View

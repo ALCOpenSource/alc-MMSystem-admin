@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.task.MentorMangerTaskDetailsViewModel" />
+            type="com.peculiaruc.alc_mmsystem_admin.ui.mentorTypeProfile.task.MentorMangerTaskDetailsViewModel" />
 
     </data>
 

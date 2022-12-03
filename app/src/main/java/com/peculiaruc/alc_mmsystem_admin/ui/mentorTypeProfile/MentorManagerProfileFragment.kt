@@ -1,5 +1,7 @@
-package com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile
+package com.peculiaruc.alc_mmsystem_admin.ui.mentorTypeProfile
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -8,14 +10,16 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentMentorManagerProfileBinding
 import com.peculiaruc.alc_mmsystem_admin.domain.models.*
+import com.peculiaruc.alc_mmsystem_admin.type.MentorType
 import com.peculiaruc.alc_mmsystem_admin.type.ProgramProgress
 import com.peculiaruc.alc_mmsystem_admin.type.TaskStatus
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
 import com.peculiaruc.alc_mmsystem_admin.ui.dialogs.DialogTypes
-import com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.adapters.*
+import com.peculiaruc.alc_mmsystem_admin.ui.mentorTypeProfile.adapters.*
 import com.peculiaruc.alc_mmsystem_admin.utilities.event.EventObserve
 
 /**
@@ -25,11 +29,13 @@ class MentorManagerProfileFragment : BaseFragment<FragmentMentorManagerProfileBi
 
     override val layoutIdFragment: Int = R.layout.fragment_mentor_manager_profile
     override val viewModel: MentorManagerProfileViewModel by viewModels()
+    val args: MentorManagerProfileFragmentArgs by navArgs()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setTitle(true, "Peculiah C. Umeh")
         setBottomNavigationVisibility(false)
+        viewModel.setMentorType(args.mentorType, args.mentorID)
         setHasOptionsMenu(true)
         setAdapter()
         onEvents()
@@ -108,7 +114,27 @@ class MentorManagerProfileFragment : BaseFragment<FragmentMentorManagerProfileBi
                     .actionMentorManagerProfileFragmentToProgramDetailsFragment()
             )
         })
+
+        viewModel.selectMentorEvent.observe(viewLifecycleOwner, EventObserve {
+            findNavController().navigate(
+                MentorManagerProfileFragmentDirections
+                    .actionMentorManagerProfileFragmentSelf(1, MentorType.MENTOR)
+            )
+        })
+
+        viewModel.openLinkEvent.observe(viewLifecycleOwner) {
+            if (!it.isNullOrBlank()) {
+                openURL(it)
+            }
+        }
     }
+
+    private fun openURL(url: String) {
+        val i = Intent(Intent.ACTION_VIEW)
+        i.data = Uri.parse(url)
+        startActivity(i)
+    }
+
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)

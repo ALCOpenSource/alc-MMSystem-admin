@@ -28,7 +28,7 @@
             android:title="Reports" />
 
         <item
-            android:id="@+id/mentorsFragment"
+            android:id="@+id/mentorFragment"
             android:icon="@drawable/ic_mentors"
             android:title="Mentors" />
 

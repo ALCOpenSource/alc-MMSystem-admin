@@ -9,10 +9,10 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentMentorMangerBinding
-import com.peculiaruc.alc_mmsystem_admin.domain.models.Mentor
 import com.peculiaruc.alc_mmsystem_admin.domain.models.MentorModel
+import com.peculiaruc.alc_mmsystem_admin.type.MentorType
 import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
-import com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.adapters.MentorAdapter
+import com.peculiaruc.alc_mmsystem_admin.ui.mentorTypeProfile.adapters.MentorAdapter
 import com.peculiaruc.alc_mmsystem_admin.utilities.event.EventObserve
 
 
@@ -26,11 +26,11 @@ class MentorMangerFragment : BaseFragment<FragmentMentorMangerBinding>() {
 
     //*******For Text*******
     val list = listOf(
-        MentorModel("","","", listOf()),
-        MentorModel("","","", listOf()),
-        MentorModel("","","", listOf()),
+        MentorModel("", "", "", listOf()),
+        MentorModel("", "", "", listOf()),
+        MentorModel("", "", "", listOf()),
 
-    )
+        )
     //////////////////
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -44,7 +44,13 @@ class MentorMangerFragment : BaseFragment<FragmentMentorMangerBinding>() {
 
     private fun observeEvents() {
         viewModel.selectItemMange.observe(viewLifecycleOwner, EventObserve {
-            findNavController().navigate(MentorMangerFragmentDirections.actionMentorMangerFragmentToMentorManagerProfileFragment())
+            findNavController().navigate(
+                MentorMangerFragmentDirections
+                    .actionMentorMangerFragmentToMentorManagerProfileFragment(
+                        1,
+                        MentorType.MENTOR_MANGER
+                    )
+            )
         })
 
         viewModel.addMentorEvent.observe(viewLifecycleOwner, EventObserve {

@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.certificate.CertificateViewModel" />
+            type="com.peculiaruc.alc_mmsystem_admin.ui.mentorTypeProfile.certificate.CertificateViewModel" />
 
     </data>
 

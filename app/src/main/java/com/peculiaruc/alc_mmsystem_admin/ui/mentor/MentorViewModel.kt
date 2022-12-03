@@ -1,4 +1,4 @@
-package com.peculiaruc.alc_mmsystem_admin.ui.mentorManger
+package com.peculiaruc.alc_mmsystem_admin.ui.mentor
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -7,10 +7,7 @@ import com.peculiaruc.alc_mmsystem_admin.domain.models.MentorModel
 import com.peculiaruc.alc_mmsystem_admin.ui.mentorTypeProfile.adapters.MentorInteractionListener
 import com.peculiaruc.alc_mmsystem_admin.utilities.event.Event
 
-/**
- * this is the viewModel for MentorMangerFragment.
- */
-class MentorMangerViewModel : ViewModel(), MentorInteractionListener {
+class MentorViewModel : ViewModel(), MentorInteractionListener {
 
     private val _selectItemMange = MutableLiveData<Event<MentorModel>>()
     val selectItemMange: LiveData<Event<MentorModel>> = _selectItemMange
@@ -21,7 +18,7 @@ class MentorMangerViewModel : ViewModel(), MentorInteractionListener {
     /**
      * done when the add mentor button is clicked
      */
-    fun addMentorManger() {
+    fun addMentor() {
         _addMentorEvent.postValue(Event(true))
     }
 

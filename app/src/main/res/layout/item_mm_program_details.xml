@@ -11,7 +11,7 @@
 
         <variable
             name="listener"
-            type="com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.program.MMProgramDetailInteractionListener" />
+            type="com.peculiaruc.alc_mmsystem_admin.ui.mentorTypeProfile.program.MMProgramDetailInteractionListener" />
 
     </data>
 

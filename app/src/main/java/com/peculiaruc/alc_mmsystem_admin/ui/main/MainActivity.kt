@@ -36,10 +36,10 @@ class MainActivity : AppCompatActivity() {
             menuItem.isChecked = true
 
             // this condition for test only until other fragment be complete.
-            if (menuItem.itemId == R.id.mentorMangerFragment
-                || menuItem.itemId == R.id.adminProfileFragment
-                || menuItem.itemId == R.id.homeFragment
-            )
+//            if (menuItem.itemId == R.id.mentorMangerFragment
+//                || menuItem.itemId == R.id.adminProfileFragment
+//                || menuItem.itemId == R.id.homeFragment
+//            )
                 binding.navHostFragment.findNavController().navigate(menuItem.itemId)
             true
         }

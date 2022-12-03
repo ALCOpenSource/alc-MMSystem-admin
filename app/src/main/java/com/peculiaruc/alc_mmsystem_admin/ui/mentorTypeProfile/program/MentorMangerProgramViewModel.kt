@@ -1,4 +1,4 @@
-package com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.program
+package com.peculiaruc.alc_mmsystem_admin.ui.mentorTypeProfile.program
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

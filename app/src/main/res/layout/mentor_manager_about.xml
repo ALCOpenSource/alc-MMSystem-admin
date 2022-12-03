@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.peculiaruc.alc_mmsystem_admin.ui.adminProfile.AdminProfileViewModel" />
+            type="com.peculiaruc.alc_mmsystem_admin.ui.mentorTypeProfile.MentorManagerProfileViewModel" />
 
     </data>
 
@@ -403,7 +403,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/chip_linkedIn"
                 app:strokeColor="@color/mms_pry_2"
-                app:strokeWidth="1dp" />
+                app:strokeWidth="1dp"
+                app:typeMentor="@{viewModel.mentorType}" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

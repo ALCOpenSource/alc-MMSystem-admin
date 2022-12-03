@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.MentorManagerProfileViewModel" />
+            type="com.peculiaruc.alc_mmsystem_admin.ui.mentorTypeProfile.MentorManagerProfileViewModel" />
 
     </data>
 
@@ -103,7 +103,8 @@
                     style="@style/chip"
                     android:layout_width="@dimen/chip_mentor_profile_width"
                     android:layout_height="wrap_content"
-                    android:text="@string/mentors" />
+                    android:text="@string/mentors"
+                    app:showWhenMentorManger="@{viewModel.mentorType}" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_tasks"
@@ -183,7 +184,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/search_icon"
-            app:showAbout="@{viewModel.checkChip}" />
+            app:showAbout="@{viewModel.checkChip}"
+            app:viewModel="@{viewModel}" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline5"

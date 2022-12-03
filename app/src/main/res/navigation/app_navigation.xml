@@ -47,8 +47,16 @@
 
     <fragment
         android:id="@+id/mentorManagerProfileFragment"
-        android:name="com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.MentorManagerProfileFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.mentorTypeProfile.MentorManagerProfileFragment"
         tools:layout="@layout/fragment_mentor_manager_profile">
+        <argument
+            android:name="mentorID"
+            app:argType="integer" />
+
+        <argument
+            android:name="mentorType"
+            app:argType="com.peculiaruc.alc_mmsystem_admin.type.MentorType" />
+
         <action
             android:id="@+id/action_mentorManagerProfileFragment_to_certificateFragment"
             app:destination="@id/certificateFragment" />
@@ -67,11 +75,14 @@
         <action
             android:id="@+id/action_mentorManagerProfileFragment_to_programDetailsFragment"
             app:destination="@id/mentorMangerProgramDetailsFragment" />
+        <action
+            android:id="@+id/action_mentorManagerProfileFragment_self"
+            app:destination="@id/mentorManagerProfileFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/certificateFragment"
-        android:name="com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.certificate.CertificateFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.mentorTypeProfile.certificate.CertificateFragment"
         tools:layout="@layout/fragment_certificate">
         <argument
             android:name="certificateTitle"
@@ -84,7 +95,7 @@
 
     <fragment
         android:id="@+id/mentorMangerTaskDetailsFragment"
-        android:name="com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.task.MentorMangerTaskDetailsFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.mentorTypeProfile.task.MentorMangerTaskDetailsFragment"
         tools:layout="@layout/fragment_mentor_manger_task">
 
         <action
@@ -306,7 +317,7 @@
     </fragment>
     <fragment
         android:id="@+id/mentorMangerProgramDetailsFragment"
-        android:name="com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.program.MentorMangerProgramDetailsFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.mentorTypeProfile.program.MentorMangerProgramDetailsFragment"
         tools:layout="@layout/item_mm_program_details">
         <action
             android:id="@+id/action_mentorMangerProgramDetailsFragment_to_basicDialog"
@@ -315,7 +326,7 @@
     </fragment>
     <fragment
         android:id="@+id/mentorMangerReportDetailsFragment"
-        android:name="com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.report.MentorMangerReportDetailsFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.mentorTypeProfile.report.MentorMangerReportDetailsFragment"
         tools:layout="@layout/fragment_mentor_manger_report_details">
 
         <action
@@ -326,5 +337,40 @@
             app:destination="@id/twoActionDialogFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/mentorFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.mentor.MentorFragment"
+        tools:layout="@layout/fragment_mentor">
+        <action
+            android:id="@+id/action_mentorFragment_to_addMentorDialog"
+            app:destination="@id/addMentorDialog" />
+        <action
+            android:id="@+id/action_mentorFragment_to_mentorManagerProfileFragment"
+            app:destination="@id/mentorManagerProfileFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/addMentorDialog"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.mentor.notUsed.MentorAddedDialog"
+        android:label="AddMentorDialog"
+        tools:layout="@layout/dialog_mentor_added">
+        <action
+            android:id="@+id/action_addMentorDialog_to_mentorAddedDialog"
+            app:destination="@id/mentorAddedDialog"
+            app:popUpTo="@+id/addMentorDialog"
+            app:popUpToInclusive="true" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/mentorAddedDialog"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.mentor.notUsed.MentorAddedDialog"
+        android:label="MentorAddedDialog"
+        tools:layout="@layout/dialog_mentor_added">
+        <action
+            android:id="@+id/action_mentorAddedDialog_to_mentorFragment"
+            app:destination="@id/mentorFragment"
+            app:popUpTo="@id/addMentorDialog"
+            app:popUpToInclusive="true" />
+    </dialog>
 
 </navigation>

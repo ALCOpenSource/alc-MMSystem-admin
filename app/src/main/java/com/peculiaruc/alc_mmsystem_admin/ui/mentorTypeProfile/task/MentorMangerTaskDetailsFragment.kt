@@ -1,4 +1,4 @@
-package com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.task
+package com.peculiaruc.alc_mmsystem_admin.ui.mentorTypeProfile.task
 
 import android.os.Bundle
 import android.view.View

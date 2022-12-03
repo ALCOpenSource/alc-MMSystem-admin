@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.program.MentorMangerProgramViewModel" />
+            type="com.peculiaruc.alc_mmsystem_admin.ui.mentorTypeProfile.program.MentorMangerProgramViewModel" />
 
     </data>
 

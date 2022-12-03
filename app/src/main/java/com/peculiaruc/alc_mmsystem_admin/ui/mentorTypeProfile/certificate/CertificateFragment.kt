@@ -1,4 +1,4 @@
-package com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.certificate
+package com.peculiaruc.alc_mmsystem_admin.ui.mentorTypeProfile.certificate
 
 import android.os.Bundle
 import android.view.View

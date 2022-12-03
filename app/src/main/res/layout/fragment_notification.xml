@@ -37,10 +37,10 @@
             android:layout_height="wrap_content"
             android:drawablePadding="6dp"
             android:fontFamily="@font/mukta_regular"
+            android:onClick="@{() -> viewModel.onClickMarkAllAsRead()}"
             android:text="@string/read_notification"
             android:textColor="@color/mms_black_1"
             android:textSize="12sp"
-            android:onClick="@{() -> viewModel.onClickMarkAllAsRead()}"
             app:drawableEndCompat="@drawable/ic_check"
             app:drawableTint="@color/mms_pry_2"
             app:layout_constraintBaseline_toBaselineOf="@id/text_all_notification"
@@ -68,8 +68,7 @@
             android:id="@+id/empty_notification"
             layout="@layout/fragment_notifications_empty"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-<!--        app:showWhenEmptyList="@{viewModel.notifications}"-->
+            android:layout_height="match_parent"
+            app:isVisible="@{viewModel.notifications.empty}" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

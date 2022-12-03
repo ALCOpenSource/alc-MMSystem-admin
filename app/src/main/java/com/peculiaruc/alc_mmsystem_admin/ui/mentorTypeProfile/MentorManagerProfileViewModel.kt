@@ -1,11 +1,12 @@
-package com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile
+package com.peculiaruc.alc_mmsystem_admin.ui.mentorTypeProfile
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.domain.models.*
-import com.peculiaruc.alc_mmsystem_admin.ui.mentorManagerProfile.adapters.*
+import com.peculiaruc.alc_mmsystem_admin.type.MentorType
+import com.peculiaruc.alc_mmsystem_admin.ui.mentorTypeProfile.adapters.*
 import com.peculiaruc.alc_mmsystem_admin.utilities.event.Event
 
 /**
@@ -36,6 +37,12 @@ class MentorManagerProfileViewModel : ViewModel(), CertificateInteractionListene
     private val _selectMentorEvent = MutableLiveData<Event<MentorModel>>()
     val selectMentorEvent: LiveData<Event<MentorModel>> = _selectMentorEvent
 
+    private val _openLinkEvent = MutableLiveData<String>()
+    val openLinkEvent: MutableLiveData<String> = _openLinkEvent
+
+    private val _mentorType = MutableLiveData<MentorType>()
+    val mentorType: MutableLiveData<MentorType> = _mentorType
+
     val checkChip = MutableLiveData(R.id.chip_about)
 
     override fun onItemCertificateSelected(item: Certificate) {
@@ -57,7 +64,6 @@ class MentorManagerProfileViewModel : ViewModel(), CertificateInteractionListene
         _selectProgramEvent.postValue(Event(item))
     }
 
-
     override fun onItemReportShare(item: Report) {
         _shareReportEvent.postValue(Event(item))
     }
@@ -71,5 +77,24 @@ class MentorManagerProfileViewModel : ViewModel(), CertificateInteractionListene
     }
 
 
+    fun onClickGithub() {
+        _openLinkEvent.postValue("https://github.com/")
+    }
+
+    fun onClickLinkedIn() {
+        _openLinkEvent.postValue("https://www.linkedin.com/feed/")
+    }
+
+    fun onClickInstagram() {
+        _openLinkEvent.postValue("https://www.instagram.com/")
+    }
+
+    fun onClickTwitter() {
+        _openLinkEvent.postValue("https://twitter.com/home")
+    }
+
+    fun setMentorType(mentorType: MentorType, mentorID: Int) {
+        _mentorType.postValue(mentorType)
+    }
 
 }

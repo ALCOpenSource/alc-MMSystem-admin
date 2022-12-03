@@ -43,6 +43,11 @@
     <string name="messages">Messages</string>
     <string name="all_mentor_manger">All mentor managers</string>
     <string name="fab_add_mentor_manger">Add mentor manger</string>
+
+    <!--  ************ Mentor   ****************** -->
+    <string name="mentor_title">Mentor</string>
+    <string name="all_mentor">All mentor</string>
+    <string name="fab_add_mentor">Add mentor</string>
     <!--  ************ Mentor Manger Profile ****************** -->
     <string name="menu_chat">Chat</string>
     <string name="about">About</string>
