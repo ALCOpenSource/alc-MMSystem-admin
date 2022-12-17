@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.peculiaruc.alc_mmsystem_admin.ui.chat.conversation.ConversationViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

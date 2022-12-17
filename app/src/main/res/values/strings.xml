@@ -329,4 +329,8 @@
     <string name="franka_kebe">Franka Kebe</string>
     <string name="program_requests">Program Requests</string>
     <string name="title_activity_chat">Chat</string>
+    <string name="select_beneficiary">Select Beneficiary</string>
+    <string name="decline_button">Decline</string>
+    <string name="approve_button">Approve</string>
+    <string name="type_message">Type message...</string>
 </resources>

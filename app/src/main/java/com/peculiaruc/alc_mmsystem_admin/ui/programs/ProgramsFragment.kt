@@ -24,6 +24,7 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
 
     override val layoutIdFragment: Int = R.layout.fragment_programs
     override val viewModel = ProgramsViewModel.getInstance()
+
     private lateinit var programsAdapter: ProgramsAdapter
     private var newProgramActionArg = -1
     override fun onCreateView(
@@ -31,8 +32,10 @@ class ProgramsFragment : BaseFragment<FragmentProgramsBinding>(),
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        setTitle(false)
 
         viewModel.initPrograms()
+
         viewModel.programs.observe(viewLifecycleOwner) {
             programsAdapter.submitList(it)
         }

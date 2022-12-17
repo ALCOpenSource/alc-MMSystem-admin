@@ -380,11 +380,38 @@
         <action
             android:id="@+id/action_approvalRequestsFragment_to_approvalProgramRequestsFragment"
             app:destination="@id/approvalProgramRequestsFragment" />
+        <action
+            android:id="@+id/action_approvalRequestsFragment_to_approvalMentorRequestFragment"
+            app:destination="@id/approvalMentorRequestFragment" />
     </fragment>
     <fragment
         android:id="@+id/approvalProgramRequestsFragment"
         android:name="com.peculiaruc.alc_mmsystem_admin.ui.approvalRequests.approvalProgramRequest.ApprovalProgramRequestsFragment"
-        tools:layout="@layout/fragment_approval_requests" />
+        tools:layout="@layout/fragment_approval_program_requests" />
+
+    <fragment
+        android:id="@+id/approvalMentorRequestFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.approvalRequests.mentorRquest.ApprovalMentorRequestFragment"
+        tools:layout="@layout/fragment_approval_mentor_request">
+        <argument
+            android:name="mentorType"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_approvalMentorRequestFragment_to_profileRequestedMentorFragment"
+            app:destination="@id/profileRequestedMentorFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/profileRequestedMentorFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.approvalRequests.profileMentorMangerRequested.MentorMangerRequestedFragment"
+        tools:layout="@layout/fragment_approval_program_requests" />
+
+    <fragment
+        android:id="@+id/conversationFragment"
+        android:name="com.peculiaruc.alc_mmsystem_admin.ui.chat.conversation.ConversationFragment"
+        android:label="ConversationFragment"
+        tools:layout="@layout/fragment_chat" />
 
 
 </navigation>

@@ -65,14 +65,13 @@
             android:layout_height="wrap_content"
             android:clickable="true"
             android:focusable="true"
+            android:layout_margin="16dp"
             android:src="@drawable/ic_add_sign"
             app:backgroundTint="@color/mms_pry_2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/ic_add_sign"
-            app:tint="@color/white"
-
-            />
+            app:tint="@color/white" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

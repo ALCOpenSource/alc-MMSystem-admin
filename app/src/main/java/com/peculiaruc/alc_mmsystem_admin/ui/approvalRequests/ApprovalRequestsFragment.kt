@@ -23,11 +23,19 @@ class ApprovalRequestsFragment : BaseFragment<FragmentApprovalRequestsBinding>()
 
     private fun observeEvents() {
         viewModel.mentorMangerRequestEvent.observe(viewLifecycleOwner, EventObserve {
-
+            findNavController().navigate(
+                ApprovalRequestsFragmentDirections.actionApprovalRequestsFragmentToApprovalMentorRequestFragment(
+                    1
+                )
+            )
         })
 
         viewModel.mentorRequestEvent.observe(viewLifecycleOwner, EventObserve {
-
+            findNavController().navigate(
+                ApprovalRequestsFragmentDirections.actionApprovalRequestsFragmentToApprovalMentorRequestFragment(
+                    2
+                )
+            )
         })
 
         viewModel.programRequestEvent.observe(viewLifecycleOwner, EventObserve {

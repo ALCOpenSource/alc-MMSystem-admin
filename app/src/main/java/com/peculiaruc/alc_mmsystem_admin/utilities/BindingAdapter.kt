@@ -374,3 +374,10 @@ fun showChipWhenMentorManger(chip: Chip, mentorType: MentorType?) {
         chip.isVisible = mentorType == MentorType.MENTOR_MANGER
     }
 }
+
+@BindingAdapter("app:selectChip")
+fun setSelectChip(chip: Chip, isSelected: Boolean?) {
+    isSelected?.let {
+        chip.isChecked = isSelected
+    }
+}

@@ -1,11 +1,8 @@
 package com.peculiaruc.alc_mmsystem_admin.ui.search
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import com.peculiaruc.alc_mmsystem_admin.R
 import com.peculiaruc.alc_mmsystem_admin.databinding.FragmentSearchBinding
@@ -15,12 +12,15 @@ import com.peculiaruc.alc_mmsystem_admin.domain.models.Report
 import com.peculiaruc.alc_mmsystem_admin.domain.models.Task
 import com.peculiaruc.alc_mmsystem_admin.type.ProgramProgress
 import com.peculiaruc.alc_mmsystem_admin.type.TaskStatus
+import com.peculiaruc.alc_mmsystem_admin.ui.base.BaseFragment
 
 /**
  * this represent Search screen..
  */
-class SearchFragment : Fragment() {
-    private lateinit var binding: FragmentSearchBinding
+class SearchFragment : BaseFragment<FragmentSearchBinding>() {
+
+    override val layoutIdFragment: Int = R.layout.fragment_search
+    override val viewModel: SearchViewModel by viewModels()
 
     private val navController by lazy {
         NavHostFragment.findNavController(this)
@@ -60,22 +60,13 @@ class SearchFragment : Fragment() {
         Certificate("", "GADS TF 2022 CERTIFICATE"),
     )
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_search, container, false)
-
-        binding.recyclerViewSearch.adapter = SearchAdapter(list)
-        binding.appBarLayout.elevation = 0f
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setTitle(false)
+        binding.recyclerViewSearch.adapter = SearchAdapter(list)
+        binding.appBarLayout.elevation = 0f
 
-        // handle back button
         binding.topAppBar.setNavigationOnClickListener {
             navController.navigateUp()
         }
