@@ -86,7 +86,7 @@ and your certification will be on them. You can read about them [here](https://d
 - Navigation Components
 - etc.
 
-# How to use this repo
+## How to use this repo
 
 To use and contribute to the project, do the following:
 1. Fork it to your GitHub account.
@@ -97,6 +97,12 @@ eg new feature or bug but follow this pattern `type/branch-description` eg `feat
 5. Ensure your branch is up to date with latest changes before pushing.
 6. Reference the issue you worked on in your PRReference the issue you worked on in your PR.
 7. Open a pull request against the develop branch and request a review from your Team Lead.
+
+## PR Format
+- Link your PR to the issue worked on
+- Enure the PR name is descriptive for your branch but not too long. Lead with what the the branch is doing
+eg new feature or bug but follow this pattern `type/branch-description` eg `feature/add-login-functionality`.
+- Add the state of the issue worked on, completely implemented or not, then what is left.
 
 ## Design
 - The design can be find [here](https://www.figma.com/file/JNZKj3lachPypSOMBOhC1e/MMS-ALC-Mobile-Project?node-id=0%3A1) 
